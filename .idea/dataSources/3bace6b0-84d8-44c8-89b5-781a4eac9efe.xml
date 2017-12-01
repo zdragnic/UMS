@@ -4,7 +4,7 @@
     <root id="1"/>
     <schema id="2" parent="1" name="BP08">
       <ObjectId>904</ObjectId>
-      <IntrospectionTimestamp>2017-11-12.00:21:40</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-12-01.13:29:31</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -2203,6 +2203,10 @@
     </schema>
     <schema id="734" parent="1" name="BP07">
       <ObjectId>903</ObjectId>
+      <IntrospectionTimestamp>2017-12-01.13:29:32</IntrospectionTimestamp>
+      <CreatedTimestamp>2017-11-16.00:50:24</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-19.18:22:31</ModifiedTimestamp>
+      <Visible>1</Visible>
     </schema>
     <schema id="735" parent="1" name="BP09">
       <ObjectId>905</ObjectId>
@@ -2273,5 +2277,1926 @@
     <schema id="757" parent="1" name="XS$NULL">
       <ObjectId>2147483638</ObjectId>
     </schema>
+    <table id="758" parent="734" name="ACADEMICYEAR">
+      <ObjectId>328887</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:18</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="759" parent="734" name="ANSWER">
+      <ObjectId>328857</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:56</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="760" parent="734" name="ANSWER_PREDEFINEDANSWER">
+      <ObjectId>328863</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:57</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="761" parent="734" name="ASSIGNMENT">
+      <ObjectId>328923</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:37</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:36</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="762" parent="734" name="ASSIGNMENTREPORT">
+      <ObjectId>328927</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:37</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:36</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="763" parent="734" name="CLASS">
+      <ObjectId>328917</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:24</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="764" parent="734" name="CLASSATTENDANCE">
+      <ObjectId>328919</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:36</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:36</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="765" parent="734" name="COURSE">
+      <ObjectId>328881</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:18</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="766" parent="734" name="COURSE_DEPARTMENT">
+      <ObjectId>328899</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:20</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="767" parent="734" name="DEGREE">
+      <ObjectId>328897</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:19</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="768" parent="734" name="DEPARTMENT">
+      <ObjectId>328879</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:18</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:34</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="769" parent="734" name="DEPARTMENT_DEGREE">
+      <ObjectId>328901</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:23</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="770" parent="734" name="DOCUMENT">
+      <ObjectId>328869</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:13</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="771" parent="734" name="DOCUMENTACTION">
+      <ObjectId>328875</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:17</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:34</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="772" parent="734" name="DOCUMENTVISIBILITY">
+      <ObjectId>328873</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:17</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:34</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="773" parent="734" name="DOCUMENT_USER">
+      <ObjectId>328877</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:18</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:34</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="774" parent="734" name="EMPLOYEEDETAILS">
+      <ObjectId>328933</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:38</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:48</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="775" parent="734" name="ENROLLMENT">
+      <ObjectId>328905</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:23</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="776" parent="734" name="EXAM">
+      <ObjectId>328911</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:24</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="777" parent="734" name="EXAMRESULT">
+      <ObjectId>328913</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:24</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="778" parent="734" name="FINALPROJECT">
+      <ObjectId>328893</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:19</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-19.18:22:31</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="779" parent="734" name="GROUPS">
+      <ObjectId>328841</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:35</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="780" parent="734" name="LABGROUP">
+      <ObjectId>328907</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:23</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="781" parent="734" name="LOG">
+      <ObjectId>328921</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:36</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:36</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="782" parent="734" name="MESSAGE">
+      <ObjectId>328889</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:19</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="783" parent="734" name="PERMISSION">
+      <ObjectId>328843</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:35</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="784" parent="734" name="PERMISSION_GROUP">
+      <ObjectId>328847</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:36</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="785" parent="734" name="PREDEFINEDANSWER">
+      <ObjectId>328859</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:57</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="786" parent="734" name="QUESTION">
+      <ObjectId>328849</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:36</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="787" parent="734" name="QUESTIONTYPE">
+      <ObjectId>328855</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:56</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="788" parent="734" name="SCHEDULEDTEST">
+      <ObjectId>328853</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:43</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-19.00:38:25</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="789" parent="734" name="SCHEDULEDTESTRESULT">
+      <ObjectId>328861</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:57</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="790" parent="734" name="SEMESTER">
+      <ObjectId>328909</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:23</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="791" parent="734" name="STUDENTDETAILS">
+      <ObjectId>328931</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:37</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:36</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="792" parent="734" name="STUDENT_COURSE_FINALRESULT">
+      <ObjectId>328915</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:24</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="793" parent="734" name="STUDYYEAR">
+      <ObjectId>328891</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:19</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="794" parent="734" name="SUBJECT">
+      <ObjectId>328867</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:00</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="795" parent="734" name="TESTSETUP">
+      <ObjectId>328851</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:37</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="796" parent="734" name="TYPEOFEMPLOYEE">
+      <ObjectId>328935</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:38</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:48</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="797" parent="734" name="USERDETAILS">
+      <ObjectId>328865</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:57</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="798" parent="734" name="USERS">
+      <ObjectId>328839</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:24</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="799" parent="734" name="USER_ENROLLMENT">
+      <ObjectId>328903</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:23</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="800" parent="734" name="USER_GROUP">
+      <ObjectId>328845</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:50:36</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="801" parent="734" name="ZAMGERUSERDETAILS">
+      <ObjectId>328883</ObjectId>
+      <CreatedTimestamp>2017-11-16.00:51:18</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-18.22:23:35</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="802" parent="758" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="803" parent="758" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="804" parent="758" name="ACTIVE">
+      <Position>3</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="805" parent="758" name="start">
+      <Position>4</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="806" parent="758" name="end">
+      <Position>5</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="807" parent="758" name="SYS_C00190290">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:19</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190290</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="808" parent="759" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="809" parent="759" name="ANSWERS">
+      <Position>2</Position>
+      <DataType>VARCHAR2(4000)|0</DataType>
+    </column>
+    <column id="810" parent="759" name="POINTS">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="811" parent="759" name="QUESTIONID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="812" parent="759" name="SCHEDULEDTESTRESULTID">
+      <Position>5</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="813" parent="759" name="COMMENTS">
+      <Position>6</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+    </column>
+    <key id="814" parent="759" name="SYS_C00190228">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:57</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190228</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="815" parent="759" name="FKANSWER404467">
+      <ModifiedTimestamp>2017-11-16.00:51:46</ModifiedTimestamp>
+      <ColNames>QUESTIONID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>QUESTION</RefTableName>
+      <RefKeyName>SYS_C00190210</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="816" parent="759" name="FKANSWER160914">
+      <ModifiedTimestamp>2017-11-16.00:51:47</ModifiedTimestamp>
+      <ColNames>SCHEDULEDTESTRESULTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>SCHEDULEDTESTRESULT</RefTableName>
+      <RefKeyName>SYS_C00190237</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="817" parent="760" name="ANSWERID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="818" parent="760" name="PREDEFINEDANSWERID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="819" parent="760" name="SYS_C00190240">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:57</ModifiedTimestamp>
+      <ColNames>ANSWERID
+PREDEFINEDANSWERID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190240</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="820" parent="760" name="FKANSWER_PRE140428">
+      <ModifiedTimestamp>2017-11-16.00:51:47</ModifiedTimestamp>
+      <ColNames>ANSWERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ANSWER</RefTableName>
+      <RefKeyName>SYS_C00190228</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="821" parent="760" name="FKANSWER_PRE627320">
+      <ModifiedTimestamp>2017-11-16.00:51:47</ModifiedTimestamp>
+      <ColNames>PREDEFINEDANSWERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>PREDEFINEDANSWER</RefTableName>
+      <RefKeyName>SYS_C00190232</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="822" parent="761" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="823" parent="761" name="CONTENT">
+      <Position>2</Position>
+      <DataType>BLOB|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="824" parent="761" name="COURSE_DEPARTMENTID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="825" parent="761" name="SYS_C00190365">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:37</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190365</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="826" parent="761" name="FKASSIGNMENT745757">
+      <ModifiedTimestamp>2017-11-16.00:52:38</ModifiedTimestamp>
+      <ColNames>COURSE_DEPARTMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>COURSE_DEPARTMENT</RefTableName>
+      <RefKeyName>SYS_C00190311</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="827" parent="762" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="828" parent="762" name="CONTENT">
+      <Position>2</Position>
+      <DataType>BLOB|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="829" parent="762" name="STUDENTID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="830" parent="762" name="ASSIGNMENTID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="831" parent="762" name="SYS_C00190370">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:37</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190370</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="832" parent="762" name="FKASSIGNMENT991854">
+      <ModifiedTimestamp>2017-11-16.00:52:38</ModifiedTimestamp>
+      <ColNames>STUDENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="833" parent="762" name="FKASSIGNMENT822266">
+      <ModifiedTimestamp>2017-11-16.00:52:38</ModifiedTimestamp>
+      <ColNames>ASSIGNMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ASSIGNMENT</RefTableName>
+      <RefKeyName>SYS_C00190365</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="834" parent="763" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="835" parent="763" name="SCHEDULED">
+      <Position>2</Position>
+      <DataType>TIMESTAMP(7)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="836" parent="763" name="LECTURERID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="837" parent="763" name="COURSE_DEPARTMENTID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="838" parent="763" name="LABGROUPID">
+      <Position>5</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="839" parent="763" name="SYS_C00190351">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:36</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190351</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="840" parent="763" name="FKCLASS190837">
+      <ModifiedTimestamp>2017-11-16.00:52:31</ModifiedTimestamp>
+      <ColNames>LECTURERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="841" parent="763" name="FKCLASS314486">
+      <ModifiedTimestamp>2017-11-16.00:52:31</ModifiedTimestamp>
+      <ColNames>COURSE_DEPARTMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>COURSE_DEPARTMENT</RefTableName>
+      <RefKeyName>SYS_C00190311</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="842" parent="763" name="FKCLASS294707">
+      <ModifiedTimestamp>2017-11-16.00:52:38</ModifiedTimestamp>
+      <ColNames>LABGROUPID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>LABGROUP</RefTableName>
+      <RefKeyName>SYS_C00190328</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="843" parent="764" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="844" parent="764" name="STUDENTID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="845" parent="764" name="CLASSID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="846" parent="764" name="PRESENT">
+      <Position>4</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="847" parent="764" name="SYS_C00190356">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:36</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190356</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="848" parent="764" name="FKCLASSATTEN466288">
+      <ModifiedTimestamp>2017-11-16.00:52:37</ModifiedTimestamp>
+      <ColNames>STUDENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="849" parent="764" name="FKCLASSATTEN702525">
+      <ModifiedTimestamp>2017-11-16.00:52:38</ModifiedTimestamp>
+      <ColNames>CLASSID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>CLASS</RefTableName>
+      <RefKeyName>SYS_C00190351</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="850" parent="765" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="851" parent="765" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="852" parent="765" name="CODE">
+      <Position>3</Position>
+      <DataType>VARCHAR2(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="853" parent="765" name="INCHARGED">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="854" parent="765" name="SYS_C00190275">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:18</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190275</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="855" parent="765" name="FKCOURSE692581">
+      <ModifiedTimestamp>2017-11-16.00:52:38</ModifiedTimestamp>
+      <ColNames>INCHARGED</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="856" parent="766" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="857" parent="766" name="COURSEID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="858" parent="766" name="DEPARTMENTID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="859" parent="766" name="ACADEMICYEARID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="860" parent="766" name="SEMESTERID">
+      <Position>5</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="861" parent="766" name="SYS_C00190311">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:23</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190311</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="862" parent="766" name="FKCOURSE_DEP905253">
+      <ModifiedTimestamp>2017-11-16.00:51:58</ModifiedTimestamp>
+      <ColNames>COURSEID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>COURSE</RefTableName>
+      <RefKeyName>SYS_C00190275</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="863" parent="766" name="FKCOURSE_DEP506222">
+      <ModifiedTimestamp>2017-11-16.00:51:59</ModifiedTimestamp>
+      <ColNames>DEPARTMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>DEPARTMENT</RefTableName>
+      <RefKeyName>SYS_C00190270</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="864" parent="766" name="FKCOURSE_DEP250486">
+      <ModifiedTimestamp>2017-11-16.00:52:31</ModifiedTimestamp>
+      <ColNames>ACADEMICYEARID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ACADEMICYEAR</RefTableName>
+      <RefKeyName>SYS_C00190290</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="865" parent="766" name="FKCOURSE_DEP391663">
+      <ModifiedTimestamp>2017-11-16.00:52:31</ModifiedTimestamp>
+      <ColNames>SEMESTERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>SEMESTER</RefTableName>
+      <RefKeyName>SYS_C00190331</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="866" parent="767" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="867" parent="767" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="868" parent="767" name="SYS_C00190305">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:19</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190305</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="869" parent="768" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="870" parent="768" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="871" parent="768" name="SYS_C00190270">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:18</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190270</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="872" parent="769" name="DEPARTMENTID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="873" parent="769" name="DEGREEID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="874" parent="769" name="SYS_C00190314">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:23</ModifiedTimestamp>
+      <ColNames>DEPARTMENTID
+DEGREEID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190314</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="875" parent="769" name="FKDEPARTMENT196302">
+      <ModifiedTimestamp>2017-11-16.00:52:02</ModifiedTimestamp>
+      <ColNames>DEPARTMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>DEPARTMENT</RefTableName>
+      <RefKeyName>SYS_C00190270</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="876" parent="769" name="FKDEPARTMENT55771">
+      <ModifiedTimestamp>2017-11-16.00:52:02</ModifiedTimestamp>
+      <ColNames>DEGREEID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>DEGREE</RefTableName>
+      <RefKeyName>SYS_C00190305</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="877" parent="770" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="878" parent="770" name="OWNERID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="879" parent="770" name="DOCUMENTVISIBILITYID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="880" parent="770" name="TITLE">
+      <Position>4</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="881" parent="770" name="CONTENT">
+      <Position>5</Position>
+      <DataType>CLOB|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="882" parent="770" name="DATECREATED">
+      <Position>6</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+    </column>
+    <key id="883" parent="770" name="SYS_C00190256">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:17</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190256</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="884" parent="770" name="FKDOCUMENT940721">
+      <ModifiedTimestamp>2017-11-16.00:51:55</ModifiedTimestamp>
+      <ColNames>OWNERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>SYS_C00190192</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="885" parent="770" name="FKDOCUMENT783821">
+      <ModifiedTimestamp>2017-11-16.00:51:56</ModifiedTimestamp>
+      <ColNames>DOCUMENTVISIBILITYID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>DOCUMENTVISIBILITY</RefTableName>
+      <RefKeyName>SYS_C00190259</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="886" parent="771" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="887" parent="771" name="CODE">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="888" parent="771" name="desc">
+      <Position>3</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="889" parent="771" name="SYS_C00190263">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:18</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190263</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="890" parent="772" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="891" parent="772" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="892" parent="772" name="SYS_C00190259">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:17</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190259</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="893" parent="773" name="DOCUMENTID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="894" parent="773" name="USERID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="895" parent="773" name="DOCUMENTACTIONID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="896" parent="773" name="SYS_C00190267">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:18</ModifiedTimestamp>
+      <ColNames>DOCUMENTID
+USERID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190267</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="897" parent="773" name="FKDOCUMENT_U532700">
+      <ModifiedTimestamp>2017-11-16.00:51:54</ModifiedTimestamp>
+      <ColNames>DOCUMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>DOCUMENT</RefTableName>
+      <RefKeyName>SYS_C00190256</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="898" parent="773" name="FKDOCUMENT_U93109">
+      <ModifiedTimestamp>2017-11-16.00:51:54</ModifiedTimestamp>
+      <ColNames>USERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>SYS_C00190192</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="899" parent="773" name="FKDOCUMENT_U945160">
+      <ModifiedTimestamp>2017-11-16.00:51:55</ModifiedTimestamp>
+      <ColNames>DOCUMENTACTIONID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>DOCUMENTACTION</RefTableName>
+      <RefKeyName>SYS_C00190263</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="900" parent="774" name="ZAMGERUSERDETAILSUSERID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="901" parent="774" name="TYPEOFEMPLOYEEID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="902" parent="774" name="DATEOFEMPLOYMENT">
+      <Position>3</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="903" parent="774" name="SALARY">
+      <Position>4</Position>
+      <DataType>FLOAT(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="904" parent="774" name="DATEOFCONTRACTEXPIRATION">
+      <Position>5</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="905" parent="774" name="SYS_C00190380">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:38</ModifiedTimestamp>
+      <ColNames>ZAMGERUSERDETAILSUSERID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190380</UnderlyingIndexName>
+    </key>
+    <foreign-key id="906" parent="774" name="FKEMPLOYEEDE795418">
+      <ModifiedTimestamp>2017-11-16.00:52:38</ModifiedTimestamp>
+      <ColNames>ZAMGERUSERDETAILSUSERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="907" parent="774" name="FKEMPLOYEEDE885564">
+      <ModifiedTimestamp>2017-11-16.00:52:38</ModifiedTimestamp>
+      <ColNames>TYPEOFEMPLOYEEID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>TYPEOFEMPLOYEE</RefTableName>
+      <RefKeyName>SYS_C00190382</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="908" parent="775" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="909" parent="775" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="910" parent="775" name="SYS_C00190324">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:23</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190324</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="911" parent="776" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="912" parent="776" name="SCHEDULED">
+      <Position>2</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="913" parent="776" name="COURSE_DEPARTMENTID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="914" parent="776" name="DATECREATED">
+      <Position>4</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+    </column>
+    <key id="915" parent="776" name="SYS_C00190335">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:24</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190335</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="916" parent="776" name="FKEXAM330766">
+      <ModifiedTimestamp>2017-11-16.00:52:31</ModifiedTimestamp>
+      <ColNames>COURSE_DEPARTMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>COURSE_DEPARTMENT</RefTableName>
+      <RefKeyName>SYS_C00190311</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="917" parent="777" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="918" parent="777" name="POINTS">
+      <Position>2</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="919" parent="777" name="STUDENTID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="920" parent="777" name="EXAMID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="921" parent="777" name="SYS_C00190340">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:24</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190340</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="922" parent="777" name="FKEXAMRESULT499844">
+      <ModifiedTimestamp>2017-11-16.00:52:31</ModifiedTimestamp>
+      <ColNames>STUDENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="923" parent="777" name="FKEXAMRESULT648881">
+      <ModifiedTimestamp>2017-11-16.00:52:31</ModifiedTimestamp>
+      <ColNames>EXAMID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>EXAM</RefTableName>
+      <RefKeyName>SYS_C00190335</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="924" parent="778" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="925" parent="778" name="THESIS">
+      <Position>2</Position>
+      <DataType>VARCHAR2(100)|0</DataType>
+    </column>
+    <column id="926" parent="778" name="CONTENT">
+      <Position>3</Position>
+      <DataType>BLOB|0</DataType>
+    </column>
+    <column id="927" parent="778" name="ACADEMICYEARID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="928" parent="778" name="DEGREEID">
+      <Position>5</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="929" parent="778" name="SYS_C00190302">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:19</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190302</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="930" parent="778" name="FKFINALPROJE821221">
+      <ModifiedTimestamp>2017-11-16.00:51:56</ModifiedTimestamp>
+      <ColNames>ACADEMICYEARID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ACADEMICYEAR</RefTableName>
+      <RefKeyName>SYS_C00190290</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="931" parent="778" name="FKFINALPROJE794955">
+      <ModifiedTimestamp>2017-11-16.00:51:57</ModifiedTimestamp>
+      <ColNames>DEGREEID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>DEGREE</RefTableName>
+      <RefKeyName>SYS_C00190305</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="932" parent="779" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="933" parent="779" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="934" parent="779" name="SYS_C00190195">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:35</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190195</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="935" parent="779" name="UNIQUE_TITLE">
+      <ModifiedTimestamp>2017-11-16.14:46:34</ModifiedTimestamp>
+      <ColNames>TITLE</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>UNIQUE_TITLE</UnderlyingIndexName>
+    </key>
+    <column id="936" parent="780" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="937" parent="780" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="938" parent="780" name="COURSE_DEPARTMENTID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="939" parent="780" name="SYS_C00190328">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:23</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190328</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="940" parent="780" name="FKLABGROUP341383">
+      <ModifiedTimestamp>2017-11-16.00:52:23</ModifiedTimestamp>
+      <ColNames>COURSE_DEPARTMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>COURSE_DEPARTMENT</RefTableName>
+      <RefKeyName>SYS_C00190311</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="941" parent="781" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="942" parent="781" name="ZAMGERUSERID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="943" parent="781" name="EVENT">
+      <Position>3</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="944" parent="781" name="TIME">
+      <Position>4</Position>
+      <DataType>TIMESTAMP(7)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="945" parent="781" name="SYS_C00190361">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:37</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190361</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="946" parent="781" name="FKLOG900613">
+      <ModifiedTimestamp>2017-11-16.00:52:38</ModifiedTimestamp>
+      <ColNames>ZAMGERUSERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="947" parent="782" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="948" parent="782" name="CONTENT">
+      <Position>2</Position>
+      <DataType>VARCHAR2(1023)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="949" parent="782" name="SENDERID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="950" parent="782" name="RECEIVERID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="951" parent="782" name="DATECREATED">
+      <Position>5</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+    </column>
+    <key id="952" parent="782" name="SYS_C00190295">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:19</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190295</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="953" parent="782" name="FKMESSAGE519743">
+      <ModifiedTimestamp>2017-11-16.00:51:57</ModifiedTimestamp>
+      <ColNames>SENDERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="954" parent="782" name="FKMESSAGE392203">
+      <ModifiedTimestamp>2017-11-16.00:51:57</ModifiedTimestamp>
+      <ColNames>RECEIVERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="955" parent="783" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="956" parent="783" name="CODE">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="957" parent="783" name="desc">
+      <Position>3</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="958" parent="783" name="SYS_C00190199">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:36</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190199</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="959" parent="784" name="PERMISSIONID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="960" parent="784" name="GROUPID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="961" parent="784" name="SYS_C00190205">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:36</ModifiedTimestamp>
+      <ColNames>PERMISSIONID
+GROUPID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190205</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="962" parent="784" name="FKPERMISSION296742">
+      <ModifiedTimestamp>2017-11-16.00:51:46</ModifiedTimestamp>
+      <ColNames>PERMISSIONID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>PERMISSION</RefTableName>
+      <RefKeyName>SYS_C00190199</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="963" parent="784" name="FKPERMISSION400468">
+      <ModifiedTimestamp>2017-11-16.00:51:46</ModifiedTimestamp>
+      <ColNames>GROUPID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>GROUPS</RefTableName>
+      <RefKeyName>SYS_C00190195</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="964" parent="785" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="965" parent="785" name="ANSWER">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="966" parent="785" name="QUESTIONID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="967" parent="785" name="SYS_C00190232">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:57</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190232</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="968" parent="785" name="FKPREDEFINED79077">
+      <ModifiedTimestamp>2017-11-16.00:51:46</ModifiedTimestamp>
+      <ColNames>QUESTIONID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>QUESTION</RefTableName>
+      <RefKeyName>SYS_C00190210</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="969" parent="786" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="970" parent="786" name="TEXT">
+      <Position>2</Position>
+      <DataType>VARCHAR2(1024)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="971" parent="786" name="QUESTIONTYPEID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="972" parent="786" name="TESTSETUPID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="973" parent="786" name="SYS_C00190210">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:36</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190210</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="974" parent="786" name="FKQUESTION801477">
+      <ModifiedTimestamp>2017-11-16.00:51:46</ModifiedTimestamp>
+      <ColNames>QUESTIONTYPEID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>QUESTIONTYPE</RefTableName>
+      <RefKeyName>SYS_C00190223</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="975" parent="786" name="FKQUESTION612696">
+      <ModifiedTimestamp>2017-11-16.00:51:46</ModifiedTimestamp>
+      <ColNames>TESTSETUPID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>TESTSETUP</RefTableName>
+      <RefKeyName>SYS_C00190214</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="976" parent="787" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="977" parent="787" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="978" parent="787" name="SYS_C00190223">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:56</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190223</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="979" parent="788" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="980" parent="788" name="START_PERIOD">
+      <Position>2</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="981" parent="788" name="DURATION">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="982" parent="788" name="TESTSETUPID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="983" parent="788" name="CREATORRID">
+      <Position>5</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="984" parent="788" name="SYS_C00190220">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:55</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190220</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="985" parent="788" name="FKSCHEDULEDT912680">
+      <ModifiedTimestamp>2017-11-16.00:51:46</ModifiedTimestamp>
+      <ColNames>TESTSETUPID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>TESTSETUP</RefTableName>
+      <RefKeyName>SYS_C00190214</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="986" parent="788" name="FKSCHEDULEDT941406">
+      <ModifiedTimestamp>2017-11-16.00:51:47</ModifiedTimestamp>
+      <ColNames>CREATORRID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>SYS_C00190192</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="987" parent="789" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="988" parent="789" name="STUDENTID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="989" parent="789" name="REVIEWERID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="990" parent="789" name="SCHEDULEDTESTID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="991" parent="789" name="COMMENTS">
+      <Position>5</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+    </column>
+    <key id="992" parent="789" name="SYS_C00190237">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:57</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190237</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="993" parent="789" name="FKSCHEDULEDT464042">
+      <ModifiedTimestamp>2017-11-16.00:51:47</ModifiedTimestamp>
+      <ColNames>STUDENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>SYS_C00190192</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="994" parent="789" name="FKSCHEDULEDT310199">
+      <ModifiedTimestamp>2017-11-16.00:51:47</ModifiedTimestamp>
+      <ColNames>REVIEWERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>SYS_C00190192</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="995" parent="789" name="FKSCHEDULEDT250472">
+      <ModifiedTimestamp>2017-11-16.00:51:47</ModifiedTimestamp>
+      <ColNames>SCHEDULEDTESTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>SCHEDULEDTEST</RefTableName>
+      <RefKeyName>SYS_C00190220</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="996" parent="790" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="997" parent="790" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="998" parent="790" name="SYS_C00190331">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:24</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190331</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="999" parent="790" name="SEMSETER_UNIQUE_TITLE">
+      <ModifiedTimestamp>2017-11-16.15:05:35</ModifiedTimestamp>
+      <ColNames>TITLE</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SEMSETER_UNIQUE_TITLE</UnderlyingIndexName>
+    </key>
+    <column id="1000" parent="791" name="ZAMGERUSERDETAILSUSERID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1001" parent="791" name="BUDGET">
+      <Position>2</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1002" parent="791" name="ENROLMENTDATE">
+      <Position>3</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+    </column>
+    <column id="1003" parent="791" name="index">
+      <Position>4</Position>
+      <DataType>VARCHAR2(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1004" parent="791" name="DISROLMENTDATE">
+      <Position>5</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+    </column>
+    <column id="1005" parent="791" name="GRADUATIONDATE">
+      <Position>6</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+    </column>
+    <column id="1006" parent="791" name="TERMINATIONREASON">
+      <Position>7</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+    </column>
+    <key id="1007" parent="791" name="SYS_C00190374">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:38</ModifiedTimestamp>
+      <ColNames>ZAMGERUSERDETAILSUSERID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190374</UnderlyingIndexName>
+    </key>
+    <foreign-key id="1008" parent="791" name="FKSTUDENTDET840273">
+      <ModifiedTimestamp>2017-11-16.00:52:38</ModifiedTimestamp>
+      <ColNames>ZAMGERUSERDETAILSUSERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="1009" parent="792" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1010" parent="792" name="COURSE_DEPARTMENTID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1011" parent="792" name="ZAMGERUSERDETAILSUSERID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1012" parent="792" name="FINALGRADE">
+      <Position>4</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="1013" parent="792" name="SYS_C00190345">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:24</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190345</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="1014" parent="792" name="FKSTUDENT_CO768515">
+      <ModifiedTimestamp>2017-11-16.00:52:31</ModifiedTimestamp>
+      <ColNames>COURSE_DEPARTMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>COURSE_DEPARTMENT</RefTableName>
+      <RefKeyName>SYS_C00190311</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="1015" parent="792" name="FKSTUDENT_CO583380">
+      <ModifiedTimestamp>2017-11-16.00:52:31</ModifiedTimestamp>
+      <ColNames>ZAMGERUSERDETAILSUSERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="1016" parent="793" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1017" parent="793" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="1018" parent="793" name="SYS_C00190298">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:19</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190298</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="1019" parent="794" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1020" parent="794" name="TITLE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="1021" parent="794" name="SYS_C00190250">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:13</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190250</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="1022" parent="795" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1023" parent="795" name="CREATORID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1024" parent="795" name="SUBJECTID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="1025" parent="795" name="SYS_C00190214">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:37</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190214</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="1026" parent="795" name="FKTESTSETUP335381">
+      <ModifiedTimestamp>2017-11-16.00:51:46</ModifiedTimestamp>
+      <ColNames>CREATORID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>SYS_C00190192</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="1027" parent="795" name="FKTESTSETUP307606">
+      <ModifiedTimestamp>2017-11-16.00:51:47</ModifiedTimestamp>
+      <ColNames>SUBJECTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>SUBJECT</RefTableName>
+      <RefKeyName>SYS_C00190250</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="1028" parent="796" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1029" parent="796" name="DESCRIPTION">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+    </column>
+    <key id="1030" parent="796" name="SYS_C00190382">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:38</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190382</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="1031" parent="797" name="USERID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1032" parent="797" name="JMBG">
+      <Position>2</Position>
+      <DataType>NUMBER(13)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1033" parent="797" name="FIRSTNAME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1034" parent="797" name="LASTNAME">
+      <Position>4</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1035" parent="797" name="EMAIL">
+      <Position>5</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1036" parent="797" name="PHONENUMBER">
+      <Position>6</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1037" parent="797" name="ADDRESS">
+      <Position>7</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+    </column>
+    <key id="1038" parent="797" name="SYS_C00190247">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:00</ModifiedTimestamp>
+      <ColNames>USERID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190247</UnderlyingIndexName>
+    </key>
+    <foreign-key id="1039" parent="797" name="FKUSERDETAIL211513">
+      <ModifiedTimestamp>2017-11-16.00:51:47</ModifiedTimestamp>
+      <ColNames>USERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>SYS_C00190192</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="1040" parent="798" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1041" parent="798" name="USERNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1042" parent="798" name="PWHASH">
+      <Position>3</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1043" parent="798" name="ISPWCHANGED">
+      <Position>4</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1044" parent="798" name="MAIL">
+      <Position>5</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+    </column>
+    <key id="1045" parent="798" name="SYS_C00190192">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:35</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190192</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="1046" parent="799" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1047" parent="799" name="STUDYYEARID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1048" parent="799" name="USERID">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1049" parent="799" name="ENROLLMENTID">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1050" parent="799" name="COURSE_DEPARTMENTID">
+      <Position>5</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1051" parent="799" name="LABGROUPID">
+      <Position>6</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="1052" parent="799" name="SYS_C00190321">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:23</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190321</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="1053" parent="799" name="FKUSER_ENROL655817">
+      <ModifiedTimestamp>2017-11-16.00:52:13</ModifiedTimestamp>
+      <ColNames>STUDYYEARID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>STUDYYEAR</RefTableName>
+      <RefKeyName>SYS_C00190298</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="1054" parent="799" name="FKUSER_ENROL220790">
+      <ModifiedTimestamp>2017-11-16.00:52:14</ModifiedTimestamp>
+      <ColNames>USERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ZAMGERUSERDETAILS</RefTableName>
+      <RefKeyName>SYS_C00190284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="1055" parent="799" name="FKUSER_ENROL554741">
+      <ModifiedTimestamp>2017-11-16.00:52:18</ModifiedTimestamp>
+      <ColNames>ENROLLMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>ENROLLMENT</RefTableName>
+      <RefKeyName>SYS_C00190324</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="1056" parent="799" name="FKUSER_ENROL178168">
+      <ModifiedTimestamp>2017-11-16.00:52:30</ModifiedTimestamp>
+      <ColNames>COURSE_DEPARTMENTID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>COURSE_DEPARTMENT</RefTableName>
+      <RefKeyName>SYS_C00190311</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="1057" parent="799" name="FKUSER_ENROL815770">
+      <ModifiedTimestamp>2017-11-16.00:52:31</ModifiedTimestamp>
+      <ColNames>LABGROUPID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>LABGROUP</RefTableName>
+      <RefKeyName>SYS_C00190328</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="1058" parent="800" name="USERID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1059" parent="800" name="GROUPID">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="1060" parent="800" name="SYS_C00190202">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:50:36</ModifiedTimestamp>
+      <ColNames>USERID
+GROUPID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190202</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="1061" parent="800" name="FKUSER_GROUP79409">
+      <ModifiedTimestamp>2017-11-16.00:51:43</ModifiedTimestamp>
+      <ColNames>USERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>SYS_C00190192</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="1062" parent="800" name="FKUSER_GROUP787410">
+      <ModifiedTimestamp>2017-11-16.00:51:46</ModifiedTimestamp>
+      <ColNames>GROUPID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>GROUPS</RefTableName>
+      <RefKeyName>SYS_C00190195</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="1063" parent="801" name="USERID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1064" parent="801" name="BIRTHDATE">
+      <Position>2</Position>
+      <DataType>TIMESTAMP(0)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1065" parent="801" name="IMAGE">
+      <Position>3</Position>
+      <DataType>BLOB|0</DataType>
+    </column>
+    <column id="1066" parent="801" name="MOTHER_NAME">
+      <Position>4</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1067" parent="801" name="FATHER_NAME">
+      <Position>5</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1068" parent="801" name="GENDER">
+      <Position>6</Position>
+      <DataType>VARCHAR2(7)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1069" parent="801" name="NATIONALITY">
+      <Position>7</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1070" parent="801" name="PREVIOUSEDUCATION">
+      <Position>8</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1071" parent="801" name="BIRTHPLACE">
+      <Position>9</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="1072" parent="801" name="SYS_C00190284">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-11-16.00:51:18</ModifiedTimestamp>
+      <ColNames>USERID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C00190284</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="1073" parent="801" name="FKZAMGERUSER89891">
+      <ModifiedTimestamp>2017-11-16.00:51:56</ModifiedTimestamp>
+      <ColNames>USERID</ColNames>
+      <RefSchemaName>BP07</RefSchemaName>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>SYS_C00190192</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
   </database-model>
 </dataSource>

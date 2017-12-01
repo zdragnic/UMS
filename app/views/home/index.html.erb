@@ -1,0 +1,12 @@
+<% if @current_user.role_id.equal?(1) %>
+    <h1>Za admina</h1>
+<% end %>
+<% if @current_user.role_id.equal?(2) %>
+    <h1> Za studenta  </h1>
+<% end %>
+<% if @current_user.role_id.equal?(3) %>
+    <h1>Za studentsku</h1>
+<% end %>
+<% if @current_user.role_id.equal?(4) %>
+    <h1> Za nastavno </h1>
+<% end %>

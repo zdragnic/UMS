@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  get 'home/index'
 
+  get 'welcome/index'
+  get 'sessions/new'
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'sessions#new'
+  root 'welcome#index'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  resources :users
+
+  get 'about' => "welcome#about", as: :about
+  get 'index' => "home#index", as: :index
+
+
 end

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user
       # Log the user in and redirect to the user's show page.
       log_in user
-      redirect_to user
+      redirect_to index_path
     elsif (params[:session][:username]== '' || params[:session][:password]== '') || (params[:session][:username]== '' && params[:session][:password]== '')
       # ovaj flash ima jos i :success :info, i sam ce tamo u izgledu promijeniti boje diva u zelenu ili plavu
       flash.now[:danger] = 'Unesite username i password'
