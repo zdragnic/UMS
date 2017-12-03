@@ -1,17 +1,5 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
-<% if @user.role_id.equal?(1) %>
-    <h1>Za admina</h1>
-<% end %>
-<% if @user.role_id.equal?(2) %>
-    <h1> Za studenta  </h1>
-<% end %>
-<% if @user.role_id.equal?(3) %>
-    <h1>Za studentsku</h1>
-<% end %>
-<% if @user.role_id.equal?(4) %>
-    <h1> Za nastavno </h1>
-<% end %>
-
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
@@ -29,4 +17,4 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-
+</div>
