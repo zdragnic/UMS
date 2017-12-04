@@ -7,8 +7,9 @@
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
       <user-name>Bp08</user-name>
-      <introspection-schemas>*:BP07,BP08</introspection-schemas>
+      <introspection-schemas>*:BP08</introspection-schemas>
     </data-source>
   </component>
 </project>
