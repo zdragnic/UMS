@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   belongs_to :role
+  has_one :student_detail
+  has_one :employee_detail
+  has_many :courses
 
   def self.authenticate(username="", login_password="")
     user = User.find_by_username(username)
@@ -11,6 +14,3 @@ class User < ApplicationRecord
     end
   end
 end
-
-
-

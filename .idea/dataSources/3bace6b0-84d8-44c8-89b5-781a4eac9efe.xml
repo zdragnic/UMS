@@ -4,7 +4,7 @@
     <root id="1"/>
     <schema id="2" parent="1" name="BP08">
       <ObjectId>904</ObjectId>
-      <IntrospectionTimestamp>2017-12-01.13:29:31</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-12-04.12:46:03</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -2203,7 +2203,7 @@
     </schema>
     <schema id="734" parent="1" name="BP07">
       <ObjectId>903</ObjectId>
-      <IntrospectionTimestamp>2017-12-01.13:29:32</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-12-04.12:46:04</IntrospectionTimestamp>
       <CreatedTimestamp>2017-11-16.00:50:24</CreatedTimestamp>
       <ModifiedTimestamp>2017-11-19.18:22:31</ModifiedTimestamp>
       <Visible>1</Visible>

@@ -1,5 +1,5 @@
-<div class="container">
 <p id="notice"><%= notice %></p>
+
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
@@ -11,10 +11,34 @@
 </p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastname %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @user.birthDate %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Birthplace:</strong>
+  <%= @user.birthplace %>
+</p>
+
+<p>
   <strong>Role:</strong>
   <%= @user.role_id %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-</div>

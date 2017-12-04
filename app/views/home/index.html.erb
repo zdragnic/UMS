@@ -3,6 +3,9 @@
 <% end %>
 <% if @current_user.role_id.equal?(2) %>
     <%= render 'home/student' %>
+
+          <h1><%= @courses.title %></h1>
+
 <% end %>
 <% if @current_user.role_id.equal?(3) %>
     <%= render 'home/studentska' %>
