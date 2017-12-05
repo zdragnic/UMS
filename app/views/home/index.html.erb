@@ -4,12 +4,18 @@
 <% if @current_user.role_id.equal?(2) %>
     <%= render 'home/student' %>
 
-          <h1><%= @courses.title %></h1>
+    <% @courses.each do |c| %>
+        <tr>
+          <td><%= c.title %></td>
+        </tr>
+    <% end %>
 
 <% end %>
 <% if @current_user.role_id.equal?(3) %>
     <%= render 'home/studentska' %>
 <% end %>
 <% if @current_user.role_id.equal?(4) %>
+
     <%= render 'home/nastavno' %>
+
 <% end %>
