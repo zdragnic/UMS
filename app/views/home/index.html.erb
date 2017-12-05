@@ -3,13 +3,6 @@
 <% end %>
 <% if @current_user.role_id.equal?(2) %>
     <%= render 'home/student' %>
-
-    <% @courses.each do |c| %>
-        <tr>
-          <td><%= c.title %></td>
-        </tr>
-    <% end %>
-
 <% end %>
 <% if @current_user.role_id.equal?(3) %>
     <%= render 'home/studentska' %>
