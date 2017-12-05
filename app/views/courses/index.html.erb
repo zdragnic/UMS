@@ -13,13 +13,13 @@
   </thead>
 
   <tbody>
-
-  <% @courses = Course.where("user_id=?",session[:user_id]) %>
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.title %></td>
         <td><%= course.code %></td>
         <td><%= course.user_id %></td>
+
+
       </tr>
     <% end %>
   </tbody>

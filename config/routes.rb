@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   resources :student_details
 
   #nested-resources
-  resources :users do
-    resources :courses
-  end
+
+
+    resources :users do
+      resources :courses
+        end
+
 
   resources :users
   get 'home/index'

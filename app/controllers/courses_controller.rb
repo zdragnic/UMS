@@ -1,38 +1,70 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
+
+
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    user = User.find(params[:user_id])
+    #2nd you get all the comments of this post
+    @courses = user.courses
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @courses }
+    end
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+    user = User.find(params[:user_id])
+    #2nd you retrieve the comment thanks to params[:id]
+    @course = user.courses.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @course }
+    end
   end
 
   # GET /courses/new
   def new
-    @course = Course.new
+    user = User.find(params[:user_id])
+    #2nd you build a new one
+    @course = user.courses.build
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @course }
+    end
   end
 
   # GET /courses/1/edit
   def edit
+    user= User.find(params[:user_id])
+    #2nd you retrieve the comment thanks to params[:id]
+    @course = user.courses.find(params[:id])
   end
+
 
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(course_params)
+    user = User.find(params[:user_id])
+    #2nd you create the comment with arguments in params[:comment]
+    @course = user.courses.create(:title => params[:title],:code => params[:code], :user_id => params[:user_id])
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @course }
+        #1st argument of redirect_to is an array, in order to build the correct route to the nested resource comment
+        format.html { redirect_to([@course.user, @course], :notice => 'Course was successfully created.') }
+        #the key :location is associated to an array in order to build the correct route to the nested resource comment
+        format.xml  { render :xml => @course, :status => :created, :location => [@course.user, @course] }
       else
-        format.html { render :new }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @course.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -40,13 +72,18 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
+    course = User.find(params[:user_id])
+    #2nd you retrieve the comment thanks to params[:id]
+    @course = user.courses.find(params[:course_params])
+
     respond_to do |format|
-      if @course.update(course_params)
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
-        format.json { render :show, status: :ok, location: @course }
+      if @course.update_attributes(params[:course])
+        #1st argument of redirect_to is an array, in order to build the correct route to the nested resource comment
+        format.html { redirect_to([@course.user, @course], :notice => 'Comment was successfully updated.') }
+        format.xml  { head :ok }
       else
-        format.html { render :edit }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,7 +98,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  private
+private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
@@ -69,6 +106,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:title, :code, :user_id)
+      params.require(:course).permit!
     end
 end

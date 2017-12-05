@@ -1,6 +1,6 @@
 <h1>Editing Course</h1>
 
-<%= render 'form', course: @course %>
+<%= render 'form' %>
 
-<%= link_to 'Show', @course %> |
-<%= link_to 'Back', courses_path %>
+<%= link_to 'Show', [@course.user, @course] %> |
+<%= link_to 'Back', user_courses_path(@course.user)%>
