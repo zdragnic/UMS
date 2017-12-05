@@ -13,6 +13,28 @@
   </thead>
 
   <tbody>
+
+  <%= @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %>
+  <% if @current_user.role_id.equal?(1) %>
+
+      <%= @courses = Course.where("user_id=?",session[:user_id]) %>
+      <% @courses.each do |course| %>
+          <tr>
+            <td><%= course.title %></td>
+            <td><%= course.code %></td>
+            <td><%= course.user_id %></td>
+
+
+          </tr>
+      <% end %>
+      </tbody>
+      </table>
+
+      <br>
+
+      <%end %>
+
+      <% if @current_user.role_id.equal?(4) %>
   <%= @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %>
  <%= @courses = Course.where("responsible=?",session[:user_id]) %>
     <% @courses.each do |course| %>
@@ -28,5 +50,5 @@
 </table>
 
 <br>
-
+<% end %>
 
