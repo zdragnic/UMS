@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :courses
-
-  get 'courses/show'
 
   resources :employee_details
   resources :student_details
+
+  #nested-resources
+  resources :users do
+    resources :courses
+  end
+
   resources :users
   get 'home/index'
 
