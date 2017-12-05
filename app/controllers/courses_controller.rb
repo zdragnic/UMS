@@ -16,6 +16,11 @@ class CoursesController < ApplicationController
     end
   end
 
+  # GET /courses
+  def kursevi
+    @courses = Course.all
+  end
+
   # GET /courses/1
   # GET /courses/1.json
   def show

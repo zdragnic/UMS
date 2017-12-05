@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Courses</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Code</th>
+    <th>User</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.title %></td>
+        <td><%= course.code %></td>
+        <td><%= course.user_id %></td>
+        <td><%= course.responsible %></td>
+
+
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

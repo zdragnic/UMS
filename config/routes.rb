@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   get 'about' => "welcome#about", as: :about
   get 'index' => "home#index", as: :index
 
-
+  # da mozemo sve kurseve ispisati neovisno od usera
+  get '/courses' , to: 'courses#kursevi'
 end

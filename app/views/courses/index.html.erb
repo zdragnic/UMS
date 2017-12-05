@@ -14,8 +14,8 @@
 
   <tbody>
 
-  <%= @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %>
-  <% if @current_user.role_id.equal?(1) %>
+  <span style="visibility: hidden"><%= @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %>
+  <% if @current_user.role_id.equal?(1) %> </span>
 
       <%= @courses = Course.where("user_id=?",session[:user_id]) %>
       <% @courses.each do |course| %>
@@ -35,8 +35,8 @@
   <%end %>
 
   <% if @current_user.role_id.equal?(4) %>
-      <%= @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %>
-      <%= @courses = Course.where("responsible=?",session[:user_id]) %>
+   <span style="visibility: hidden">   <%= @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %>
+      <%= @courses = Course.where("responsible=?",session[:user_id]) %> </span>
       <% @courses.each do |course| %>
           <tr>
             <td><%= course.title %></td>
