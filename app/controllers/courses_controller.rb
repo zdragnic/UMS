@@ -54,7 +54,7 @@ class CoursesController < ApplicationController
   def create
     user = User.find(params[:user_id])
     #2nd you create the comment with arguments in params[:comment]
-    @course = user.courses.create(:title => params[:title],:code => params[:code], :user_id => params[:user_id])
+    @course = user.courses.create(course_params)
 
     respond_to do |format|
       if @course.save
@@ -106,6 +106,6 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit!
+      params.require(:course).permit(:title, :code, :user_id)
     end
 end
