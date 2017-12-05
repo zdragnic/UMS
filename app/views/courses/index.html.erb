@@ -13,7 +13,8 @@
   </thead>
 
   <tbody>
-     <%= @courses = Course.where("user_id=?",session[:user_id])%>
+  <%= @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %>
+ <%= @courses = Course.where("responsible=?",session[:user_id]) %>
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.title %></td>
