@@ -4,12 +4,12 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Title</th>
-      <th>Code</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Naziv kursa</th>
+    <th>Šifra kursa</th>
+    <th>Odgovorni profesor</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
@@ -22,7 +22,7 @@
           <tr>
             <td><%= course.title %></td>
             <td><%= course.code %></td>
-            <td><%= course.user_id %></td>
+            <td><%= @current_user.name %></td>
 
 
           </tr>
@@ -32,23 +32,22 @@
 
       <br>
 
-      <%end %>
+  <%end %>
 
-      <% if @current_user.role_id.equal?(4) %>
-  <%= @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %>
- <%= @courses = Course.where("responsible=?",session[:user_id]) %>
-    <% @courses.each do |course| %>
-      <tr>
-        <td><%= course.title %></td>
-        <td><%= course.code %></td>
-        <td><%= course.user_id %></td>
+  <% if @current_user.role_id.equal?(4) %>
+      <%= @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %>
+      <%= @courses = Course.where("responsible=?",session[:user_id]) %>
+      <% @courses.each do |course| %>
+          <tr>
+            <td><%= course.title %></td>
+            <td><%= course.code %></td>
+            <td><%= @current_user.name %></td>
 
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          </tr>
+      <% end %>
+      </tbody>
+      </table>
 
-<br>
-<% end %>
-
+      <br>
+  <% end %>

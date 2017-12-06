@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   #nested-resources
 
 
-    resources :users do
-      resources :courses
-        end
+  resources :users do
+    resources :courses
+  end
 
 
   resources :users

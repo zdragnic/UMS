@@ -4,8 +4,10 @@ one:
   title: MyString
   code: MyString
   user: one
+  responsible: 1
 
 two:
   title: MyString
   code: MyString
   user: two
+  responsible: 1
