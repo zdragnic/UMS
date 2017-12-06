@@ -2,7 +2,7 @@
 
 <h1>Users</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Username</th>
@@ -28,9 +28,9 @@
         <td><%= user.address %></td>
         <td><%= user.birthplace %></td>
         <td><%= user.role_id %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user , class:'btn btn-primary btn-sm', style: 'color: white'%></td>
+        <td><%= link_to 'Edit', edit_user_path(user) , class: 'btn btn-primary btn-sm', style: 'color: white' %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger btn-sm', style: 'color: white'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path , class:'btn btn-primary btn-md', style: 'color: white'%>

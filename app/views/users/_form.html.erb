@@ -10,48 +10,51 @@
       </ul>
     </div>
   <% end %>
+<div class="form-group">
 
   <div class="field">
     <%= form.label :username %>
-    <%= form.text_field :username, id: :user_username %>
+    <%= form.text_field :username, id: :user_username, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_field :password, id: :user_password %>
+    <%= form.text_field :password, id: :user_password, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :user_name %>
+    <%= form.text_field :name, id: :user_name , class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :lastname %>
-    <%= form.text_field :lastname, id: :user_lastname %>
+    <%= form.text_field :lastname, id: :user_lastname, class: 'form-control' %>
   </div>
 
-  <div class="field">
     <%= form.label :birthDate %>
-    <%= form.date_select :birthDate, id: :user_birthDate %>
+  <div class="form-control">
+
+    <%= form.date_select :birthDate, id: :user_birthDate, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :address %>
-    <%= form.text_field :address, id: :user_address %>
+    <%= form.text_field :address, id: :user_address , class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :birthplace %>
-    <%= form.text_field :birthplace, id: :user_birthplace %>
+    <%= form.text_field :birthplace, id: :user_birthplace, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :role_id %>
-    <%= form.number_field :role_id, id: :user_role_id %>
+    <%= form.number_field :role_id, id: :user_role_id, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit  class:'btn btn-primary'%>
   </div>
+</div>
 <% end %>

@@ -13,24 +13,24 @@
 
     <div class="field">
       <%= form.label :title %>
-      <%= form.text_field :title %>
+      <%= form.text_field :title,  class: 'form-control' %>
     </div>
 
     <div class="field">
       <%= form.label :code %>
-      <%= form.text_field :code%>
+      <%= form.text_field :code, class: 'form-control'%>
     </div>
 
     <div class="field">
       <%= form.label :user %>
-      <%= form.text_field :user%>
+      <%= form.text_field :user, class: 'form-control'%>
     </div>
 
     <div class="field">
       <%= form.label :responsible %>
-      <%= form.text_field :responsible%>
+      <%= form.text_field :responsible, class: 'form-control'%>
     </div>
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit class:'btn btn-primary'%>
     </div>
 <% end %>
