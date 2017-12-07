@@ -1,28 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>User:</strong>
+  <%= @student_detail.user %>
+</p>
+
+<p>
+  <strong>Indeks:</strong>
+  <%= @student_detail.indeks %>
+</p>
+
+<p>
   <strong>Budget:</strong>
   <%= @student_detail.budget %>
 </p>
 
 <p>
-  <strong>Enrolmentdate:</strong>
-  <%= @student_detail.enrolmentDate %>
+  <strong>Enrollmentdate:</strong>
+  <%= @student_detail.enrollmentDate %>
 </p>
 
 <p>
-  <strong>Disrolmentdate:</strong>
-  <%= @student_detail.disrolmentDate %>
+  <strong>Disrollmentdate:</strong>
+  <%= @student_detail.disrollmentDate %>
 </p>
 
 <p>
   <strong>Graduationdate:</strong>
   <%= @student_detail.graduationDate %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @student_detail.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_student_detail_path(@student_detail) %> |

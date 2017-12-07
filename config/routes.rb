@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :employee_details
+  resources :user_enrollments
   resources :student_details
+  resources :employee_details
 
   #nested-resources
 
@@ -27,4 +28,5 @@ Rails.application.routes.draw do
 
   # da mozemo sve kurseve ispisati neovisno od usera
   get '/courses' , to: 'courses#kursevi'
+
 end

@@ -1,27 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Student Details</h1>
-
-<table>
+<span style="visibility: hidden"><%= @current_user %> </span>
+<table class="table">
   <thead>
     <tr>
-      <th>Budget</th>
-      <th>Enrolmentdate</th>
-      <th>Disrolmentdate</th>
-      <th>Graduationdate</th>
+      <th>Ime</th>
+      <th>Prezime</th>
       <th>User</th>
+      <th>Indeks</th>
+      <th>Budget</th>
+      <th>Enrollmentdate</th>
+      <th>Disrollmentdate</th>
+      <th>Graduationdate</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @student_details.each do |student_detail| %>
+      <span style="visibility: hidden"><%= @student= User.find_by_id(student_detail.user_id) %> </span>
       <tr>
-        <td><%= student_detail.budget %></td>
-        <td><%= student_detail.enrolmentDate %></td>
-        <td><%= student_detail.disrolmentDate %></td>
-        <td><%= student_detail.graduationDate %></td>
+        <td><%= @student.name %></td>
+        <td><%= @student.lastname %></td>
         <td><%= student_detail.user_id %></td>
+        <td><%= student_detail.indeks %></td>
+        <td><%= student_detail.budget %></td>
+        <td><%= student_detail.enrollmentDate %></td>
+        <td><%= student_detail.disrollmentDate %></td>
+        <td><%= student_detail.graduationDate %></td>
         <td><%= link_to 'Show', student_detail %></td>
         <td><%= link_to 'Edit', edit_student_detail_path(student_detail) %></td>
         <td><%= link_to 'Destroy', student_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,6 +37,11 @@
   </tbody>
 </table>
 
+<br>
+<%= form_tag(student_details_path, method: :get) do %>
+    <%= text_field_tag :indeks, params[:indeks] %>
+    <%= submit_tag 'Search', name: nil %>
+<% end %>
 <br>
 
 <%= link_to 'New Student Detail', new_student_detail_path %>

@@ -12,28 +12,33 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :student_detail_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :indeks %>
+    <%= form.text_field :indeks, id: :student_detail_indeks %>
+  </div>
+
+  <div class="field">
     <%= form.label :budget %>
-    <%= form.number_field :budget, id: :student_detail_budget %>
+    <%= form.text_field :budget, id: :student_detail_budget %>
   </div>
 
   <div class="field">
-    <%= form.label :enrolmentDate %>
-    <%= form.date_select :enrolmentDate, id: :student_detail_enrolmentDate %>
+    <%= form.label :enrollmentDate %>
+    <%= form.date_select :enrollmentDate, id: :student_detail_enrollmentDate %>
   </div>
 
   <div class="field">
-    <%= form.label :disrolmentDate %>
-    <%= form.date_select :disrolmentDate, id: :student_detail_disrolmentDate %>
+    <%= form.label :disrollmentDate %>
+    <%= form.date_select :disrollmentDate, id: :student_detail_disrollmentDate %>
   </div>
 
   <div class="field">
     <%= form.label :graduationDate %>
     <%= form.date_select :graduationDate, id: :student_detail_graduationDate %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :student_detail_user_id %>
   </div>
 
   <div class="actions">

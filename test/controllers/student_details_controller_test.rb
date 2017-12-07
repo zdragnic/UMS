@@ -17,7 +17,7 @@ class StudentDetailsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create student_detail" do
     assert_difference('StudentDetail.count') do
-      post student_details_url, params: { student_detail: { budget: @student_detail.budget, disrolmentDate: @student_detail.disrolmentDate, enrolmentDate: @student_detail.enrolmentDate, graduationDate: @student_detail.graduationDate, user_id: @student_detail.user_id } }
+      post student_details_url, params: { student_detail: { budget: @student_detail.budget, disrollmentDate: @student_detail.disrollmentDate, enrollmentDate: @student_detail.enrollmentDate, graduationDate: @student_detail.graduationDate, indeks: @student_detail.indeks, user_id: @student_detail.user_id } }
     end
 
     assert_redirected_to student_detail_url(StudentDetail.last)
@@ -34,7 +34,7 @@ class StudentDetailsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update student_detail" do
-    patch student_detail_url(@student_detail), params: { student_detail: { budget: @student_detail.budget, disrolmentDate: @student_detail.disrolmentDate, enrolmentDate: @student_detail.enrolmentDate, graduationDate: @student_detail.graduationDate, user_id: @student_detail.user_id } }
+    patch student_detail_url(@student_detail), params: { student_detail: { budget: @student_detail.budget, disrollmentDate: @student_detail.disrollmentDate, enrollmentDate: @student_detail.enrollmentDate, graduationDate: @student_detail.graduationDate, indeks: @student_detail.indeks, user_id: @student_detail.user_id } }
     assert_redirected_to student_detail_url(@student_detail)
   end
 

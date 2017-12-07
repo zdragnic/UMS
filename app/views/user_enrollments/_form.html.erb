@@ -1,0 +1,43 @@
+<%= form_with(model: user_enrollment, local: true) do |form| %>
+  <% if user_enrollment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_enrollment.errors.count, "error") %> prohibited this user_enrollment from being saved:</h2>
+
+      <ul>
+      <% user_enrollment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :study_year_id %>
+    <span style="visibility: hidden"> <%= @kursevi = StudyYear.all %> </span>
+    <br>    <%= form.collection_select :study_year_id, @kursevi, :id, :title, prompt: "Select study year" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <span style="visibility: hidden"> <%= @kursevi = User.all %> </span>
+    <br>    <%= form.collection_select :user_id, @kursevi, :id, :name, prompt: "Select study year" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_department_id %>
+    <span style="visibility: hidden"> <%= @kursevi = Course.all %> </span>
+    <br>    <%= form.collection_select :course_department_id, @kursevi, :id, :title, prompt: "Select study year"  %>
+    <%= form.text_field :course_department_id, :value => @course_id, id: :user_enrollment_course_department_id %>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :lab_group_id %>
+    <span style="visibility: hidden"> <%= @kursevi = LabGroup.all %> </span>
+    <br>    <%= form.collection_select :lab_group_id, @kursevi, :id, :title, prompt: "Select study year" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

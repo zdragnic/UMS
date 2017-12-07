@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  budget: 1
-  enrolmentDate: 2017-12-04
-  disrolmentDate: 2017-12-04
-  graduationDate: 2017-12-04
-  user_id: 1
+  user: one
+  indeks: MyString
+  budget: 
+  enrollmentDate: 2017-12-07
+  disrollmentDate: 2017-12-07
+  graduationDate: 2017-12-07
 
 two:
-  budget: 1
-  enrolmentDate: 2017-12-04
-  disrolmentDate: 2017-12-04
-  graduationDate: 2017-12-04
-  user_id: 1
+  user: two
+  indeks: MyString
+  budget: 
+  enrollmentDate: 2017-12-07
+  disrollmentDate: 2017-12-07
+  graduationDate: 2017-12-07

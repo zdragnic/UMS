@@ -4,7 +4,7 @@ class StudentDetailsController < ApplicationController
   # GET /student_details
   # GET /student_details.json
   def index
-    @student_details = StudentDetail.all
+    @student_details = StudentDetail.search(params[:indeks])
   end
 
   # GET /student_details/1
@@ -69,6 +69,6 @@ class StudentDetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_detail_params
-      params.require(:student_detail).permit(:budget, :enrolmentDate, :disrolmentDate, :graduationDate, :user_id)
+      params.require(:student_detail).permit(:user_id, :indeks, :budget, :enrollmentDate, :disrollmentDate, :graduationDate)
     end
 end

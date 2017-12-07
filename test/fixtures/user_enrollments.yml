@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  study_year: one
+  user: one
+  course_department: one
+  lab_group: one
+
+two:
+  study_year: two
+  user: two
+  course_department: two
+  lab_group: two

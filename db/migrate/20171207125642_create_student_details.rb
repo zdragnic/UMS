@@ -1,10 +1,11 @@
 class CreateStudentDetails < ActiveRecord::Migration[5.1]
   def change
     create_table :student_details do |t|
-      t.belongs_to :user, index: true
-      t.integer :budget
-      t.date :enrolmentDate
-      t.date :disrolmentDate
+      t.references :user, foreign_key: true
+      t.string :indeks
+      t.bit :budget
+      t.date :enrollmentDate
+      t.date :disrollmentDate
       t.date :graduationDate
 
       t.timestamps
