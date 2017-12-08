@@ -1,10 +1,8 @@
 <div class="container">
 
   <h1> Studentska podstranica</h1>
-  <br>
-
   <div class="row">
-    <div class="col-xs-6 col-md-3" style="text-align: center">
+      <div class="col-xs-3 col-md-3" style="text-align: center">
       <div class="thumbnail">
         <span class="glyphicon glyphicon-user gi-5x"></span>
         <div class="caption">
@@ -13,7 +11,7 @@
       </div>
     </div>
 
-    <div class="col-xs-6 col-md-3" style="text-align: center">
+    <div class="col-xs-3 col-md-3" style="text-align: center">
       <div class="thumbnail">
         <span class="glyphicon glyphicon-book gi-5x"></span>
         <div class="caption">
@@ -30,16 +28,27 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="row">
+    <h1> Obavjestenja</h1>
 
-    <div class="col-xs-6 col-md-3" style="text-align: center">
-      <div class="thumbnail">
-        <span class="glyphicon glyphicon-envelope gi-5x"></span>
-        <div class="caption">
-          <a href="#"><h3>Obavjestenja</h3></a>
-        </div>
+    <div class="col-md-9 col-md-offset-0 ">
+      <div class="panel-group">
+
+        <% @notices.each do |notice| %>
+            <% if slusaKurs?(session[:user_id], notice.course_id) %>
+                <span style="visibility: hidden"> <%= @course= Course.find( notice.course_id) %> </span>
+                <div class="col-md-6 col-md-offset-3">
+                  <div class="panel panel-info">
+                    <div class="panel-heading"><%= notice.title %>, Predmet: <%= @course.title%>, Datum: <%= notice.created_at%></div>
+                    <div class="panel-body"> <%= notice.text %></div>
+                  </div>
+                </div>
+            <% end %>
+
+        <% end %>
       </div>
     </div>
+</div>
 
-
-  </div>
 </div>

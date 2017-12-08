@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171207150732) do
+ActiveRecord::Schema.define(version: 20171208202639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,17 @@ ActiveRecord::Schema.define(version: 20171207150732) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_department_id"], name: "index_lab_groups_on_course_department_id"
+  end
+
+  create_table "notices", force: :cascade do |t|
+    t.string "title"
+    t.string "text"
+    t.bigint "user_id"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_notices_on_course_id"
+    t.index ["user_id"], name: "index_notices_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -134,6 +145,8 @@ ActiveRecord::Schema.define(version: 20171207150732) do
   add_foreign_key "course_departments", "semesters"
   add_foreign_key "courses", "users"
   add_foreign_key "lab_groups", "course_departments"
+  add_foreign_key "notices", "courses"
+  add_foreign_key "notices", "users"
   add_foreign_key "student_details", "users"
   add_foreign_key "user_enrollments", "course_departments"
   add_foreign_key "user_enrollments", "lab_groups"

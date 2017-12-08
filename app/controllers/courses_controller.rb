@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
   def index
     user = User.find(params[:user_id])
     #2nd you get all the comments of this post
-    @courses = user.courses
+    @courses = Course.all
 
     respond_to do |format|
       format.html # index.html.erb

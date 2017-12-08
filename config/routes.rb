@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :notices
   resources :user_enrollments
   resources :student_details
   resources :employee_details
