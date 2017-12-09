@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Exams</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Scheduled</th>
+      <th>Course department</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <span style="visibility: hidden"><%=   @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %> </span>
+    <% @exams.each do |exam| %>
+  <% if NastavnoIspiti(session[:user_id],exam.course_department_id)%>
+    <%if !@current_user.role_id.equal?(2)%>
+      <tr>
+        <td><%= exam.title %></td>
+        <td><%= exam.scheduled %></td>
+        <td><%= exam.course_department_id %></td>
+        <td><%= link_to 'Show', exam %></td>
+        <td><%= link_to 'Edit', edit_exam_path(exam) %></td>
+        <td><%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+          <% elsif StudentIspiti?(session[:user_id],exam.course_department_id)%>
+              <tr>
+                <td><%= exam.title %></td>
+                <td><%= exam.scheduled %></td>
+                <td><%= exam.course_department_id %></td>
+                <%= @es = ExamStudent.new(user_id:session[:user_id], exam_id:exam.id, status:1 )%>
+                <%= @es1 = ExamStudent.where("user_id=? and exam_id=?",session[:user_id], exam.id ).pluck(:id)[0]%>
+                <td><%= link_to 'Prijavi', exam_students_path(:user_id=>session[:user_id], :exam_id=>exam.id, :status=>1 ), method: :post %></td>
+                <td><%= link_to 'Odjavi', exam_student_path(@es1), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+      <%end%>
+    <% end %>
+      <%end%>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exam', new_exam_path %>

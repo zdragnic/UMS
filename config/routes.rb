@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :exam_students
+  resources :exams
+  resources :requests
+  resources :credentials
   resources :notices
   resources :user_enrollments
   resources :student_details

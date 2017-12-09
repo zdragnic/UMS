@@ -6,7 +6,9 @@ module CoursesHelper
     puts var
     end
     if korisnik.role_id.equal?(2)
-      var = Course.where("user_id=? and id=?",user_id, course_id).exists?
+      kurs_id = CourseDepartment.find_by_course_id(course_id)
+      var = UserEnrollment.where("user_id=? and course_department_id=?",user_id, kurs_id).exists?
+      puts var
     end
     if korisnik.role_id.equal?(1)
       puts korisnik.role_id
@@ -15,10 +17,10 @@ module CoursesHelper
     return var
   end
 
-  def responsible(course_id)
-    var = Course.where("id=?",course_id)
+  def responsible?(course_id)
+    var = Course.find(course_id)
     odgovorni= var.responsible
-    korisnik = User.where("id=?", odgovorni)
+    korisnik = User.find(odgovorni)
     return korisnik.name
   end
 end

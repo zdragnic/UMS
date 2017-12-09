@@ -15,7 +15,7 @@
 
   <tbody>
     <% @notices.each do |notice| %>
-  <% if stavioObavijest?(session[:user_id], notice.id)%>
+  <% if stavioObavijest?(session[:user_id], notice.course_id)%>
       <tr>
         <td><%= notice.title %></td>
         <td><%= notice.text %></td>

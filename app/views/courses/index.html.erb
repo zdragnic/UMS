@@ -18,13 +18,14 @@
 
 
       <% @courses.each do |course| %>
+  <%= @odgovorni ||= User.find(course.responsible) %>
          <% if drziKurs?(session[:user_id], course.id)%>
           <tr>
             <td><%= course.title %></td>
             <td><%= course.code %></td>
-            <td><%= @current_user.name %></td>
+            <td><%= @odgovorni.name %></td>
 
-        <%if !@current_user.role_id.equal?(2)%>
+        <%if @current_user.role_id.equal?(1)%>
                 <td><%= link_to 'Show',user_course_path(course.user_id,course ) , class:'btn btn-primary btn-sm', style: 'color: white'%></td>
         <td><%= link_to 'Edit',edit_user_course_path(course.user_id,course)  ,class: 'btn btn-primary btn-sm', style: 'color: white' %></td>
         <td><%= link_to 'Destroy', user_course_path(course.user_id, course), method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger btn-sm', style: 'color: white'%></td>

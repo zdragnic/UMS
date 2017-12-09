@@ -1,0 +1,49 @@
+<%= form_with(model: request, local: true) do |form| %>
+  <% if request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :credential_id %>
+    <span style="visibility: hidden"> <%= @zahtjevi = Credential.all %> </span>
+    <br>    <%= form.collection_select :credential_id, @zahtjevi, :id, :title, prompt: "Select credential" %>
+  </div>
+
+    <% if rola?(session[:user_id])%>
+   <span> <div class="field">
+      <%= form.label :user_id %>
+      <%= form.text_field :user_id, id: :request_user_id %>
+    </div>
+    </span>
+    <% else %>
+    <span > <div class="field">
+      <%= form.label :user_id %>
+      <%= form.text_field :user_id, id: :request_user_id, :value=>session[:user_id] %>
+    </div>
+    </span>
+        <% end %>
+    <% if rola?(session[:user_id])%>
+     <div class="field">
+    <%= form.label :status %>
+      <%= form.text_field :status, id: :request_status %>
+  </div>
+        <% else %>
+        <div class="field">
+          <%= form.label :status %>
+          <%= form.text_field :status, id: :request_status, :value=>0 %>
+        </div>
+        <%end%>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
