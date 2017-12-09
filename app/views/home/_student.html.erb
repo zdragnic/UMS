@@ -36,7 +36,7 @@
       <div class="panel-group">
 
         <% @notices.each do |notice| %>
-            <% if slusaKurs?(session[:user_id], notice.course_id) %>
+            <% if stavioObavijest?(session[:user_id], notice.course_id) %>
                 <span style="visibility: hidden"> <%= @course= Course.find( notice.course_id) %> </span>
                 <div class="col-md-6 col-md-offset-3">
                   <div class="panel panel-info">
