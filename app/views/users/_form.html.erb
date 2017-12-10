@@ -1,3 +1,13 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <%if @user.name%>
+    <h3 class="panel-title"><%= @user.name %> <%=@user.lastname %></h3>
+        <%else %>
+        <h3 class="panel-title">New user</h3>
+
+  <%end%>
+  </div>
+  <div class="panel-body">
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -58,3 +68,5 @@
   </div>
 </div>
 <% end %>
+  </div>
+</div>
