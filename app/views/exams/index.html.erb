@@ -33,7 +33,7 @@
                 <%= @es = ExamStudent.new(user_id:session[:user_id], exam_id:exam.id, status:1 )%>
                 <%= @es1 = ExamStudent.where("user_id=? and exam_id=?",session[:user_id], exam.id ).pluck(:id)[0]%>
                 <td><%= link_to 'Prijavi', exam_students_path(:user_id=>session[:user_id], :exam_id=>exam.id, :status=>1 ), method: :post %></td>
-                <td><%= link_to 'Odjavi', exam_students_path(@es1), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Odjavi', exam_student_path(@es1), method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
       <%end%>
     <% end %>
