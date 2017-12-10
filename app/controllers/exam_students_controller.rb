@@ -47,7 +47,7 @@ class ExamStudentsController < ApplicationController
 
     respond_to do |format|
       if @exam_student.save
-        format.html { redirect_to @exam_student, notice: 'Exam student was successfully created.' }
+        format.html { redirect_to exams_url, notice: 'Exam student was successfully created.' }
         format.json { render :show, status: :created, location: @exam_student }
       else
         format.html { render :new }
@@ -75,7 +75,7 @@ class ExamStudentsController < ApplicationController
   def destroy
     @exam_student.destroy
     respond_to do |format|
-      format.html { redirect_to exam_students_url, notice: 'Exam student was successfully destroyed.' }
+      format.html { redirect_to exams_url, notice: 'Exam student was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

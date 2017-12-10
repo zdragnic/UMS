@@ -2,17 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40e777f2-120d-45bb-8642-f18ca3d16422" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/courses_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/courses_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/course.rb" afterPath="$PROJECT_DIR$/app/models/course.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/courses/index.html.erb" afterPath="$PROJECT_DIR$/app/views/courses/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/_nastavno.html.erb" afterPath="$PROJECT_DIR$/app/views/home/_nastavno.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/exam_students_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/exam_students_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/exams_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/exams_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/requests_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/requests_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exams/index.html.erb" afterPath="$PROJECT_DIR$/app/views/exams/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/_student.html.erb" afterPath="$PROJECT_DIR$/app/views/home/_student.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/_studentska.html.erb" afterPath="$PROJECT_DIR$/app/views/home/_studentska.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notices/index.html.erb" afterPath="$PROJECT_DIR$/app/views/notices/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/requests.yml" afterPath="$PROJECT_DIR$/test/fixtures/requests.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/roles.yml" afterPath="$PROJECT_DIR$/test/fixtures/roles.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/semesters.yml" afterPath="$PROJECT_DIR$/test/fixtures/semesters.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/student_details.yml" afterPath="$PROJECT_DIR$/test/fixtures/student_details.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/study_years.yml" afterPath="$PROJECT_DIR$/test/fixtures/study_years.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/user_enrollments.yml" afterPath="$PROJECT_DIR$/test/fixtures/user_enrollments.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/users.yml" afterPath="$PROJECT_DIR$/test/fixtures/users.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/academic_year_test.rb" afterPath="$PROJECT_DIR$/test/models/academic_year_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/course_department_test.rb" afterPath="$PROJECT_DIR$/test/models/course_department_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/course_test.rb" afterPath="$PROJECT_DIR$/test/models/course_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/credential_test.rb" afterPath="$PROJECT_DIR$/test/models/credential_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/department_test.rb" afterPath="$PROJECT_DIR$/test/models/department_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/employee_detail_test.rb" afterPath="$PROJECT_DIR$/test/models/employee_detail_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/exam_student_test.rb" afterPath="$PROJECT_DIR$/test/models/exam_student_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/exam_test.rb" afterPath="$PROJECT_DIR$/test/models/exam_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/lab_group_test.rb" afterPath="$PROJECT_DIR$/test/models/lab_group_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/notice_test.rb" afterPath="$PROJECT_DIR$/test/models/notice_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/request_test.rb" afterPath="$PROJECT_DIR$/test/models/request_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/role_test.rb" afterPath="$PROJECT_DIR$/test/models/role_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/semester_test.rb" afterPath="$PROJECT_DIR$/test/models/semester_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/student_detail_test.rb" afterPath="$PROJECT_DIR$/test/models/student_detail_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/study_year_test.rb" afterPath="$PROJECT_DIR$/test/models/study_year_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/user_enrollment_test.rb" afterPath="$PROJECT_DIR$/test/models/user_enrollment_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/models/user_test.rb" afterPath="$PROJECT_DIR$/test/models/user_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/system/courses_test.rb" afterPath="$PROJECT_DIR$/test/system/courses_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/system/credentials_test.rb" afterPath="$PROJECT_DIR$/test/system/credentials_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/system/employee_details_test.rb" afterPath="$PROJECT_DIR$/test/system/employee_details_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/system/exam_students_test.rb" afterPath="$PROJECT_DIR$/test/system/exam_students_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/system/exams_test.rb" afterPath="$PROJECT_DIR$/test/system/exams_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/system/notices_test.rb" afterPath="$PROJECT_DIR$/test/system/notices_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/system/requests_test.rb" afterPath="$PROJECT_DIR$/test/system/requests_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/system/student_details_test.rb" afterPath="$PROJECT_DIR$/test/system/student_details_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/system/user_enrollments_test.rb" afterPath="$PROJECT_DIR$/test/system/user_enrollments_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/system/users_test.rb" afterPath="$PROJECT_DIR$/test/system/users_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_helper.rb" afterPath="$PROJECT_DIR$/test/test_helper.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -27,16 +58,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/UMS@db_migrate__5_.coverage" NAME="db:migrate (5) Coverage Results" MODIFIED="1512648055604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
-    <SUITE FILE_PATH="coverage/UMS@seeds.coverage" NAME="seeds Coverage Results" MODIFIED="1512648809959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" MODULE_NAME="UniversityManagementSystem" />
-    <SUITE FILE_PATH="coverage/UMS@Development__UniversityManagementSystem.coverage" NAME="Development: UniversityManagementSystem Coverage Results" MODIFIED="1512828412560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
     <SUITE FILE_PATH="coverage/UMS@db_migrate__3_.coverage" NAME="db:migrate (3) Coverage Results" MODIFIED="1512821928897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
-    <SUITE FILE_PATH="coverage/UMS@db_migrate__2_.coverage" NAME="db:migrate (2) Coverage Results" MODIFIED="1512831970631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
     <SUITE FILE_PATH="coverage/UMS@Rails_console__UniversityManagementSystem.coverage" NAME="Rails console: UniversityManagementSystem Coverage Results" MODIFIED="1512828878162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
-    <SUITE FILE_PATH="coverage/UMS@db_migrate__1_.coverage" NAME="db:migrate (1) Coverage Results" MODIFIED="1512834244284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
-    <SUITE FILE_PATH="coverage/UniversityManagementSystem@Development__UniversityManagementSystem.coverage" NAME="Development: UniversityManagementSystem Coverage Results" MODIFIED="1509899997594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
     <SUITE FILE_PATH="coverage/UMS@db_migrate__4_.coverage" NAME="db:migrate (4) Coverage Results" MODIFIED="1512822431239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
     <SUITE FILE_PATH="coverage/UMS@db_migrate.coverage" NAME="db:migrate Coverage Results" MODIFIED="1512832323329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
+    <SUITE FILE_PATH="coverage/UMS@db_migrate__1_.coverage" NAME="db:migrate (1) Coverage Results" MODIFIED="1512834244284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
+    <SUITE FILE_PATH="coverage/UMS@Development__UniversityManagementSystem.coverage" NAME="Development: UniversityManagementSystem Coverage Results" MODIFIED="1512918187697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
+    <SUITE FILE_PATH="coverage/UMS@db_migrate__2_.coverage" NAME="db:migrate (2) Coverage Results" MODIFIED="1512831970631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
+    <SUITE FILE_PATH="coverage/UMS@seeds.coverage" NAME="seeds Coverage Results" MODIFIED="1512648809959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" MODULE_NAME="UniversityManagementSystem" />
+    <SUITE FILE_PATH="coverage/UniversityManagementSystem@Development__UniversityManagementSystem.coverage" NAME="Development: UniversityManagementSystem Coverage Results" MODIFIED="1509899997594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
+    <SUITE FILE_PATH="coverage/UMS@db_migrate__5_.coverage" NAME="db:migrate (5) Coverage Results" MODIFIED="1512648055604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="UniversityManagementSystem" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -59,8 +90,8 @@
       <file leaf-file-name="requests_helper.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/requests_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+            <state relative-caret-position="314">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -69,8 +100,8 @@
       <file leaf-file-name="exams_helper.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/exams_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="12" />
+            <state relative-caret-position="424">
+              <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -79,10 +110,10 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/exams/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+            <state relative-caret-position="339">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="e#1127#1153#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,7 +122,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/exam_students/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
+            <state relative-caret-position="100">
               <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding />
             </state>
@@ -101,8 +132,8 @@
       <file leaf-file-name="exams_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/exams_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state relative-caret-position="1875">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,8 +142,18 @@
       <file leaf-file-name="exam_students_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/exam_students_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="79" column="7" lean-forward="true" selection-start-line="79" selection-start-column="7" selection-end-line="79" selection-end-column="7" />
+            <state relative-caret-position="1225">
+              <caret line="49" column="43" lean-forward="false" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_student.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/home/_student.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -121,7 +162,7 @@
       <file leaf-file-name="home_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="75">
               <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
@@ -180,20 +221,20 @@
         <option value="$PROJECT_DIR$/app/helpers/courses_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/courses/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/notices/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/home/_student.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/_studentska.html.erb" />
         <option value="$PROJECT_DIR$/app/views/requests/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/requests/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/helpers/requests_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/requests/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/models/request.rb" />
         <option value="$PROJECT_DIR$/app/views/requests/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/_nastavno.html.erb" />
-        <option value="$PROJECT_DIR$/app/helpers/exams_helper.rb" />
         <option value="$PROJECT_DIR$/app/controllers/exams_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/exam_students_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/exams/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/exam_students/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/helpers/requests_helper.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/exam_students_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/home/_student.html.erb" />
+        <option value="$PROJECT_DIR$/app/helpers/exams_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/exams/index.html.erb" />
       </list>
     </option>
   </component>
@@ -217,7 +258,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="236" />
     <option name="y" value="118" />
     <option name="width" value="1400" />
@@ -238,7 +279,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="RailsProjectView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -407,6 +447,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -427,7 +468,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Rake.db:migrate (1)">
+  <component name="RunManager" selected="Rails.Development: UniversityManagementSystem">
     <configuration name="Development: UniversityManagementSystem" type="RailsRunConfigurationType" factoryName="Rails">
       <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
       <module name="UniversityManagementSystem" />
@@ -659,11 +700,12 @@
       <workItem from="1512817716416" duration="6202000" />
       <workItem from="1512825192678" duration="2990000" />
       <workItem from="1512828406832" duration="8387000" />
+      <workItem from="1512918063027" duration="419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221267000" />
+    <option name="totallyTimeSpent" value="221686000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -675,15 +717,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.298125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30324325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25934315" sideWeight="0.19297297" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.080625" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08054054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.49783784" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38587642" sideWeight="0.80702704" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38505095" sideWeight="0.80702704" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -890,7 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,13 +946,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/_student.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -947,7 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,7 +1009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -985,7 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,7 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,7 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,7 +1037,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +1044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,7 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1041,7 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,45 +1073,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="75">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/requests_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/exams_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/exam_students_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="79" column="7" lean-forward="true" selection-start-line="79" selection-start-column="7" selection-end-line="79" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/exam_students/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
+        <state relative-caret-position="100">
           <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding />
         </state>
@@ -1095,18 +1094,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/exams_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state relative-caret-position="1875">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/requests_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/exam_students_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1225">
+          <caret line="49" column="43" lean-forward="false" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/_student.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/exams_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/exams/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        <state relative-caret-position="339">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="e#1127#1153#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

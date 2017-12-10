@@ -23,17 +23,18 @@ end
   def status(value)
     zahtjev = Request.find(value)
     l = Request.where(["id = ?", value])
-
     puts "STATUS"
-   puts l.pluck(:status)[0]
+    puts l.pluck(:status)[0]
+    y= l.pluck(:status)[0]
 
-    x="Obrađeno"
-    if l.pluck(:status)[0].equal?(0)
+    if y == '0'
       x="Neobrađeno"
     end
-    return x
-
-      end
+  else if y == '1'
+         x="Obrađeno"
+       end
+  return x
+  end
 
   end
 

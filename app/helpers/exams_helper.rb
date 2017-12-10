@@ -19,4 +19,13 @@ module ExamsHelper
     return var
   end
 
+  def prijavioIspit(user_id, exam_id)
+    var=false
+    prijava= ExamStudent.where("user_id=? and exam_id=?", user_id,exam_id).pluck(:status)[0]
+    if prijava == '1'
+      var=true
+    end
+    return var
+  end
+
 end
