@@ -2,7 +2,7 @@
 
 <h1>User Enrollments</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Study year</th>
@@ -20,9 +20,9 @@
         <td><%= user_enrollment.user_id %></td>
         <td><%= user_enrollment.course_department_id %></td>
         <td><%= user_enrollment.lab_group_id %></td>
-        <td><%= link_to 'Show', user_enrollment %></td>
-        <td><%= link_to 'Edit', edit_user_enrollment_path(user_enrollment) %></td>
-        <td><%= link_to 'Destroy', user_enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_enrollment, class: 'btn btn-primary', style: 'color:white' %></td>
+        <td><%= link_to 'Edit', edit_user_enrollment_path(user_enrollment),class: 'btn btn-primary' ,style: 'color:white'%></td>
+        <td><%= link_to 'Destroy', user_enrollment, method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-danger',style: 'color:white' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New User Enrollment', new_user_enrollment_path %>
+<%= link_to 'New User Enrollment', new_user_enrollment_path, class:'btn btn-primary',style: 'color:white'%>

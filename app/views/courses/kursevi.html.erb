@@ -21,11 +21,11 @@
         <td><%= course.code %></td>
         <td><%= course.user_id %></td>
         <td><%= course.responsible %></td>
-        <!-- dodati ovdje linkove koji fale show_users_courses .. kako vec
-        <td><%= link_to 'Show',  class:'btn btn-primary btn-sm', style: 'color: white'%></td>
-        <td><%= link_to 'Edit',  class: 'btn btn-primary btn-sm', style: 'color: white' %></td>
-        <td><%= link_to 'Destroy',  method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger btn-sm', style: 'color: white'%></td>-->
 
+
+        <td><%= link_to 'Show',user_course_path(course.user_id,course ) , class:'btn btn-primary btn-sm', style: 'color: white'%></td>
+        <td><%= link_to 'Edit',edit_user_course_path(course.user_id,course)  ,class: 'btn btn-primary btn-sm', style: 'color: white' %></td>
+        <td><%= link_to 'Destroy', user_course_path(course.user_id, course), method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger btn-sm', style: 'color: white'%></td>
       </tr>
   <% end %>
   </tbody>

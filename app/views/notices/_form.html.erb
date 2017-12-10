@@ -1,3 +1,13 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <%if @notice.title%>
+        <h3 class="panel-title"><%= @notice.title %></h3>
+    <%else %>
+        <h3 class="panel-title">New notice</h3>
+
+    <%end%>
+  </div>
+  <div class="panel-body">
 <%= form_with(model: notice, local: true) do |form| %>
   <% if notice.errors.any? %>
     <div id="error_explanation">
@@ -38,3 +48,5 @@
     <%= form.submit class:'btn btn-primary'%>
   </div>
 <% end %>
+  </div>
+</div>

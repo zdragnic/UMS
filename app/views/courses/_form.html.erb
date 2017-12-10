@@ -1,3 +1,13 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <%if @course.title%>
+        <h3 class="panel-title"><%= @course.title %></h3>
+    <%else %>
+        <h3 class="panel-title">New course</h3>
+
+    <%end%>
+  </div>
+  <div class="panel-body">
 <%= form_for([@course.user, @course]) do |form| %>
     <% if @course.errors.any? %>
         <div id="error_explanation">
@@ -22,15 +32,16 @@
     </div>
 
     <div class="field">
-      <%= form.label :user %>
-      <%= form.text_field :user, class: 'form-control'%>
-    </div>
-
-    <div class="field">
       <%= form.label :responsible %>
       <%= form.text_field :responsible, class: 'form-control'%>
     </div>
+        <div  style="visibility: hidden">
+          <%= form.label :user %>
+          <%= form.text_field :user, class: 'form-control', :value=>1%>
+        </div>
     <div class="actions">
       <%= form.submit class:'btn btn-primary'%>
     </div>
 <% end %>
+  </div>
+</div>

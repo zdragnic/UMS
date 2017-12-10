@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Student Details</h1>
+<br>
+<%= form_tag(student_details_path, method: :get) do %>
+    <%= text_field_tag :indeks, params[:indeks]%>
+
+    <%= submit_tag 'Search', name: nil, class:'btn btn-primary' %>
+<% end %>
+
+<br>
 <span style="visibility: hidden"><%= @current_user %> </span>
 <table class="table">
   <thead>
@@ -29,19 +37,15 @@
         <td><%= student_detail.enrollmentDate %></td>
         <td><%= student_detail.disrollmentDate %></td>
         <td><%= student_detail.graduationDate %></td>
-        <td><%= link_to 'Show', student_detail %></td>
-        <td><%= link_to 'Edit', edit_student_detail_path(student_detail) %></td>
-        <td><%= link_to 'Destroy', student_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', student_detail, class: 'btn btn-primary', style: 'color:white' %></td>
+        <td><%= link_to 'Edit', edit_student_detail_path(student_detail), class: 'btn btn-primary', style: 'color:white' %></td>
+        <td><%= link_to 'Destroy', student_detail, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', style: 'color:white' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%= form_tag(student_details_path, method: :get) do %>
-    <%= text_field_tag :indeks, params[:indeks] %>
-    <%= submit_tag 'Search', name: nil %>
-<% end %>
-<br>
 
-<%= link_to 'New Student Detail', new_student_detail_path %>
+
+<%= link_to 'New Student Detail', new_student_detail_path ,class:'btn btn-primary', style: 'color:white' %>

@@ -1,62 +1,65 @@
-<div class="container">
 
-  <h1> Studentska podstranica</h1>
-  <div class="row">
-      <div class="col-xs-3 col-md-3" style="text-align: center">
-      <div class="thumbnail">
-        <span class="glyphicon glyphicon-user gi-5x"></span>
-        <div class="caption">
-          <a href=<%= user_path(current_user) %>><h3> Moj profil</h3></a>
-        </div>
-      </div>
+<div class="container-fluid">
+  <br>
+  <div class="row content">
+    <div class="col-sm-4 sidenav" style="padding-right:20px; border-right: 1px solid #ccc;" >
+      <h3>Notices</h3>
+      <br><br>
+      <% @notices.each do |notice| %>
+          <% if stavioObavijest?(session[:user_id], notice.course_id) %>
+              <input type="hidden" <%= @course= Course.find( notice.course_id) %>>
+              <div class="panel panel-info">
+                  <div class="panel-heading"><%= notice.title %>, Predmet: <%= @course.title%>, Datum: <%= notice.created_at%></div>
+                  <div class="panel-body"> <%= notice.text %></div>
+
+              </div>
+          <% end %>
+
+      <% end %>
+
     </div>
 
-    <div class="col-xs-3 col-md-3" style="text-align: center">
-      <div class="thumbnail">
-        <span class="glyphicon glyphicon-book gi-5x"></span>
-        <div class="caption">
-          <a href=<%= user_courses_path(current_user) %>><h3>Moji kursevi</h3></a>
+    <div class="col-sm-6 col-sm-offset-1">
+     <h3>Menu</h3>
+      <br><br>
+       <div class="row content" >
+      <div class="col-sm-5" style="text-align: center">
+        <div class="thumbnail shadow-depth-3">
+          <span class="glyphicon glyphicon-user gi-5x"></span>
+          <div class="caption">
+            <a href=<%= user_path(current_user) %>><h3> Moj profil</h3></a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-xs-6 col-md-3" style="text-align: center">
-      <div class="thumbnail">
-        <span class="glyphicon glyphicon-file gi-5x"></span>
-        <div class="caption">
-          <a href=<%= new_request_path %>><h3>Zahtjev za uvjerenje</h3></a>
+      <div class="col-sm-5" style="text-align: center">
+        <div class="thumbnail shadow-depth-3">
+          <span class="glyphicon glyphicon-book gi-5x"></span>
+          <div class="caption">
+            <a href=<%= user_courses_path(current_user) %>><h3>Moji kursevi</h3></a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-xs-6 col-md-3" style="text-align: center">
-      <div class="thumbnail">
-        <span class="glyphicon glyphicon-file gi-5x"></span>
-        <div class="caption">
-          <a href=<%= exams_path %>><h3>Ispiti</h3></a>
+       </div>
+      <div class="row content">
+      <div class="col-sm-5" style="text-align: center">
+        <div class="thumbnail shadow-depth-3">
+          <span class="glyphicon glyphicon-file gi-5x"></span>
+          <div class="caption">
+            <a href=<%= requests_path %>><h3>Uvjerenja</h3></a>
+          </div>
         </div>
       </div>
-    </div>
+      <div class="col-sm-5" style="text-align: center">
+        <div class="thumbnail shadow-depth-3">
+          <span class="glyphicon glyphicon-file gi-5x"></span>
+          <div class="caption">
+            <a href=<%= exams_path %>><h3>Ispiti</h3></a>
+          </div>
+        </div>
+      </div>
   </div>
-  <div class="row">
-    <h1> Obavjestenja</h1>
-
-    <div class="col-md-9 col-md-offset-0 ">
-      <div class="panel-group">
-
-        <% @notices.each do |notice| %>
-            <% if stavioObavijest?(session[:user_id], notice.course_id) %>
-                <span style="visibility: hidden"> <%= @course= Course.find( notice.course_id) %> </span>
-                <div class="col-md-6 col-md-offset-3">
-                  <div class="panel panel-info">
-                    <div class="panel-heading"><%= notice.title %>, Predmet: <%= @course.title%>, Datum: <%= notice.created_at%></div>
-                    <div class="panel-body"> <%= notice.text %></div>
-                  </div>
-                </div>
-            <% end %>
-
-        <% end %>
-      </div>
-    </div>
+</div>
+  </div>
 </div>
 
-</div>

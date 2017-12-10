@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
+<span style="visibility: hidden">
 <%= javascript_include_tag"//www.google.com/jsapi","chartkick" %>
 <%= @zahtjevi = Request.all %>
-<h1>Obrađeni/neobrađeni zahtjevi za uvjerenja</h1>
+<%= @request = [['Stipendija', Request.where(credential_id: 1).size], ['Zdravstveno osiguranje', Request.where(credential_id: 2).size], ['Pravo na prevoz', Request.where(credential_id: 3).size]]%>
 <%= @request = [['Obrađeno', Request.where(status: 1).size], ['Neobrađeno', Request.where(status: 0).size]]%>
+</span>
+<h1>Obrađeni/neobrađeni zahtjevi za uvjerenja</h1>
 <%= pie_chart @request %>
 
 <h1>Statistika po tipovima uvjerenja</h1>
 
-<%= @request = [['Stipendija', Request.where(credential_id: 1).size], ['Zdravstveno osiguranje', Request.where(credential_id: 2).size], ['Pravo na prevoz', Request.where(credential_id: 3).size]]%>
 <%= pie_chart @request %>

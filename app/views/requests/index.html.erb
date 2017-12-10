@@ -23,10 +23,10 @@
 
         <td><%= request.user_id %></td>
         <td><%= request.credential_id %></td>
-        <td><%= link_to 'Show', request %></td>
-        <td><%= link_to 'Edit', edit_request_path(request) %></td>
+        <td><%= link_to 'Show', request ,class:'btn btn-primary btn-sm', style: 'color: white'%></td>
+        <td><%= link_to 'Edit', edit_request_path(request) ,class:'btn btn-primary btn-sm', style: 'color: white'%></td>
         <% if !rola?(session[:user_id])%>
-        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-danger btn-sm', style: 'color: white'%></td>
             <%end%>
       </tr>
 
@@ -34,9 +34,11 @@
   <%end%>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Request', new_request_path %>
+<% if !rola?(session[:user_id])%>
+<%= link_to 'New Request', new_request_path, class:'btn btn-primary', style: 'color: white'%>
+  <%else %>
 <br>
-<%= link_to 'Statistika uvjerenja', employee_details_path %>
+<%= link_to 'Statistika uvjerenja', employee_details_path ,class:'btn btn-primary', style: 'color: white'%>
+<%end%>
+<br>

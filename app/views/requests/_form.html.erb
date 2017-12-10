@@ -1,3 +1,8 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Request</h3>
+     </div>
+  <div class="panel-body">
 <%= form_with(model: request, local: true) do |form| %>
   <% if request.errors.any? %>
     <div id="error_explanation">
@@ -13,37 +18,37 @@
 
 
   <div class="field">
-    <%= form.label :credential_id %>
     <span style="visibility: hidden"> <%= @zahtjevi = Credential.all %> </span>
-    <br>    <%= form.collection_select :credential_id, @zahtjevi, :id, :title, prompt: "Select credential" %>
+    <%= form.label :credential_id %>
+       <%= form.collection_select :credential_id, @zahtjevi, :id, :title, prompt: "Select credential", class:'form-control' %>
   </div>
 
     <% if rola?(session[:user_id])%>
    <span> <div class="field">
       <%= form.label :user_id %>
-      <%= form.text_field :user_id, id: :request_user_id %>
+      <%= form.text_field :user_id, id: :request_user_id , class:'form-control' %>
     </div>
     </span>
     <% else %>
-    <span > <div class="field">
-      <%= form.label :user_id %>
-      <%= form.text_field :user_id, id: :request_user_id, :value=>session[:user_id] %>
+     <div style="visibility: hidden">
+       <%= form.text_field :user_id, id: :request_user_id, :value=>session[:user_id], class:'form-control'  %>
     </div>
-    </span>
+
         <% end %>
     <% if rola?(session[:user_id])%>
      <div class="field">
     <%= form.label :status %>
-      <%= form.text_field :status, id: :request_status %>
+      <%= form.text_field :status, id: :request_status , class:'form-control' %>
   </div>
         <% else %>
-        <div class="field">
-          <%= form.label :status %>
-          <%= form.text_field :status, id: :request_status, :value=>0 %>
+        <div  style="visibility: hidden">
+        <%= form.text_field :status, id: :request_status, :value=>0, class:'form-control' %>
         </div>
         <%end%>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:'btn btn-primary'%>
   </div>
 <% end %>
+  </div>
+</div>
