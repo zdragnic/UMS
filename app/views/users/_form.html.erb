@@ -42,10 +42,10 @@
     <%= form.text_field :lastname, id: :user_lastname, class: 'form-control' %>
   </div>
 
-    <%= form.label :birthDate %>
-  <div class="form-control">
 
-    <%= form.date_select :birthDate, id: :user_birthDate, class: 'form-control' %>
+  <div class="field">
+    <%= form.label :birthDate %>
+    <%= form.date_field :birthDate, id: :user_birthDate, class: 'form-control' %>
   </div>
 
   <div class="field">

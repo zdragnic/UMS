@@ -20,7 +20,7 @@
   <div class="field">
     <span style="visibility: hidden"> <%= @zahtjevi = Credential.all %> </span>
     <%= form.label :credential_id %>
-       <%= form.collection_select :credential_id, @zahtjevi, :id, :title, prompt: "Select credential", class:'form-control' %>
+       <%= form.collection_select :credential_id, @zahtjevi, :id, :title,{},{ prompt: "Select credential", class:'form-control'} %>
   </div>
 
     <% if rola?(session[:user_id])%>

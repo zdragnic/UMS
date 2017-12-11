@@ -1,3 +1,13 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <%if @exam.title%>
+        <h3 class="panel-title"><%= @exam.title %></h3>
+    <%else %>
+        <h3 class="panel-title">New exam</h3>
+
+    <%end%>
+  </div>
+  <div class="panel-body">
 <%= form_with(model: exam, local: true) do |form| %>
   <% if exam.errors.any? %>
     <div id="error_explanation">
@@ -13,20 +23,22 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :exam_title %>
+    <%= form.text_field :title, id: :exam_title, class:'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :scheduled %>
-    <%= form.date_select :scheduled, id: :exam_scheduled %>
+    <%= form.date_field :scheduled, id: :exam_scheduled, class:'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :course_department_id %>
-    <%= form.text_field :course_department_id, id: :exam_course_department_id %>
+    <%= form.text_field :course_department_id, id: :exam_course_department_id, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:'btn btn-primary' %>
   </div>
 <% end %>
+  </div>
+</div>
