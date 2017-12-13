@@ -31,10 +31,12 @@
       <%= form.text_field :code, class: 'form-control'%>
     </div>
 
-    <div class="field">
-      <%= form.label :responsible %>
-      <%= form.text_field :responsible, class: 'form-control'%>
-    </div>
+        <div class="field">
+          <%= form.label :responsible %>
+          <span style="visibility: hidden"> <%= @responsible = User.where("role_id='4'") %> </span>
+          <br>    <%= form.collection_select :responsible, @responsible, :id, :name, {},{prompt: "Select responsible", class:'form-control'} %>
+        </div>
+
         <div  style="visibility: hidden">
           <%= form.label :user %>
           <%= form.text_field :user, class: 'form-control', :value=>1%>

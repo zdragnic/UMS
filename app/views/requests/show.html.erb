@@ -7,12 +7,12 @@
 
 <span style="visibility: hidden"><%=@current_user ||= User.find (@request.user_id)%></span>
 <p>
-  <strong>User:</strong>
+  <strong>Student:</strong>
   <%= @current_user.name%>  <%= @current_user.lastname%>
 </p>
 
 <p>
-  <strong>Credential:</strong>
+  <strong>Svrha uvjerenja:</strong>
   <%= @request.credential_id %>
 </p>
 

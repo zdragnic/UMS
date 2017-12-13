@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Requests</h1>
+<h1>Zahtjevi za uvjerenja</h1>
 
 <table class="table">
   <thead>
     <tr>
       <th>Status</th>
-      <th>User</th>
-      <th>Credential</th>
+      <th>Student</th>
+      <th>Svrha uvjerenja</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,8 +21,15 @@
 
         <td><%= status(request.id) %></td>
 
-        <td><%= request.user_id %></td>
-        <td><%= request.credential_id %></td>
+        <td>
+          <% @c = User.where('id=?', request.user_id)%>
+          <%= @c.pluck(:name)[0]%>
+          <%= @c.pluck(:lastname)[0]%>
+        </td>
+        <td>
+          <% @c = Credential.where('id=?', request.credential_id)%>
+          <%= @c.pluck(:title)[0]%>
+        </td>
         <td><%= link_to 'Show', request ,class:'btn btn-primary btn-sm', style: 'color: white'%></td>
         <td><%= link_to 'Edit', edit_request_path(request) ,class:'btn btn-primary btn-sm', style: 'color: white'%></td>
         <% if !rola?(session[:user_id])%>
@@ -36,7 +43,7 @@
 </table>
 <br>
 <% if !rola?(session[:user_id])%>
-<%= link_to 'New Request', new_request_path, class:'btn btn-primary', style: 'color: white'%>
+<%= link_to 'Novi zahtjev', new_request_path, class:'btn btn-primary', style: 'color: white'%>
   <%else %>
 <br>
 <%= link_to 'Statistika uvjerenja', employee_details_path ,class:'btn btn-primary', style: 'color: white'%>

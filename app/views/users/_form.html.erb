@@ -58,9 +58,11 @@
     <%= form.text_field :birthplace, id: :user_birthplace, class: 'form-control' %>
   </div>
 
+
   <div class="field">
     <%= form.label :role_id %>
-    <%= form.number_field :role_id, id: :user_role_id, class: 'form-control' %>
+    <span style="visibility: hidden"> <%= @role = Role.all %> </span>
+    <br>    <%= form.collection_select :role_id, @role, :id, :name, {},{prompt: "Select role", class:'form-control'} %>
   </div>
 
         <div class="actions">

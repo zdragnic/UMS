@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Courses</h1>
+<h1>Kursevi</h1>
 
 <table class="table">
   <thead>
   <tr>
-    <th>Title</th>
-    <th>Code</th>
-    <th>User</th>
-    <th>Resposible</th>
+    <th>Naziv</th>
+    <th>Šifra kursa</th>
+    <th>Odgovorni profesor</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -19,13 +18,16 @@
       <tr>
         <td><%= course.title %></td>
         <td><%= course.code %></td>
-        <td><%= course.user_id %></td>
-        <td><%= course.responsible %></td>
+        <td>
+           <%=
+             @role = User.where('id=?', course.responsible)
+             @role.pluck(:name)[0]%>
+             <%=@role.pluck(:lastname)[0]%>
+        </td>
 
-
-        <td><%= link_to 'Show',user_course_path(course.user_id,course ) , class:'btn btn-primary btn-sm', style: 'color: white'%></td>
-        <td><%= link_to 'Edit',edit_user_course_path(course.user_id,course)  ,class: 'btn btn-primary btn-sm', style: 'color: white' %></td>
-        <td><%= link_to 'Destroy', user_course_path(course.user_id, course), method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger btn-sm', style: 'color: white'%></td>
+        <td><%= link_to 'Prikaži',user_course_path(course.user_id,course ) , class:'btn btn-primary btn-sm', style: 'color: white'%></td>
+        <td><%= link_to 'Uredi',edit_user_course_path(course.user_id,course)  ,class: 'btn btn-primary btn-sm', style: 'color: white' %></td>
+        <td><%= link_to 'Izbriši', user_course_path(course.user_id, course), method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger btn-sm', style: 'color: white'%></td>
       </tr>
   <% end %>
   </tbody>

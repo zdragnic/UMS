@@ -12,7 +12,10 @@
 
 <p>
   <strong>Odgovorni nastavnik:</strong>
-  <%= @course.responsible %>
+  <%=
+    @role = User.where('id=?', @course.responsible)
+    @role.pluck(:name)[0]%>
+  <%=@role.pluck(:lastname)[0]%>
 </p>
 
 
