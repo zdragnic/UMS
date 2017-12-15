@@ -22,18 +22,18 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :title %>
+    <%= form.label :'Naslov' %>
     <%= form.text_field :title, id: :notice_title, class: 'form-control'%>
   </div>
 
   <div class="form-group">
-    <%= form.label :text %>
+    <%= form.label :'Tekst' %>
     <%= form.text_field :text, id: :notice_text, class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <span style="visibility: hidden"> <%= @kursevi = Course.all %> </span>
-    <%= form.label :course_id %>
+    <%= form.label  :course_id %>
     <%= form.collection_select(:course_id, @kursevi, :id, :title, {}, {:class=>'form-control'})%>
 
 

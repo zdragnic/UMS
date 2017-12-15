@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>User Enrollments</h1>
+<h1>Upisani studenti</h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Study year</th>
-      <th>User</th>
-      <th>Course department</th>
-      <th>Lab group</th>
+      <th>Studijska godina</th>
+      <th>Student</th>
+      <th>Kurs</th>
+      <th>Laboratorijska grupa</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,13 +16,27 @@
   <tbody>
     <% @user_enrollments.each do |user_enrollment| %>
       <tr>
-        <td><%= user_enrollment.study_year_id %></td>
-        <td><%= user_enrollment.user_id %></td>
-        <td><%= user_enrollment.course_department_id %></td>
-        <td><%= user_enrollment.lab_group_id %></td>
-        <td><%= link_to 'Show', user_enrollment, class: 'btn btn-primary', style: 'color:white' %></td>
-        <td><%= link_to 'Edit', edit_user_enrollment_path(user_enrollment),class: 'btn btn-primary' ,style: 'color:white'%></td>
-        <td><%= link_to 'Destroy', user_enrollment, method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-danger',style: 'color:white' %></td>
+        <td>
+          <% @c = StudyYear.where('id=?', user_enrollment.study_year_id)%>
+          <%= @c.pluck(:title)[0]%>
+        </td>
+        <td>
+          <% @c = User.where('id=?', user_enrollment.user_id)%>
+          <%= @c.pluck(:name)[0]%>
+          <%= @c.pluck(:lastname)[0]%>
+        </td>
+        <td>
+          <% @r = CourseDepartment.where('id=?', user_enrollment.course_department_id) %>
+          <% @c = Course.where('id=?', @r.pluck(:course_id)[0])%>
+          <%= @c.pluck(:title)[0]%>
+        </td>
+        <td>
+          <% @c = LabGroup.where('id=?', user_enrollment.lab_group_id)%>
+          <%= @c.pluck(:title)[0]%>
+        </td>
+        <td><%= link_to 'Prikaži', user_enrollment, class: 'btn btn-primary', style: 'color:white' %></td>
+        <td><%= link_to 'Uredi', edit_user_enrollment_path(user_enrollment),class: 'btn btn-primary' ,style: 'color:white'%></td>
+        <td><%= link_to 'Izbriši', user_enrollment, method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-danger',style: 'color:white' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +44,4 @@
 
 <br>
 
-<%= link_to 'New User Enrollment', new_user_enrollment_path, class:'btn btn-primary',style: 'color:white'%>
+<%= link_to 'Novi upis', new_user_enrollment_path, class:'btn btn-primary',style: 'color:white'%>

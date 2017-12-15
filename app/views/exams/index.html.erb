@@ -25,9 +25,9 @@
           <% @c = Course.where('id=?', @r.pluck(:course_id)[0])%>
           <%= @c.pluck(:title)[0]%>
         </td>
-        <td><%= link_to 'Show', exam, class:'btn btn-primary btn-sm', style: 'color: white' %></td>
-        <td><%= link_to 'Edit', edit_exam_path(exam), class:'btn btn-primary btn-sm', style: 'color: white' %></td>
-        <td><%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-sm', style: 'color: white' %></td>
+        <td><%= link_to 'Prikaži', exam, class:'btn btn-primary btn-sm', style: 'color: white' %></td>
+        <td><%= link_to 'Uredi', edit_exam_path(exam), class:'btn btn-primary btn-sm', style: 'color: white' %></td>
+        <td><%= link_to 'Izbriši', exam, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-sm', style: 'color: white' %></td>
       </tr>
           <% elsif StudentIspiti?(session[:user_id],exam.course_department_id)%>
               <tr>
@@ -59,5 +59,5 @@
 <br>
 <%if !@current_user.role_id.equal?(2)%>
 
-    <%= link_to 'New Exam', new_exam_path, class:'btn btn-primary btn-sm', style: 'color: white' %>
+    <%= link_to 'Novi ispit', new_exam_path, class:'btn btn-primary btn-sm', style: 'color: white' %>
 <%end %>

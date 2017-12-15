@@ -1,6 +1,7 @@
 <div class="container">
 
-  <h1> Admin panel </h1>
+  <h1> Zdravo <%= @role = User.where('id=?', @current_user.id)
+           @role.pluck(:name)[0] %> ! </h1>
   <br>
 
   <div class="row">

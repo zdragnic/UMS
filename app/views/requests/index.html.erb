@@ -30,10 +30,10 @@
           <% @c = Credential.where('id=?', request.credential_id)%>
           <%= @c.pluck(:title)[0]%>
         </td>
-        <td><%= link_to 'Show', request ,class:'btn btn-primary btn-sm', style: 'color: white'%></td>
-        <td><%= link_to 'Edit', edit_request_path(request) ,class:'btn btn-primary btn-sm', style: 'color: white'%></td>
+        <td><%= link_to 'Prikaži', request ,class:'btn btn-primary btn-sm', style: 'color: white'%></td>
+        <td><%= link_to 'Uredi', edit_request_path(request) ,class:'btn btn-primary btn-sm', style: 'color: white'%></td>
         <% if !rola?(session[:user_id])%>
-        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-danger btn-sm', style: 'color: white'%></td>
+        <td><%= link_to 'Izbriši', request, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-danger btn-sm', style: 'color: white'%></td>
             <%end%>
       </tr>
 
