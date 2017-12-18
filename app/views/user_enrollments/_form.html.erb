@@ -1,6 +1,7 @@
+<br>
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title">User enrollment</h3>
+    <h3 class="panel-title">Upis studenta na kurs</h3>
   </div>
   <div class="panel-body">
 <%= form_with(model: user_enrollment, local: true) do |form| %>
@@ -17,31 +18,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :study_year_id %>
+    <%= form.label :"Studijska godina" %>
     <span style="visibility: hidden"> <%= @kursevi = StudyYear.all %> </span>
     <br>    <%= form.collection_select :study_year_id, @kursevi, :id, :title, {},{prompt: "Select study year", class:'form-control'} %>
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :"Student" %>
     <span style="visibility: hidden"> <%= @kursevi = User.all %> </span>
     <br>    <%= form.collection_select :user_id, @kursevi, :id, :name, {},{prompt: "Select user", class:'form-control'}%>
   </div>
 
   <div class="field">
-    <%= form.label :course_department_id %>
+    <%= form.label :"Odsjek" %>
     <%= form.text_field :course_department_id, :value => @course_id, id: :user_enrollment_course_department_id, class:'form-control' %>
 
   </div>
 
   <div class="field">
-    <%= form.label :lab_group_id %>
+    <%= form.label :"Broj grupe" %>
     <span style="visibility: hidden"> <%= @kursevi = LabGroup.all %> </span>
     <br>    <%= form.collection_select :lab_group_id, @kursevi, :id, :title,{},{prompt: "Select study year", class:'form-control'} %>
   </div>
+        <br>
 
   <div class="actions">
-    <%= form.submit class:'btn btn-primary'%>
+    <%= form.submit :value =>"Upiši studenta na kurs", :class =>'btn btn-primary'%>
   </div>
 <% end %>
   </div>

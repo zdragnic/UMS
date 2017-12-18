@@ -1,9 +1,10 @@
+<br>
 <div class="panel panel-info">
   <div class="panel-heading">
     <%if @exam.title%>
         <h3 class="panel-title"><%= @exam.title %></h3>
     <%else %>
-        <h3 class="panel-title">New exam</h3>
+        <h3 class="panel-title">Novi ispit</h3>
 
     <%end%>
   </div>
@@ -22,22 +23,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :"Naziv ispita" %>
     <%= form.text_field :title, id: :exam_title, class:'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :scheduled %>
+    <%= form.label :"Datum ispita" %>
     <%= form.date_field :scheduled, id: :exam_scheduled, class:'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :course_department_id %>
+    <%= form.label :"Smjer" %>
     <%= form.text_field :course_department_id, id: :exam_course_department_id, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit class:'btn btn-primary' %>
+    <%= form.submit class:'btn btn-primary', :value => "Kreiraj ispit" %>
   </div>
 <% end %>
   </div>

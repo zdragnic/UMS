@@ -1,7 +1,6 @@
 <div class="container">
 
-  <h1> Zdravo <%= @role = User.where('id=?', @current_user.id)
-           @role.pluck(:name)[0] %> ! </h1>
+  <h1 class="bg-info"> Zdravo, <%= @current_user.name %>  </h1>
   <br>
 
   <div class="row">

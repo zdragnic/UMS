@@ -1,19 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Naziv:</strong>
   <%= @exam.title %>
 </p>
 
 <p>
-  <strong>Scheduled:</strong>
+  <strong>Datum ispita:</strong>
   <%= @exam.scheduled %>
 </p>
 
-<p>
-  <strong>Course department:</strong>
-  <%= @exam.course_department %>
-</p>
 
 <%= link_to 'Uredi ispit', edit_exam_path(@exam) %> |
 <%= link_to 'Prikaži sve ispite', exams_path %>

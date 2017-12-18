@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Detalji o studentima</h1>
+<h2 class="bg-info" style="font-size: 30px">Detalji o studentima</h2>
 <br>
+<p>Indeks studenta: </p>
 <%= form_tag(student_details_path, method: :get) do %>
     <%= text_field_tag :indeks, params[:indeks]%>
-
+<br>
+    <br>
     <%= submit_tag 'Pretraga', name: nil, class:'btn btn-primary' %>
 <% end %>
 
@@ -52,4 +54,4 @@
 <br>
 
 
-<%= link_to 'Novi detalji o studentu', new_student_detail_path ,class:'btn btn-primary', style: 'color:white' %>
+<%= link_to 'Dodaj novog studenta', new_student_detail_path ,class:'btn btn-primary', style: 'color:white' %>
