@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>Korisnici </h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Name</th>
-      <th>Lastname</th>
-      <th>Birthdate</th>
-      <th>Address</th>
-      <th>Birthplace</th>
-      <th>Role</th>
+      <th>Korisničko ime</th>
+      <th>Šifra/th>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>Datum rođenja</th>
+      <th>Adresa</th>
+      <th>Mjesto rođenja</th>
+      <th>Rola</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,9 +28,9 @@
         <td><%= user.address %></td>
         <td><%= user.birthplace %></td>
         <td><%= user.role_id %></td>
-        <td><%= link_to 'Show', user , class:'btn btn-primary btn-sm', style: 'color: white'%></td>
-        <td><%= link_to 'Edit', edit_user_path(user) , class: 'btn btn-primary btn-sm', style: 'color: white' %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger btn-sm', style: 'color: white'%></td>
+        <td><%= link_to 'Prikaži', user , class:'btn btn-primary btn-sm', style: 'color: white'%></td>
+        <td><%= link_to 'Uredi', edit_user_path(user) , class: 'btn btn-primary btn-sm', style: 'color: white' %></td>
+        <td><%= link_to 'Izbriši', user, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-danger btn-sm', style: 'color: white'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path , class:'btn btn-primary btn-md', style: 'color: white'%>
+<%= link_to 'Novi korisnik', new_user_path , class:'btn btn-primary btn-md', style: 'color: white'%>

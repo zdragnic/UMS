@@ -5,6 +5,8 @@ class EmployeeDetailsController < ApplicationController
   # GET /employee_details.json
   def index
     @employee_details = EmployeeDetail.all
+    @var1=params[:param1]
+    @var2=params[:param2]
   end
 
   # GET /employee_details/1

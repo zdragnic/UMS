@@ -3,7 +3,7 @@
     <%if @notice.title%>
         <h3 class="panel-title"><%= @notice.title %></h3>
     <%else %>
-        <h3 class="panel-title">New notice</h3>
+        <h3 class="panel-title">Novo obavještenje</h3>
 
     <%end%>
   </div>
@@ -33,7 +33,7 @@
 
   <div class="form-group">
     <span style="visibility: hidden"> <%= @kursevi = Course.all %> </span>
-    <%= form.label  :course_id %>
+    <%= form.label  :'Kurs' %>
     <%= form.collection_select(:course_id, @kursevi, :id, :title, {}, {:class=>'form-control'})%>
 
 
@@ -44,7 +44,7 @@
     </div>
 
   <div class="actions">
-    <%= form.submit class:'btn btn-primary'%>
+    <%= form.submit 'Sačuvaj', class:'btn btn-primary'%>
   </div>
 <% end %>
   </div>

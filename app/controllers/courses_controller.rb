@@ -64,7 +64,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.save
         #1st argument of redirect_to is an array, in order to build the correct route to the nested resource comment
-        format.html { redirect_to([@course.user, @course], :notice => 'Course was successfully created.') }
+        format.html { redirect_to([@course.user, @course], :notice => 'Kurs je uspješno kreiran.') }
         #the key :location is associated to an array in order to build the correct route to the nested resource comment
         format.xml  { render :xml => @course, :status => :created, :location => [@course.user, @course] }
       else
@@ -84,7 +84,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.update_attributes(params[:course])
         #1st argument of redirect_to is an array, in order to build the correct route to the nested resource comment
-        format.html { redirect_to([@course.user, @course], :notice => 'Comment was successfully updated.') }
+        format.html { redirect_to([@course.user, @course], :notice => 'Kurs je uspješno izmijenjen.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -98,7 +98,7 @@ class CoursesController < ApplicationController
   def destroy
     @course.destroy
     respond_to do |format|
-      format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
+      format.html { redirect_to courses_url, notice: 'Kurs je uspješno izbrisan. ' }
       format.json { head :no_content }
     end
   end

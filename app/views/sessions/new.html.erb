@@ -4,8 +4,12 @@
 <div class="wrapper">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path, class:'form-signin') do |f| %>
+        <div align="center">
+        <img src="https://avatars2.githubusercontent.com/u/6596214?s=200&v=4" width="20%" height="20%" />
+        </div>
         <h3 class="form-signin-heading">Prijava</h3>
-        <hr class="colorgraph"><br>
+        <hr style="height:1px; border-top:1px solid steelblue" />
+        <hr style="height:1px;border:none;color:#333;background-color:#333;" />
         <%= f.label :'Korisničko ime' %>
         <%= f.text_field :username, class: 'form-control' %>
 <br>

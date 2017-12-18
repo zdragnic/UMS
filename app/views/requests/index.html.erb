@@ -46,6 +46,16 @@
 <%= link_to 'Novi zahtjev', new_request_path, class:'btn btn-primary', style: 'color: white'%>
   <%else %>
 <br>
-<%= link_to 'Statistika uvjerenja', employee_details_path ,class:'btn btn-primary', style: 'color: white'%>
 <%end%>
 <br>
+<form >
+  <br>
+    Tip izvještaja:
+    <%= select_tag(:option, options_for_select([['Statistika po tipovima uvjerenja', 1], ['Obrađeni/Neobrađeni zahtjevi za uvjerenja', 2]], selected: :option)) %>
+  <% @var1=1 %>
+  Tip prikaza:
+  <%= select_tag(:option, options_for_select([['Pie chart', 1], ['Bar chart', 2]], selected: :option)) %>
+  <% @var2=2 %>
+  <br><br>
+  <%= link_to 'Prikaži statistiku', employee_details_path(:param1 => @var1, :param2 => @var2) ,class:'btn btn-primary', style: 'color: white'%>
+</form>

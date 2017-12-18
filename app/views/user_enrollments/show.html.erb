@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Study year:</strong>
+  <strong>Studijska godina:</strong>
   <%= @user_enrollment.study_year_id %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Korisnik:</strong>
   <%= @user_enrollment.user_id %>
 </p>
 
 <p>
-  <strong>Course department:</strong>
+  <strong>Kurs:</strong>
   <%= @user_enrollment.course_department_id %>
 </p>
 
 <p>
-  <strong>Lab group:</strong>
+  <strong>Laboratorijska grupa:</strong>
   <%= @user_enrollment.lab_group_id %>
 </p>
 
-<%= link_to 'Edit', edit_user_enrollment_path(@user_enrollment) %> |
-<%= link_to 'Back', user_enrollments_path %>
+<%= link_to 'Uredi', edit_user_enrollment_path(@user_enrollment) %> |
+<%= link_to 'Prikaži sve upise', user_enrollments_path %>

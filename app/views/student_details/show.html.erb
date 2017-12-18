@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Korisnik:</strong>
   <%= @student_detail.user %>
 </p>
 
@@ -11,24 +11,24 @@
 </p>
 
 <p>
-  <strong>Budget:</strong>
+  <strong>Budžet:</strong>
   <%= @student_detail.budget %>
 </p>
 
 <p>
-  <strong>Enrollmentdate:</strong>
+  <strong>Datum upisa:</strong>
   <%= @student_detail.enrollmentDate %>
 </p>
 
 <p>
-  <strong>Disrollmentdate:</strong>
+  <strong>Datum ispisa:</strong>
   <%= @student_detail.disrollmentDate %>
 </p>
 
 <p>
-  <strong>Graduationdate:</strong>
+  <strong>Datum diplomiranja:</strong>
   <%= @student_detail.graduationDate %>
 </p>
 
-<%= link_to 'Edit', edit_student_detail_path(@student_detail) %> |
-<%= link_to 'Back', student_details_path %>
+<%= link_to 'Uredi', edit_student_detail_path(@student_detail) %> |
+<%= link_to 'Prikaži detalje o svim studentima', student_details_path %>

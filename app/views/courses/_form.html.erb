@@ -3,7 +3,7 @@
     <%if @course.title%>
         <h3 class="panel-title"><%= @course.title %></h3>
     <%else %>
-        <h3 class="panel-title">New course</h3>
+        <h3 class="panel-title">Novi kurs</h3>
 
     <%end%>
   </div>
@@ -22,27 +22,27 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :title %>
+      <%= form.label :'Naziv kursa' %>
       <%= form.text_field :title,  class: 'form-control' %>
     </div>
 
     <div class="field">
-      <%= form.label :code %>
+      <%= form.label :'Šifra kursa' %>
       <%= form.text_field :code, class: 'form-control'%>
     </div>
 
         <div class="field">
-          <%= form.label :responsible %>
+          <%= form.label :'Odgovorni profesor' %>
           <span style="visibility: hidden"> <%= @responsible = User.where("role_id='4'") %> </span>
-          <br>    <%= form.collection_select :responsible, @responsible, :id, :name, {},{prompt: "Select responsible", class:'form-control'} %>
+             <%= form.collection_select :responsible, @responsible, :id, :name, {},{prompt: "Select responsible", class:'form-control'} %>
         </div>
 
         <div  style="visibility: hidden">
-          <%= form.label :user %>
+          <%= form.label :'Korisnik' %>
           <%= form.text_field :user, class: 'form-control', :value=>1%>
         </div>
     <div class="actions">
-      <%= form.submit class:'btn btn-primary'%>
+      <%= form.submit 'Kreiraj kurs', class:'btn btn-primary' %>
     </div>
 <% end %>
   </div>

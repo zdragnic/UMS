@@ -3,7 +3,7 @@
   <br>
   <div class="row content">
     <div class="col-sm-4 sidenav" style="padding-right:20px; border-right: 1px solid #ccc;" >
-      <h3>Notices</h3>
+      <h3>Obavještenja</h3>
       <br><br>
       <% @notices.each do |notice| %>
           <% if stavioObavijest?(session[:user_id], notice.course_id) %>
@@ -25,7 +25,9 @@
        <div class="row content" >
       <div class="col-sm-5" style="text-align: center">
         <div class="thumbnail shadow-depth-3">
+          <br>
           <span class="glyphicon glyphicon-user gi-5x"></span>
+          <br>
           <div class="caption">
             <a href=<%= user_path(current_user) %>><h3> Moj profil</h3></a>
           </div>
@@ -34,6 +36,7 @@
 
       <div class="col-sm-5" style="text-align: center">
         <div class="thumbnail shadow-depth-3">
+          <br>
           <span class="glyphicon glyphicon-book gi-5x"></span>
           <div class="caption">
             <a href=<%= user_courses_path(current_user) %>><h3>Moji kursevi</h3></a>
@@ -44,6 +47,7 @@
       <div class="row content">
       <div class="col-sm-5" style="text-align: center">
         <div class="thumbnail shadow-depth-3">
+          <br>
           <span class="glyphicon glyphicon-file gi-5x"></span>
           <div class="caption">
             <a href=<%= requests_path %>><h3>Uvjerenja</h3></a>
@@ -52,6 +56,7 @@
       </div>
       <div class="col-sm-5" style="text-align: center">
         <div class="thumbnail shadow-depth-3">
+          <br>
           <span class="glyphicon glyphicon-file gi-5x"></span>
           <div class="caption">
             <a href=<%= exams_path %>><h3>Ispiti</h3></a>

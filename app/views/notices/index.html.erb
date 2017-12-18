@@ -25,7 +25,7 @@
           <%= @c.pluck(:lastname)[0] %>
         </td>
         <td>
-          <% @c = Course.where('id=?', notice.user_id) %>
+          <% @c = Course.where('id=?', notice.course_id) %>
           <%= @c.pluck(:title)[0] %>
         </td>
         <td><%= link_to 'Prikaži', notice, class:'btn btn-primary btn-sm', style: 'color: white' %></td>
