@@ -1,6 +1,7 @@
 package com.example.dragnic.bpums;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
          _passwordText = (EditText) findViewById (R.id.input_password);
          _loginButton = (Button)findViewById(R.id.btn_login);
         _loginButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 login();
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             _loginButton.setEnabled(false);
 
             final ProgressDialog progressDialog = new ProgressDialog(MainActivity.this,
-                    R.style.Theme_AppCompat_DayNight_DarkActionBar);
+                    R.style.Theme_AppCompat_DayNight_Dialog);
             progressDialog.setIndeterminate(true);
             progressDialog.setMessage("Authenticating...");
             progressDialog.show();
@@ -91,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
 
         public void onLoginSuccess() {
             _loginButton.setEnabled(true);
+            Intent intent= new Intent(MainActivity.this, HomeActivity.class);
+            intent.putExtra("username", currentUser.getUsername());
+            MainActivity.this.startActivity(intent);
+
             //finish(); ovo sam maknulaa izadje iz aplikacije ne znam sta radi hahah
         }
 
