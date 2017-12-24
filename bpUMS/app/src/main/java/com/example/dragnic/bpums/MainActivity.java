@@ -2,7 +2,7 @@ package com.example.dragnic.bpums;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.StrictMode;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,17 +11,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
     EditText _emailText = null;
     EditText _passwordText = null;
     Button _loginButton = null;
     User currentUser = new User();
+    SharedPreferences sharedpreferences;
+    public static final String MyPREFERENCES = "MyPrefs" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,8 +89,10 @@ public class MainActivity extends AppCompatActivity {
 
         public void onLoginSuccess() {
             _loginButton.setEnabled(true);
-            Intent intent= new Intent(MainActivity.this, HomeActivity.class);
+
+            Intent intent= new Intent(MainActivity.this, StudentActivity.class);
             intent.putExtra("username", currentUser.getUsername());
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             MainActivity.this.startActivity(intent);
 
             //finish(); ovo sam maknulaa izadje iz aplikacije ne znam sta radi hahah
