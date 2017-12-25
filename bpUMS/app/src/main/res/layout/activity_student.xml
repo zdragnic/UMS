@@ -68,7 +68,7 @@ android:id="@+id/ll">
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:background="@drawable/cercleshape"
-                android:src="@drawable/book"
+                android:src="@drawable/knjiga"
                 android:padding="10dp" />
 
             <TextView

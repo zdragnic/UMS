@@ -89,8 +89,19 @@ public class MainActivity extends AppCompatActivity {
 
         public void onLoginSuccess() {
             _loginButton.setEnabled(true);
-
-            Intent intent= new Intent(MainActivity.this, StudentActivity.class);
+            Intent intent = null;
+            if(currentUser.getRole_id() == 2){
+            intent= new Intent(MainActivity.this, StudentActivity.class);
+            }
+            else if (currentUser.getRole_id()==3){
+            intent= new Intent(MainActivity.this, StudentskaActivity.class);
+            }
+            else if(currentUser.getRole_id()==4){
+            intent= new Intent(MainActivity.this, NastavnoActivity.class);
+            }
+            else {
+            intent= new Intent(MainActivity.this, AdminActivity.class);
+            }
             intent.putExtra("username", currentUser.getUsername());
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             MainActivity.this.startActivity(intent);
