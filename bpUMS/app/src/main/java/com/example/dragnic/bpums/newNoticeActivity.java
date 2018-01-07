@@ -13,8 +13,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -28,6 +31,9 @@ public class newNoticeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_notice);
 
+
+
+
         Intent intent= getIntent();
         final String id = intent.getStringExtra("id");
         final EditText etnaslov = (EditText) findViewById(R.id.editTextNaslov);
@@ -39,70 +45,12 @@ public class newNoticeActivity extends AppCompatActivity {
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
 
         Button btnNovaO = (Button)findViewById(R.id.buttonNova);
-        btnNovaO.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String kurs = spinner.getSelectedItem().toString();
-                Integer c_id = dajKurs(kurs);
-                String naslov = etnaslov.getText().toString(); //editTextNaslov
-                String tekst = etporuka.getText().toString(); //editTextTekst
-                boolean ispravno = validate();
 
-                java.util.Date utilDate = new java.util.Date();
-                java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-                try{
-
-                    ResultSet rs = db.select("SELECT * FROM courses");
-                    rs.moveToInsertRow();
-                    rs.updateString("title", naslov);
-                    rs.updateString("text", tekst);
-                    rs.updateInt("user_id", Integer.getInteger(id));
-                    rs.updateInt("course_id", c_id);
-                    rs.updateDate("created_at",sqlDate);
-                    rs.updateDate("updated_at",sqlDate);
-
-                    rs.insertRow();
-                    rs.moveToCurrentRow();
-                    rs.close();
-
-                    Context context = getApplicationContext();
-                    CharSequence text = "Uspjesno objavljenot!";
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                }
-
-                catch(Exception e){
-                    Log.e("Geska", e.getMessage());
-                }
-
-            }
-        });
 
         // Spinner Drop down elements
-        List<String> categories = new ArrayList<String>();
-
-
-        ResultSet rs= null;
-        try {
-        String q = "SELECT * FROM courses WHERE responsible = "+id;
-        Log.d("Upit", q);
-        rs = db.execute(q);
-        //rs.beforeFirst();
-        while (rs.next()) {
-         categories.add(rs.getString("title"));
-
-        }
-        rs.close();
-        Log.d("LISTA velicina", String.valueOf(categories.size()));
-
-    }
-
-        catch(Exception e){
-                Log.e("Geska", e.getMessage());
-                }
-
+        List<String> categories = dajKurseve(db, id);
+        Log.d("DB",db._mensagem);
+        Log.d("DB", String.valueOf(db._status));
 
 
         // Creating adapter for spinner
@@ -114,7 +62,48 @@ public class newNoticeActivity extends AppCompatActivity {
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
 
+        btnNovaO.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kurs = spinner.getSelectedItem().toString();
+               Integer c_id = dajKurs(kurs,db);
+                String naslov = etnaslov.getText().toString(); //editTextNaslov
+                String tekst = etporuka.getText().toString(); //editTextTekst
+                boolean ispravno = validate();
 
+                java.util.Date utilDate = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+                try{
+                    ResultSet r = db.execute("SELECT * FROM courses");
+                    Log.d("DB1",db._mensagem);
+                    Log.d("DB1", String.valueOf(db._status));
+                    r.moveToInsertRow();
+                    r.updateString("title", naslov);
+                    r.updateString("text", tekst);
+                    r.updateInt("user_id", Integer.getInteger(id));
+                    r.updateInt("course_id", c_id);
+                    r.updateDate("created_at",sqlDate);
+                    r.updateDate("updated_at",sqlDate);
+
+                    r.insertRow();
+                    r.moveToCurrentRow();
+
+                    Context context = getApplicationContext();
+                    CharSequence text = "Uspjesno objavljenot!";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                    r.close();
+
+                }
+
+                catch(Exception e){
+                    Log.e("Geska", e.getMessage());
+                }
+
+            }
+        });
 
 
     }
@@ -150,8 +139,7 @@ public class newNoticeActivity extends AppCompatActivity {
         return valid;
     }
 
-    public Integer dajKurs (String id) {
-        DatabseHelper db = new DatabseHelper();
+    public Integer dajKurs (String id, DatabseHelper db) {
         ResultSet rs1 = null;
         Integer c_id = 0;
 
@@ -168,6 +156,32 @@ public class newNoticeActivity extends AppCompatActivity {
             e1.printStackTrace();
         }
         return c_id;
+    }
+
+    public ArrayList<String> dajKurseve (DatabseHelper db, String id){
+        ResultSet rs= null;
+        ArrayList<String> categories = new ArrayList<>();
+        try {
+            String q = "SELECT * FROM courses WHERE responsible = "+id;
+            Log.d("Upit", q);
+            rs = db.execute(q);
+            //rs.beforeFirst();
+            while (rs.next()) {
+                categories.add(rs.getString("title"));
+
+            }
+            Log.d("DB2",db._mensagem);
+            Log.d("DB2", String.valueOf(db._status));
+            rs.close();
+            Log.d("LISTA velicina", String.valueOf(categories.size()));
+
+        }
+
+        catch(Exception e){
+            Log.e("Geska", e.getMessage());
+        }
+
+        return categories;
     }
     }
 

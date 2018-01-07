@@ -17,6 +17,10 @@ public class StudentActivity extends AppCompatActivity {
         final String id = intent.getStringExtra("id");
         View v= (View) findViewById(R.id.Logout);
         View vo= (View) findViewById(R.id.Obavijesti);
+        View vc= (View) findViewById(R.id.courses);
+        View vp= (View) findViewById(R.id.myprofile);
+
+
 
 
         //TextView _txt_username = (TextView) findViewById(R.id.txt_username);
@@ -34,6 +38,29 @@ public class StudentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= null;
                 intent= new Intent(StudentActivity.this, NoticesActivity.class);
+                intent.putExtra("id", id);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                StudentActivity.this.startActivity(intent);
+            }
+        });
+
+
+        vc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= null;
+                intent= new Intent(StudentActivity.this, CoursesActivity.class);
+                intent.putExtra("id", id);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                StudentActivity.this.startActivity(intent);
+            }
+        });
+
+        vp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= null;
+                intent= new Intent(StudentActivity.this, ProfileActivity.class);
                 intent.putExtra("id", id);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 StudentActivity.this.startActivity(intent);

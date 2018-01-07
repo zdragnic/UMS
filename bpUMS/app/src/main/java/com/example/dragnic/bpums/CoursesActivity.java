@@ -6,35 +6,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class NoticesActivity extends AppCompatActivity {
+public class CoursesActivity extends AppCompatActivity {
 
-ArrayList<Notice> poruke = new ArrayList<>();
-//dobaviti logovanog usera id njegov
-
+    ArrayList<Course> kursevi = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notices);
-        ListView lv = (ListView) findViewById(R.id.listview);
+        setContentView(R.layout.activity_courses);
+
+        ListView lv = (ListView) findViewById(R.id.lvcourses);
         Intent intent= getIntent();
         final String id = intent.getStringExtra("id");
-        Button btnNova = (Button) findViewById(R.id.butnNovaObavijest);
-        btnNova.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= null;
-                intent= new Intent(NoticesActivity.this, newNoticeActivity.class);
-                intent.putExtra("id", id);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                NoticesActivity.this.startActivity(intent);
-            }
-        });
 
         DatabseHelper db = new DatabseHelper();
         ResultSet rs= null;
@@ -50,60 +37,61 @@ ArrayList<Notice> poruke = new ArrayList<>();
                 role = rs1.getInt("role_id");
             }
             if (role == 4) {
-                String q = "SELECT * FROM notices"; //+id;
+                String q = "SELECT * FROM courses"; //+id;
                 Log.d("Upit", q);
                 rs = db.execute(q);
                 //rs.beforeFirst();
                 while (rs.next()) {
-                    Notice poruka = new Notice();
+                    Course c = new Course();
                     //Log.d("Poruka je", rs.getString("title"));
-                    poruka.setId(rs.getInt("id"));
-                    poruka.setTitle(rs.getString("title"));
-                    poruka.setText(rs.getString("text"));
-                    poruka.setCreated_at(rs.getDate("created_at"));
-                    if (String.valueOf(rs.getInt("user_id")).equals(id)) {
-                        poruke.add(poruka);
-                        Log.d("Poruka je", poruka.getTitle());
+                    c.setId(rs.getInt("id"));
+                    c.setTitle(rs.getString("title"));
+                    c.setCode(rs.getString("code"));
+                    c.setResponsible(rs.getInt("responsible"));
+                    c.setCreated_at(rs.getDate("created_at"));
+                    if (String.valueOf(rs.getInt("responsible")).equals(id)) {
+                        kursevi.add(c);
+                        Log.d("Kurs je", c.getTitle());
                     }
 
                 }
                 rs.close();
                 rs1.close();
 
-                Log.d("LISTA velicina", String.valueOf(poruke.size()));
-                ArrayAdapter<Notice> na = new NoticesAdapter(this, poruke);
+                Log.d("LISTA velicina", String.valueOf(kursevi.size()));
+                ArrayAdapter<Course> na = new CoursesAdapter(this, kursevi);
                 lv.setAdapter(na);
-                btnNova.setVisibility(View.VISIBLE);
 
 
 
             } else {
-                String q = "SELECT * FROM notices"; //+id;
+                String q = "SELECT * FROM courses"; //+id;
                 Log.d("Upit", q);
                 rs = db.execute(q);
                 //rs.beforeFirst();
                 while (rs.next()) {
-                    Notice poruka = new Notice();
+                    Course c = new Course();
                     //Log.d("Poruka je", rs.getString("title"));
-                    poruka.setId(rs.getInt("id"));
-                    poruka.setTitle(rs.getString("title"));
-                    poruka.setText(rs.getString("text"));
-                    poruka.setCreated_at(rs.getDate("created_at"));
-                    if (slusaKurs(id, rs.getInt("course_id"))) {
-                        poruke.add(poruka);
-                        Log.d("Poruka je", poruka.getTitle());
+                    c.setId(rs.getInt("id"));
+                    c.setTitle(rs.getString("title"));
+                    c.setCode(rs.getString("code"));
+                    c.setResponsible(rs.getInt("responsible"));
+                    c.setCreated_at(rs.getDate("created_at"));
+                    if (slusaKurs(id, rs.getInt("id"))) {
+                        kursevi.add(c);
+                        Log.d("Kurs je", c.getTitle());
                     }
 
                 }
                 rs.close();
-                Log.d("LISTA velicina", String.valueOf(poruke.size()));
-                ArrayAdapter<Notice> na = new NoticesAdapter(this, poruke);
+                Log.d("LISTA velicina", String.valueOf(kursevi.size()));
+                ArrayAdapter<Course> na = new CoursesAdapter(this, kursevi);
                 lv.setAdapter(na);
             }
         }
         catch(Exception e){
-                Log.e("Geska", e.getMessage());
-            }
+            Log.e("Geska", e.getMessage());
+        }
 
     }
 
@@ -121,18 +109,18 @@ ArrayList<Notice> poruke = new ArrayList<>();
             rs = db.execute(q1);
 
             if (rs.next()) {
-            idDep= rs.getInt("id");
+                idDep= rs.getInt("id");
             }
             String q= "SELECT * FROM user_enrollments WHERE user_id= "+user_id+" AND course_department_id= "+idDep;
             Log.d("Upit",q);
             rs1 = db.execute(q);
             if (rs1.next()) {
-            slusa = true;
+                slusa = true;
             }
             rs.close();
             rs1.close();
             Log.d("SLUSA", String.valueOf(slusa));
-                  }
+        }
         catch (Exception e){
             Log.e("Geska",e.getMessage());
         }
@@ -140,4 +128,5 @@ ArrayList<Notice> poruke = new ArrayList<>();
         return slusa;
 
     }
+
 }

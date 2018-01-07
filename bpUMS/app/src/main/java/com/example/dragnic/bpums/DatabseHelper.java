@@ -41,7 +41,7 @@ public class DatabseHelper extends _Default implements Runnable {
         }
     }
 
-    private void connect(){
+    public void connect(){
         Thread thread = new Thread(this);
         thread.start();
         try{
@@ -52,7 +52,7 @@ public class DatabseHelper extends _Default implements Runnable {
         }
     }
 
-    private void disconnect(){
+    public void disconnect(){
         if (this.conn!= null){
             try{
                 this.conn.close();
@@ -81,6 +81,7 @@ public class DatabseHelper extends _Default implements Runnable {
         ResultSet resultSet = null;
         try {
             resultSet = new ExecuteDB(this.conn, query).execute().get();
+
         }catch (Exception e){
             this._status = false;
             this._mensagem = e.getMessage();
