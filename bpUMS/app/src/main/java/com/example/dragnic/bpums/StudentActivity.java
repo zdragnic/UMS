@@ -14,8 +14,10 @@ public class StudentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
         Intent intent= getIntent();
-        String username = intent.getStringExtra("username");
+        final String id = intent.getStringExtra("id");
         View v= (View) findViewById(R.id.Logout);
+        View vo= (View) findViewById(R.id.Obavijesti);
+
 
         //TextView _txt_username = (TextView) findViewById(R.id.txt_username);
         //Button _logoutButton = (Button)findViewById(R.id.btn_logout);
@@ -25,6 +27,16 @@ public class StudentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 logout();
+            }
+        });
+       vo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= null;
+                intent= new Intent(StudentActivity.this, NoticesActivity.class);
+                intent.putExtra("id", id);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                StudentActivity.this.startActivity(intent);
             }
         });
     }

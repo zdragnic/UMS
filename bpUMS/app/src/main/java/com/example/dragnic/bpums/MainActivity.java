@@ -18,8 +18,7 @@ public class MainActivity extends AppCompatActivity {
     EditText _passwordText = null;
     Button _loginButton = null;
     User currentUser = new User();
-    SharedPreferences sharedpreferences;
-    public static final String MyPREFERENCES = "MyPrefs" ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Upit",q);
                 rs = db.execute(q);
                 if (rs.next()) {
-                    Log.d("Username logovanog je", rs.getString("username"));
+                    Log.d("Username logovanog je", rs.getString("id"));
                     currentUser.setId(rs.getInt("id"));
                     currentUser.setPassword(rs.getString("password"));
                     currentUser.setRole_id(rs.getInt("role_id"));
@@ -102,7 +101,9 @@ public class MainActivity extends AppCompatActivity {
             else {
             intent= new Intent(MainActivity.this, AdminActivity.class);
             }
-            intent.putExtra("username", currentUser.getUsername());
+            String s= String.valueOf(currentUser.getId());
+            intent.putExtra("id", s);
+            Log.d("User id je", s);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             MainActivity.this.startActivity(intent);
 

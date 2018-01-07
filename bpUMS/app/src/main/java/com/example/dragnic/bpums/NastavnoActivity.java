@@ -11,13 +11,30 @@ public class NastavnoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nastavno);
+
+        Intent intent= getIntent();
+        final String id = intent.getStringExtra("id");
         View v= (View) findViewById(R.id.Logout);
+        View vo= (View) findViewById(R.id.Obavijesti);
+
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 logout();
             }
         });
+
+        vo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= null;
+                intent= new Intent(NastavnoActivity.this, NoticesActivity.class);
+                intent.putExtra("id", id);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                NastavnoActivity.this.startActivity(intent);
+            }
+        });
+
     }
 
     public  void logout(){

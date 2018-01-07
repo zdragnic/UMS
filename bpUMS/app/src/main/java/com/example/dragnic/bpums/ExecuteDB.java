@@ -23,7 +23,8 @@ public class ExecuteDB extends AsyncTask<String,Void,ResultSet> {
     protected ResultSet doInBackground(String... params) {
         ResultSet resultSet = null;
         try{
-            resultSet = connection.prepareStatement(query).executeQuery();
+            resultSet = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE).executeQuery(query);
         }catch (Exception e){
 
         }finally {

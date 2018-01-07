@@ -21,7 +21,9 @@
         <activity android:name=".StudentActivity" />
         <activity android:name=".StudentskaActivity" />
         <activity android:name=".NastavnoActivity" />
-        <activity android:name=".AdminActivity"></activity>
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".NoticesActivity" />
+        <activity android:name=".newNoticeActivity"></activity>
     </application>
 
 </manifest>
