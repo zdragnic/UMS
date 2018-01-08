@@ -66,40 +66,33 @@ public class newNoticeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String kurs = spinner.getSelectedItem().toString();
-               Integer c_id = dajKurs(kurs,db);
+                Integer c_id = dajKurs(kurs,db);
                 String naslov = etnaslov.getText().toString(); //editTextNaslov
                 String tekst = etporuka.getText().toString(); //editTextTekst
                 boolean ispravno = validate();
-
-                java.util.Date utilDate = new java.util.Date();
-                java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-                try{
-                    ResultSet r = db.execute("SELECT * FROM courses");
-                    Log.d("DB1",db._mensagem);
-                    Log.d("DB1", String.valueOf(db._status));
-                    r.moveToInsertRow();
-                    r.updateString("title", naslov);
-                    r.updateString("text", tekst);
-                    r.updateInt("user_id", Integer.getInteger(id));
-                    r.updateInt("course_id", c_id);
-                    r.updateDate("created_at",sqlDate);
-                    r.updateDate("updated_at",sqlDate);
-
-                    r.insertRow();
-                    r.moveToCurrentRow();
-
+                if(ispravno) {
+                    java.util.Date utilDate = new java.util.Date();
+                    java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+                    Notice n = new Notice();
+                    n.setUser_id(11);
+                    n.setCourse_id(c_id);
+                    n.setCreated_at(sqlDate);
+                    n.setTitle(naslov);
+                    n.setText(tekst);
+                    //trebao bi dio koda da provjerava jel fkt dodao u bazu
+                    n.save();
                     Context context = getApplicationContext();
-                    CharSequence text = "Uspjesno objavljenot!";
+                    CharSequence text = "Objavljena obavijest!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                    r.close();
 
-                }
-
-                catch(Exception e){
-                    Log.e("Geska", e.getMessage());
+                    Intent intent = null;
+                    intent = new Intent(newNoticeActivity.this, NoticesActivity.class);
+                    intent.putExtra("id", id);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    newNoticeActivity.this.startActivity(intent);
                 }
 
             }

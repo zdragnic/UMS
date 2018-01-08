@@ -1,3 +1,4 @@
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -5,6 +6,12 @@
     android:paddingTop="56dp"
     android:paddingLeft="24dp"
     android:paddingRight="24dp">
+    <Button
+        android:id="@+id/butnNovaObavijest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nova obavijest"
+        android:visibility="invisible" />
 
     <ListView
         android:id="@+id/listview"
@@ -13,11 +20,6 @@
 
     </ListView>
 
-    <Button
-        android:id="@+id/butnNovaObavijest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nova obavijest"
-        android:visibility="invisible" />
+
 
 </LinearLayout>
