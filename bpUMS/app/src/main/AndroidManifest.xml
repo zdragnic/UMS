@@ -25,7 +25,9 @@
         <activity android:name=".NoticesActivity" />
         <activity android:name=".newNoticeActivity" />
         <activity android:name=".CoursesActivity" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".RequestsActivity" />
+        <activity android:name=".newRequestActivity"></activity>
     </application>
 
 </manifest>

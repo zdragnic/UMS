@@ -11,11 +11,40 @@ public class StudentskaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_studentska);
+
+        Intent intent= getIntent();
+        final String id = intent.getStringExtra("id");
         View v= (View) findViewById(R.id.Logout);
+        View vu= (View) findViewById(R.id.zahtjevi);
+        View vp= (View) findViewById(R.id.myprofile);
+
+
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 logout();
+            }
+        });
+
+        vu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= null;
+                intent= new Intent(StudentskaActivity.this, RequestsActivity.class);
+                intent.putExtra("id", id);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                StudentskaActivity.this.startActivity(intent);
+            }
+        });
+
+        vp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= null;
+                intent= new Intent(StudentskaActivity.this, ProfileActivity.class);
+                intent.putExtra("id", id);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                StudentskaActivity.this.startActivity(intent);
             }
         });
     }

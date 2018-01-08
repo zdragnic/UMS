@@ -74,7 +74,7 @@ public class newNoticeActivity extends AppCompatActivity {
                     java.util.Date utilDate = new java.util.Date();
                     java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
                     Notice n = new Notice();
-                    n.setUser_id(11);
+                    n.setUser_id(Integer.parseInt(id));
                     n.setCourse_id(c_id);
                     n.setCreated_at(sqlDate);
                     n.setTitle(naslov);

@@ -19,6 +19,7 @@ public class StudentActivity extends AppCompatActivity {
         View vo= (View) findViewById(R.id.Obavijesti);
         View vc= (View) findViewById(R.id.courses);
         View vp= (View) findViewById(R.id.myprofile);
+        View vu= (View) findViewById(R.id.requests);
 
 
 
@@ -61,6 +62,17 @@ public class StudentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= null;
                 intent= new Intent(StudentActivity.this, ProfileActivity.class);
+                intent.putExtra("id", id);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                StudentActivity.this.startActivity(intent);
+            }
+        });
+
+        vu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= null;
+                intent= new Intent(StudentActivity.this, RequestsActivity.class);
                 intent.putExtra("id", id);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 StudentActivity.this.startActivity(intent);
