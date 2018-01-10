@@ -1,10 +1,13 @@
 package com.example.dragnic.bpums;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -15,6 +18,7 @@ import java.util.ArrayList;
 public class NoticesActivity extends AppCompatActivity {
 
 ArrayList<Notice> poruke = new ArrayList<>();
+    ArrayAdapter<Notice> na = null;
 //dobaviti logovanog usera id njegov
 
     @Override
@@ -22,6 +26,7 @@ ArrayList<Notice> poruke = new ArrayList<>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notices);
         ListView lv = (ListView) findViewById(R.id.listview);
+
         Intent intent= getIntent();
         final String id = intent.getStringExtra("id");
         Button btnNova = (Button) findViewById(R.id.butnNovaObavijest);
@@ -49,7 +54,55 @@ ArrayList<Notice> poruke = new ArrayList<>();
             if (rs1.next()) {
                 role = rs1.getInt("role_id");
             }
+            //profesor
             if (role == 4) {
+
+                //brisanje
+
+                lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                                   int position, long arg3) {
+
+                        final Notice n = na.getItem(position);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(NoticesActivity.this);
+
+                        builder.setTitle("Potvrdite brisanje");
+                        builder.setMessage("Da li ste sigurni?");
+
+                        builder.setPositiveButton("DA", new DialogInterface.OnClickListener() {
+
+                            public void onClick(DialogInterface dialog, int which) {
+                                n.delete();
+                                na.notifyDataSetChanged();
+
+                                dialog.dismiss();
+                                //refresh aktivnosti
+                                finish();
+                                startActivity(getIntent());
+                            }
+                        });
+
+                        builder.setNegativeButton("NE", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                // Do nothing
+                                dialog.dismiss();
+                            }
+                        });
+
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
+
+                        return false;
+                    }
+
+                });
+
                 String q = "SELECT * FROM notices"; //+id;
                 Log.d("Upit", q);
                 rs = db.execute(q);
@@ -71,7 +124,7 @@ ArrayList<Notice> poruke = new ArrayList<>();
                 rs1.close();
 
                 Log.d("LISTA velicina", String.valueOf(poruke.size()));
-                ArrayAdapter<Notice> na = new NoticesAdapter(this, poruke);
+                na = new NoticesAdapter(this, poruke);
                 lv.setAdapter(na);
                 btnNova.setVisibility(View.VISIBLE);
 
@@ -97,13 +150,16 @@ ArrayList<Notice> poruke = new ArrayList<>();
                 }
                 rs.close();
                 Log.d("LISTA velicina", String.valueOf(poruke.size()));
-                ArrayAdapter<Notice> na = new NoticesAdapter(this, poruke);
+                na = new NoticesAdapter(this, poruke);
                 lv.setAdapter(na);
             }
         }
         catch(Exception e){
                 Log.e("Geska", e.getMessage());
             }
+
+
+
 
     }
 

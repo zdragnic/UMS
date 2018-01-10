@@ -14,10 +14,11 @@ public class NastavnoActivity extends AppCompatActivity {
 
         Intent intent= getIntent();
         final String id = intent.getStringExtra("id");
-        View v= (View) findViewById(R.id.Logout);
+        View v=  (View)  findViewById(R.id.Logout);
         View vo= (View) findViewById(R.id.Obavijesti);
         View vc= (View) findViewById(R.id.courses);
         View vp= (View) findViewById(R.id.myprofile);
+        View ve= (View) findViewById(R.id.exams);
 
 
         v.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +55,17 @@ public class NastavnoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= null;
                 intent= new Intent(NastavnoActivity.this, ProfileActivity.class);
+                intent.putExtra("id", id);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                NastavnoActivity.this.startActivity(intent);
+            }
+        });
+
+        ve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= null;
+                intent= new Intent(NastavnoActivity.this, newExamActivity.class);
                 intent.putExtra("id", id);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 NastavnoActivity.this.startActivity(intent);

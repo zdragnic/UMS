@@ -27,7 +27,8 @@
         <activity android:name=".CoursesActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".RequestsActivity" />
-        <activity android:name=".newRequestActivity"></activity>
+        <activity android:name=".newRequestActivity" />
+        <activity android:name=".newExamActivity"></activity>
     </application>
 
 </manifest>

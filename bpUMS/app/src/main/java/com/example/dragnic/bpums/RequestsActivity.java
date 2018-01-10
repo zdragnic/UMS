@@ -1,10 +1,13 @@
 package com.example.dragnic.bpums;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -14,6 +17,7 @@ import java.util.ArrayList;
 
 public class RequestsActivity extends AppCompatActivity {
     ArrayList<Request> zahtjevi = new ArrayList<>();
+    ArrayAdapter<Request> na = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +84,53 @@ public class RequestsActivity extends AppCompatActivity {
 
             //student
             } else {
+
+                //brisanje
+
+                lvR.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                                   int position, long arg3) {
+
+                        final Request r = na.getItem(position);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(RequestsActivity.this);
+
+                        builder.setTitle("Potvrdite brisanje");
+                        builder.setMessage("Da li ste sigurni?");
+
+                        builder.setPositiveButton("DA", new DialogInterface.OnClickListener() {
+
+                            public void onClick(DialogInterface dialog, int which) {
+                                r.delete();
+                                na.notifyDataSetChanged();
+
+                                dialog.dismiss();
+                                //refresh aktivnosti
+                                finish();
+                                startActivity(getIntent());
+                            }
+                        });
+
+                        builder.setNegativeButton("NE", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                // Do nothing
+                                dialog.dismiss();
+                            }
+                        });
+
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
+
+                        return false;
+                    }
+
+                });
+
                 String q = "SELECT * FROM requests";
                 Log.d("Upit", q);
                 rs = db.execute(q);
@@ -101,7 +152,7 @@ public class RequestsActivity extends AppCompatActivity {
 
             }
                 rs.close();
-            ArrayAdapter<Request> na = new RequestsAdapter(this, zahtjevi);
+            na = new RequestsAdapter(this, zahtjevi);
             lvR.setAdapter(na);
             }
 
