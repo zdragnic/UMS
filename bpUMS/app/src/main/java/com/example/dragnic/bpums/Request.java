@@ -64,6 +64,10 @@ public class Request {
             q = String.format("INSERT INTO requests (status,user_id, credential_id, created_at, updated_at) VALUES ('%d','%d','%d','%s','%s');",
                     this.isStatus(),this.getUser_id(),this.getCredential_id(), this.getCreated_at(),this.getCreated_at());
         }
+        else{
+            q = String.format("UPDATE requests SET status = '%d' WHERE id = %d;",
+                    1,this.getId());
+        }
         Log.d("Upit save", q);
         DatabseHelper db = new DatabseHelper();
 

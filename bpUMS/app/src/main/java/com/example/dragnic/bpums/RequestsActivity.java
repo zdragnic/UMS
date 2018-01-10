@@ -54,7 +54,55 @@ public class RequestsActivity extends AppCompatActivity {
             if (rs1.next()) {
                 role = rs1.getInt("role_id");
             }
+            //studentska
             if (role == 3) {
+
+                //brisanje
+
+                lvR.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                                   int position, long arg3) {
+
+                        final Request r = na.getItem(position);
+                        Log.d("Brisem zahtjev id", String.valueOf(r.getId()));
+                        AlertDialog.Builder builder = new AlertDialog.Builder(RequestsActivity.this);
+
+                        builder.setTitle("Zahtjev obradjen");
+                        builder.setMessage("Da li ste sigurni?");
+
+                        builder.setPositiveButton("DA", new DialogInterface.OnClickListener() {
+
+                            public void onClick(DialogInterface dialog, int which) {
+                                r.save();
+                                na.notifyDataSetChanged();
+
+                                dialog.dismiss();
+                                //refresh aktivnosti
+                                finish();
+                                startActivity(getIntent());
+                            }
+                        });
+
+                        builder.setNegativeButton("NE", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                // Do nothing
+                                dialog.dismiss();
+                            }
+                        });
+
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
+
+                        return false;
+                    }
+
+                });
                 String q = "SELECT * FROM requests"; //+id;
                 Log.d("Upit", q);
                 rs = db.execute(q);
