@@ -1,0 +1,1853 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 10.0
+-- Dumped by pg_dump version 10.0
+
+-- Started on 2018-01-17 13:19:39
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3042 (class 1262 OID 16483)
+-- Name: UniversityManagementSystem_development; Type: DATABASE; Schema: -; Owner: bp
+--
+
+CREATE DATABASE "UniversityManagementSystem_development" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'Bosnian (Latin)_Bosnia and Herzegovina.1250' LC_CTYPE = 'Bosnian (Latin)_Bosnia and Herzegovina.1250';
+
+
+ALTER DATABASE "UniversityManagementSystem_development" OWNER TO bp;
+
+\connect "UniversityManagementSystem_development"
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 1 (class 3079 OID 12924)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 3044 (class 0 OID 0)
+-- Dependencies: 1
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 209 (class 1259 OID 16701)
+-- Name: academic_years; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE academic_years (
+    id bigint NOT NULL,
+    title character varying,
+    active bit(1),
+    start date,
+    "end" date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE academic_years OWNER TO bp;
+
+--
+-- TOC entry 208 (class 1259 OID 16699)
+-- Name: academic_years_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE academic_years_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE academic_years_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3045 (class 0 OID 0)
+-- Dependencies: 208
+-- Name: academic_years_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE academic_years_id_seq OWNED BY academic_years.id;
+
+
+--
+-- TOC entry 197 (class 1259 OID 16493)
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE ar_internal_metadata OWNER TO bp;
+
+--
+-- TOC entry 213 (class 1259 OID 16723)
+-- Name: course_departments; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE course_departments (
+    id bigint NOT NULL,
+    course_id bigint,
+    department_id bigint,
+    academic_year_id bigint,
+    semester_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE course_departments OWNER TO bp;
+
+--
+-- TOC entry 212 (class 1259 OID 16721)
+-- Name: course_departments_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE course_departments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE course_departments_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3046 (class 0 OID 0)
+-- Dependencies: 212
+-- Name: course_departments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE course_departments_id_seq OWNED BY course_departments.id;
+
+
+--
+-- TOC entry 205 (class 1259 OID 16673)
+-- Name: courses; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE courses (
+    id bigint NOT NULL,
+    title character varying,
+    code character varying,
+    user_id bigint,
+    responsible integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE courses OWNER TO bp;
+
+--
+-- TOC entry 204 (class 1259 OID 16671)
+-- Name: courses_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE courses_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE courses_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3047 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: courses_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE courses_id_seq OWNED BY courses.id;
+
+
+--
+-- TOC entry 225 (class 1259 OID 16883)
+-- Name: credentials; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE credentials (
+    id bigint NOT NULL,
+    title character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE credentials OWNER TO bp;
+
+--
+-- TOC entry 224 (class 1259 OID 16881)
+-- Name: credentials_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE credentials_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE credentials_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3048 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: credentials_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE credentials_id_seq OWNED BY credentials.id;
+
+
+--
+-- TOC entry 211 (class 1259 OID 16712)
+-- Name: departments; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE departments (
+    id bigint NOT NULL,
+    title character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE departments OWNER TO bp;
+
+--
+-- TOC entry 210 (class 1259 OID 16710)
+-- Name: departments_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE departments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE departments_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3049 (class 0 OID 0)
+-- Dependencies: 210
+-- Name: departments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE departments_id_seq OWNED BY departments.id;
+
+
+--
+-- TOC entry 203 (class 1259 OID 16582)
+-- Name: employee_details; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE employee_details (
+    id bigint NOT NULL,
+    user_id bigint,
+    salary double precision,
+    "employmentDate" date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE employee_details OWNER TO bp;
+
+--
+-- TOC entry 202 (class 1259 OID 16580)
+-- Name: employee_details_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE employee_details_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE employee_details_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3050 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: employee_details_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE employee_details_id_seq OWNED BY employee_details.id;
+
+
+--
+-- TOC entry 231 (class 1259 OID 16931)
+-- Name: exam_students; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE exam_students (
+    id bigint NOT NULL,
+    exam_id bigint,
+    user_id bigint,
+    status bit(1),
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE exam_students OWNER TO bp;
+
+--
+-- TOC entry 230 (class 1259 OID 16929)
+-- Name: exam_students_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE exam_students_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE exam_students_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3051 (class 0 OID 0)
+-- Dependencies: 230
+-- Name: exam_students_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE exam_students_id_seq OWNED BY exam_students.id;
+
+
+--
+-- TOC entry 229 (class 1259 OID 16914)
+-- Name: exams; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE exams (
+    id bigint NOT NULL,
+    title character varying,
+    scheduled date,
+    course_department_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE exams OWNER TO bp;
+
+--
+-- TOC entry 228 (class 1259 OID 16912)
+-- Name: exams_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE exams_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE exams_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3052 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: exams_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE exams_id_seq OWNED BY exams.id;
+
+
+--
+-- TOC entry 215 (class 1259 OID 16755)
+-- Name: lab_groups; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE lab_groups (
+    id bigint NOT NULL,
+    title character varying,
+    course_department_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE lab_groups OWNER TO bp;
+
+--
+-- TOC entry 214 (class 1259 OID 16753)
+-- Name: lab_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE lab_groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE lab_groups_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3053 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: lab_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE lab_groups_id_seq OWNED BY lab_groups.id;
+
+
+--
+-- TOC entry 223 (class 1259 OID 16860)
+-- Name: notices; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE notices (
+    id bigint NOT NULL,
+    title character varying,
+    text character varying,
+    user_id bigint,
+    course_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE notices OWNER TO bp;
+
+--
+-- TOC entry 222 (class 1259 OID 16858)
+-- Name: notices_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE notices_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE notices_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3054 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: notices_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE notices_id_seq OWNED BY notices.id;
+
+
+--
+-- TOC entry 227 (class 1259 OID 16894)
+-- Name: requests; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE requests (
+    id bigint NOT NULL,
+    status bit(1),
+    user_id bigint,
+    credential_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE requests OWNER TO bp;
+
+--
+-- TOC entry 226 (class 1259 OID 16892)
+-- Name: requests_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE requests_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE requests_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3055 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: requests_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE requests_id_seq OWNED BY requests.id;
+
+
+--
+-- TOC entry 199 (class 1259 OID 16537)
+-- Name: roles; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE roles (
+    id bigint NOT NULL,
+    name character varying,
+    description character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE roles OWNER TO bp;
+
+--
+-- TOC entry 198 (class 1259 OID 16535)
+-- Name: roles_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE roles_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE roles_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3056 (class 0 OID 0)
+-- Dependencies: 198
+-- Name: roles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE roles_id_seq OWNED BY roles.id;
+
+
+--
+-- TOC entry 196 (class 1259 OID 16485)
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE schema_migrations (
+    version character varying NOT NULL
+);
+
+
+ALTER TABLE schema_migrations OWNER TO bp;
+
+--
+-- TOC entry 207 (class 1259 OID 16690)
+-- Name: semesters; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE semesters (
+    id bigint NOT NULL,
+    title character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE semesters OWNER TO bp;
+
+--
+-- TOC entry 206 (class 1259 OID 16688)
+-- Name: semesters_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE semesters_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE semesters_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3057 (class 0 OID 0)
+-- Dependencies: 206
+-- Name: semesters_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE semesters_id_seq OWNED BY semesters.id;
+
+
+--
+-- TOC entry 219 (class 1259 OID 16788)
+-- Name: student_details; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE student_details (
+    id bigint NOT NULL,
+    user_id bigint,
+    indeks character varying,
+    budget bit(1),
+    "enrollmentDate" date,
+    "disrollmentDate" date,
+    "graduationDate" date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE student_details OWNER TO bp;
+
+--
+-- TOC entry 218 (class 1259 OID 16786)
+-- Name: student_details_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE student_details_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE student_details_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3058 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: student_details_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE student_details_id_seq OWNED BY student_details.id;
+
+
+--
+-- TOC entry 217 (class 1259 OID 16772)
+-- Name: study_years; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE study_years (
+    id bigint NOT NULL,
+    title character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE study_years OWNER TO bp;
+
+--
+-- TOC entry 216 (class 1259 OID 16770)
+-- Name: study_years_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE study_years_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE study_years_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3059 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: study_years_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE study_years_id_seq OWNED BY study_years.id;
+
+
+--
+-- TOC entry 221 (class 1259 OID 16805)
+-- Name: user_enrollments; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE user_enrollments (
+    id bigint NOT NULL,
+    study_year_id bigint,
+    user_id bigint,
+    course_department_id bigint,
+    lab_group_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE user_enrollments OWNER TO bp;
+
+--
+-- TOC entry 220 (class 1259 OID 16803)
+-- Name: user_enrollments_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE user_enrollments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE user_enrollments_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3060 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: user_enrollments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE user_enrollments_id_seq OWNED BY user_enrollments.id;
+
+
+--
+-- TOC entry 201 (class 1259 OID 16561)
+-- Name: users; Type: TABLE; Schema: public; Owner: bp
+--
+
+CREATE TABLE users (
+    id bigint NOT NULL,
+    role_id bigint,
+    username character varying,
+    password character varying,
+    name character varying,
+    lastname character varying,
+    "birthDate" date,
+    address character varying,
+    birthplace character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE users OWNER TO bp;
+
+--
+-- TOC entry 200 (class 1259 OID 16559)
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: bp
+--
+
+CREATE SEQUENCE users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE users_id_seq OWNER TO bp;
+
+--
+-- TOC entry 3061 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bp
+--
+
+ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- TOC entry 2793 (class 2604 OID 16704)
+-- Name: academic_years id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY academic_years ALTER COLUMN id SET DEFAULT nextval('academic_years_id_seq'::regclass);
+
+
+--
+-- TOC entry 2795 (class 2604 OID 16726)
+-- Name: course_departments id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY course_departments ALTER COLUMN id SET DEFAULT nextval('course_departments_id_seq'::regclass);
+
+
+--
+-- TOC entry 2791 (class 2604 OID 16676)
+-- Name: courses id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY courses ALTER COLUMN id SET DEFAULT nextval('courses_id_seq'::regclass);
+
+
+--
+-- TOC entry 2801 (class 2604 OID 16886)
+-- Name: credentials id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY credentials ALTER COLUMN id SET DEFAULT nextval('credentials_id_seq'::regclass);
+
+
+--
+-- TOC entry 2794 (class 2604 OID 16715)
+-- Name: departments id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY departments ALTER COLUMN id SET DEFAULT nextval('departments_id_seq'::regclass);
+
+
+--
+-- TOC entry 2790 (class 2604 OID 16585)
+-- Name: employee_details id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY employee_details ALTER COLUMN id SET DEFAULT nextval('employee_details_id_seq'::regclass);
+
+
+--
+-- TOC entry 2804 (class 2604 OID 16934)
+-- Name: exam_students id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY exam_students ALTER COLUMN id SET DEFAULT nextval('exam_students_id_seq'::regclass);
+
+
+--
+-- TOC entry 2803 (class 2604 OID 16917)
+-- Name: exams id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY exams ALTER COLUMN id SET DEFAULT nextval('exams_id_seq'::regclass);
+
+
+--
+-- TOC entry 2796 (class 2604 OID 16758)
+-- Name: lab_groups id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY lab_groups ALTER COLUMN id SET DEFAULT nextval('lab_groups_id_seq'::regclass);
+
+
+--
+-- TOC entry 2800 (class 2604 OID 16863)
+-- Name: notices id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY notices ALTER COLUMN id SET DEFAULT nextval('notices_id_seq'::regclass);
+
+
+--
+-- TOC entry 2802 (class 2604 OID 16897)
+-- Name: requests id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY requests ALTER COLUMN id SET DEFAULT nextval('requests_id_seq'::regclass);
+
+
+--
+-- TOC entry 2788 (class 2604 OID 16540)
+-- Name: roles id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY roles ALTER COLUMN id SET DEFAULT nextval('roles_id_seq'::regclass);
+
+
+--
+-- TOC entry 2792 (class 2604 OID 16693)
+-- Name: semesters id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY semesters ALTER COLUMN id SET DEFAULT nextval('semesters_id_seq'::regclass);
+
+
+--
+-- TOC entry 2798 (class 2604 OID 16791)
+-- Name: student_details id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY student_details ALTER COLUMN id SET DEFAULT nextval('student_details_id_seq'::regclass);
+
+
+--
+-- TOC entry 2797 (class 2604 OID 16775)
+-- Name: study_years id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY study_years ALTER COLUMN id SET DEFAULT nextval('study_years_id_seq'::regclass);
+
+
+--
+-- TOC entry 2799 (class 2604 OID 16808)
+-- Name: user_enrollments id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY user_enrollments ALTER COLUMN id SET DEFAULT nextval('user_enrollments_id_seq'::regclass);
+
+
+--
+-- TOC entry 2789 (class 2604 OID 16564)
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- TOC entry 3015 (class 0 OID 16701)
+-- Dependencies: 209
+-- Data for Name: academic_years; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO academic_years (id, title, active, start, "end", created_at, updated_at) VALUES (1, '2017/2017', B'1', '2017-12-09', '2017-12-09', '2017-12-09 09:55:59.188817', '2017-12-09 09:55:59.188817');
+
+
+--
+-- TOC entry 3003 (class 0 OID 16493)
+-- Dependencies: 197
+-- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO ar_internal_metadata (key, value, created_at, updated_at) VALUES ('environment', 'development', '2017-11-05 17:28:34.754183', '2017-11-05 17:28:34.754183');
+
+
+--
+-- TOC entry 3019 (class 0 OID 16723)
+-- Dependencies: 213
+-- Data for Name: course_departments; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO course_departments (id, course_id, department_id, academic_year_id, semester_id, created_at, updated_at) VALUES (1, 1, 1, 1, 1, '2017-02-01 00:00:00', '2017-02-02 00:00:00');
+INSERT INTO course_departments (id, course_id, department_id, academic_year_id, semester_id, created_at, updated_at) VALUES (2, 3, 1, 1, 5, '2017-02-01 00:00:00', '2017-02-01 00:00:00');
+INSERT INTO course_departments (id, course_id, department_id, academic_year_id, semester_id, created_at, updated_at) VALUES (3, 4, 1, 1, 7, '2017-02-01 00:00:00', '2017-02-01 00:00:00');
+INSERT INTO course_departments (id, course_id, department_id, academic_year_id, semester_id, created_at, updated_at) VALUES (4, 5, 1, 1, 7, '2017-02-01 00:00:00', '2017-02-01 00:00:00');
+INSERT INTO course_departments (id, course_id, department_id, academic_year_id, semester_id, created_at, updated_at) VALUES (5, 6, 1, 1, 7, '2017-02-01 00:00:00', '2017-02-01 00:00:00');
+INSERT INTO course_departments (id, course_id, department_id, academic_year_id, semester_id, created_at, updated_at) VALUES (6, 2, 1, 1, 7, '2017-02-01 00:00:00', '2017-02-01 00:00:00');
+
+
+--
+-- TOC entry 3011 (class 0 OID 16673)
+-- Dependencies: 205
+-- Data for Name: courses; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO courses (id, title, code, user_id, responsible, created_at, updated_at) VALUES (2, 'ASP', 'RIO35', 2, 11, '2017-12-05 23:39:20.341707', '2017-12-05 23:39:20.341707');
+INSERT INTO courses (id, title, code, user_id, responsible, created_at, updated_at) VALUES (1, 'VVS', 'RIO34', 4, 9, '2017-12-05 23:39:06.117428', '2017-12-05 23:39:06.117428');
+INSERT INTO courses (id, title, code, user_id, responsible, created_at, updated_at) VALUES (4, 'MMS', 'RIO787', 1, 11, '2017-12-05 23:49:10.998045', '2017-12-05 23:49:10.998045');
+INSERT INTO courses (id, title, code, user_id, responsible, created_at, updated_at) VALUES (3, 'PRS', 'RIO36', 4, 10, '2017-12-05 23:39:31.69751', '2017-12-05 23:39:31.69751');
+INSERT INTO courses (id, title, code, user_id, responsible, created_at, updated_at) VALUES (6, 'NM', 'RIO2017', 1, 13, '2017-12-09 10:22:37.799551', '2017-12-09 10:22:37.799551');
+INSERT INTO courses (id, title, code, user_id, responsible, created_at, updated_at) VALUES (5, 'POOS', 'RIO123', 2, 12, '2017-12-06 19:14:11.760949', '2017-12-06 19:14:11.760949');
+INSERT INTO courses (id, title, code, user_id, responsible, created_at, updated_at) VALUES (7, 'IM3', 'RIO123', 1, 13, '2017-12-18 09:28:06.268256', '2017-12-18 09:28:06.268256');
+INSERT INTO courses (id, title, code, user_id, responsible, created_at, updated_at) VALUES (8, 'Novi Kurs', 'RIO333', 1, 7, '2018-01-16 22:37:54.734871', '2018-01-16 22:37:54.734871');
+
+
+--
+-- TOC entry 3031 (class 0 OID 16883)
+-- Dependencies: 225
+-- Data for Name: credentials; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO credentials (id, title, created_at, updated_at) VALUES (1, 'Potvrda o redovnom studiju- stipendija', '2017-12-09 23:23:28.194133', '2017-12-09 23:23:28.194133');
+INSERT INTO credentials (id, title, created_at, updated_at) VALUES (2, 'Potvrda o redovnom studiju- prevoz', '2017-12-09 23:23:47.121726', '2017-12-09 23:23:47.121726');
+
+
+--
+-- TOC entry 3017 (class 0 OID 16712)
+-- Dependencies: 211
+-- Data for Name: departments; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO departments (id, title, created_at, updated_at) VALUES (1, 'RI', '2017-12-09 09:57:18.278188', '2017-12-09 09:57:18.278188');
+INSERT INTO departments (id, title, created_at, updated_at) VALUES (2, 'AIE', '2017-12-09 09:57:18.335205', '2017-12-09 09:57:18.335205');
+
+
+--
+-- TOC entry 3009 (class 0 OID 16582)
+-- Dependencies: 203
+-- Data for Name: employee_details; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+
+
+--
+-- TOC entry 3037 (class 0 OID 16931)
+-- Dependencies: 231
+-- Data for Name: exam_students; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO exam_students (id, exam_id, user_id, status, created_at, updated_at) VALUES (1, 1, 2, B'0', '2017-12-09 23:33:59.888395', '2017-12-09 23:33:59.888395');
+INSERT INTO exam_students (id, exam_id, user_id, status, created_at, updated_at) VALUES (2, 1, 2, B'1', '2017-12-09 23:41:07.992885', '2017-12-09 23:41:07.992885');
+INSERT INTO exam_students (id, exam_id, user_id, status, created_at, updated_at) VALUES (26, 2, 5, B'0', '2017-12-18 09:21:20.145043', '2017-12-18 09:21:20.145043');
+INSERT INTO exam_students (id, exam_id, user_id, status, created_at, updated_at) VALUES (41, 1, 5, B'1', '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+INSERT INTO exam_students (id, exam_id, user_id, status, created_at, updated_at) VALUES (42, 3, 2, B'1', '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+INSERT INTO exam_students (id, exam_id, user_id, status, created_at, updated_at) VALUES (43, 5, 2, B'1', '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+INSERT INTO exam_students (id, exam_id, user_id, status, created_at, updated_at) VALUES (44, 18, 5, B'1', '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+INSERT INTO exam_students (id, exam_id, user_id, status, created_at, updated_at) VALUES (45, 18, 2, B'1', '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+
+
+--
+-- TOC entry 3035 (class 0 OID 16914)
+-- Dependencies: 229
+-- Data for Name: exams; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO exams (id, title, scheduled, course_department_id, created_at, updated_at) VALUES (2, 'Prva parcijala PRS', '2017-12-09', 2, '2017-12-09 23:29:47.344162', '2017-12-09 23:29:47.344162');
+INSERT INTO exams (id, title, scheduled, course_department_id, created_at, updated_at) VALUES (3, 'Prva parcijala MMS', '2017-12-10', 3, '2017-12-10 13:02:09.212315', '2017-12-10 13:02:09.212315');
+INSERT INTO exams (id, title, scheduled, course_department_id, created_at, updated_at) VALUES (1, 'Prva parcijala VVS', '2017-12-09', 1, '2017-12-09 23:25:58.987149', '2017-12-09 23:25:58.987149');
+INSERT INTO exams (id, title, scheduled, course_department_id, created_at, updated_at) VALUES (5, 'Druga parcijala PRS', '2018-01-25', 2, '2017-12-11 12:54:28.334736', '2017-12-11 12:54:28.334736');
+INSERT INTO exams (id, title, scheduled, course_department_id, created_at, updated_at) VALUES (11, 'Prva parcijala ASP', '2018-01-26', 6, '2018-01-16 00:00:00', '2018-01-16 00:00:00');
+INSERT INTO exams (id, title, scheduled, course_department_id, created_at, updated_at) VALUES (14, 'ASP druga parcijala', '2018-01-11', 6, '2018-01-16 22:16:45.691826', '2018-01-16 22:16:45.691826');
+INSERT INTO exams (id, title, scheduled, course_department_id, created_at, updated_at) VALUES (18, 'ASP usmeni ispit', '2018-01-24', 6, '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+
+
+--
+-- TOC entry 3021 (class 0 OID 16755)
+-- Dependencies: 215
+-- Data for Name: lab_groups; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO lab_groups (id, title, course_department_id, created_at, updated_at) VALUES (2, 'PRS1', 3, '2013-02-02 00:00:00', '2013-02-02 00:00:00');
+INSERT INTO lab_groups (id, title, course_department_id, created_at, updated_at) VALUES (1, 'VVS1', 1, '2013-02-02 00:00:00', '2014-02-02 00:00:00');
+INSERT INTO lab_groups (id, title, course_department_id, created_at, updated_at) VALUES (3, 'MMS1', 4, '2017-02-01 00:00:00', '2017-02-01 00:00:00');
+
+
+--
+-- TOC entry 3029 (class 0 OID 16860)
+-- Dependencies: 223
+-- Data for Name: notices; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO notices (id, title, text, user_id, course_id, created_at, updated_at) VALUES (1, 'Obavjestenje', 'Predavanja iz predmeta MMS ce se odrzavati cetvrtkom od 09.30 do 11.45 sati sa jednom 15-minutnom pauzom.', 11, 4, '2017-12-08 20:33:48.729403', '2017-12-08 20:33:48.729403');
+INSERT INTO notices (id, title, text, user_id, course_id, created_at, updated_at) VALUES (3, 'Obavjestenja', 'U utorak (14.12.2017.) neće biti predavanja iz POOS.', 12, 5, '2017-12-08 21:07:28.754479', '2017-12-08 21:07:28.754479');
+INSERT INTO notices (id, title, text, user_id, course_id, created_at, updated_at) VALUES (4, 'Obavjestenje', 'Objavljeni su rezultati prvog parcijalnog ispita odrzanog 27.11.2017.', 11, 4, '2017-12-08 21:07:28.754479', '2017-12-08 21:07:28.754479');
+INSERT INTO notices (id, title, text, user_id, course_id, created_at, updated_at) VALUES (5, 'Obavjestenje', 'U petak 16.12.2017. nece biti predavanja.', 9, 1, '2017-12-08 21:07:28.754479', '2017-12-08 21:07:28.754479');
+INSERT INTO notices (id, title, text, user_id, course_id, created_at, updated_at) VALUES (2, 'Obavjestenje', 'Objavljeni rezultati ispita: I parcijalni (29. 11. 2017).', 10, 3, '2017-12-08 20:48:46.020114', '2017-12-11 12:56:25.086667');
+INSERT INTO notices (id, title, text, user_id, course_id, created_at, updated_at) VALUES (93, 'Obavjestenje', 'Usmeni ispit se odrzava 24.1.2018.', 11, 2, '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+
+
+--
+-- TOC entry 3033 (class 0 OID 16894)
+-- Dependencies: 227
+-- Data for Name: requests; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO requests (id, status, user_id, credential_id, created_at, updated_at) VALUES (16, B'1', 5, 2, '2017-12-18 09:42:21.905565', '2017-12-18 09:42:21.905565');
+INSERT INTO requests (id, status, user_id, credential_id, created_at, updated_at) VALUES (27, B'1', 2, 1, '2018-01-15 00:00:00', '2018-01-15 00:00:00');
+INSERT INTO requests (id, status, user_id, credential_id, created_at, updated_at) VALUES (32, B'1', 2, 1, '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+INSERT INTO requests (id, status, user_id, credential_id, created_at, updated_at) VALUES (33, B'1', 2, 1, '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+INSERT INTO requests (id, status, user_id, credential_id, created_at, updated_at) VALUES (35, B'1', 5, 1, '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+INSERT INTO requests (id, status, user_id, credential_id, created_at, updated_at) VALUES (36, B'1', 2, 2, '2018-01-17 00:00:00', '2018-01-17 00:00:00');
+
+
+--
+-- TOC entry 3005 (class 0 OID 16537)
+-- Dependencies: 199
+-- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO roles (id, name, description, created_at, updated_at) VALUES (1, 'admin', 'Opis.', '2017-11-05 19:43:22.984113', '2017-11-05 19:43:22.984113');
+INSERT INTO roles (id, name, description, created_at, updated_at) VALUES (2, 'student', 'Opis.', '2017-11-05 19:43:30.719167', '2017-11-05 19:43:30.719167');
+INSERT INTO roles (id, name, description, created_at, updated_at) VALUES (3, 'studentska', 'Opis.', '2017-11-05 19:43:35.823074', '2017-11-05 19:43:35.823074');
+INSERT INTO roles (id, name, description, created_at, updated_at) VALUES (4, 'akademsko', 'Opis.', '2017-11-05 19:43:43.016909', '2017-11-05 19:43:43.016909');
+
+
+--
+-- TOC entry 3002 (class 0 OID 16485)
+-- Dependencies: 196
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO schema_migrations (version) VALUES ('20171105172145');
+INSERT INTO schema_migrations (version) VALUES ('20171105185836');
+INSERT INTO schema_migrations (version) VALUES ('20171105190622');
+INSERT INTO schema_migrations (version) VALUES ('20171105185837');
+INSERT INTO schema_migrations (version) VALUES ('20171105190623');
+INSERT INTO schema_migrations (version) VALUES ('20171204172718');
+INSERT INTO schema_migrations (version) VALUES ('20171204180107');
+INSERT INTO schema_migrations (version) VALUES ('20171204180848');
+INSERT INTO schema_migrations (version) VALUES ('20171204183116');
+INSERT INTO schema_migrations (version) VALUES ('20171205172303');
+INSERT INTO schema_migrations (version) VALUES ('20171205172320');
+INSERT INTO schema_migrations (version) VALUES ('20171205172647');
+INSERT INTO schema_migrations (version) VALUES ('20171205172644');
+INSERT INTO schema_migrations (version) VALUES ('20171205234608');
+INSERT INTO schema_migrations (version) VALUES ('20171207114218');
+INSERT INTO schema_migrations (version) VALUES ('20171207114441');
+INSERT INTO schema_migrations (version) VALUES ('20171207114611');
+INSERT INTO schema_migrations (version) VALUES ('20171207115606');
+INSERT INTO schema_migrations (version) VALUES ('20171207120014');
+INSERT INTO schema_migrations (version) VALUES ('20171207123237');
+INSERT INTO schema_migrations (version) VALUES ('20171207125642');
+INSERT INTO schema_migrations (version) VALUES ('20171207150732');
+INSERT INTO schema_migrations (version) VALUES ('20171208200812');
+INSERT INTO schema_migrations (version) VALUES ('20171208202639');
+INSERT INTO schema_migrations (version) VALUES ('20171209122418');
+INSERT INTO schema_migrations (version) VALUES ('20171209122501');
+INSERT INTO schema_migrations (version) VALUES ('20171209151152');
+INSERT INTO schema_migrations (version) VALUES ('20171209154319');
+
+
+--
+-- TOC entry 3013 (class 0 OID 16690)
+-- Dependencies: 207
+-- Data for Name: semesters; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO semesters (id, title, created_at, updated_at) VALUES (1, 'prvi', '2017-12-09 09:55:03.456354', '2017-12-09 09:55:03.456354');
+INSERT INTO semesters (id, title, created_at, updated_at) VALUES (2, 'drugi', '2017-12-09 09:55:03.544066', '2017-12-09 09:55:03.544066');
+INSERT INTO semesters (id, title, created_at, updated_at) VALUES (3, 'treci', '2017-12-09 09:55:03.546057', '2017-12-09 09:55:03.546057');
+INSERT INTO semesters (id, title, created_at, updated_at) VALUES (4, 'Cetvrti semestar', '2017-12-11 11:54:05.935562', '2017-12-11 11:54:05.935562');
+INSERT INTO semesters (id, title, created_at, updated_at) VALUES (5, 'Peti semestar', '2017-12-11 11:54:05.940063', '2017-12-11 11:54:05.940063');
+INSERT INTO semesters (id, title, created_at, updated_at) VALUES (6, 'Sesti semestar', '2017-12-11 11:54:05.943064', '2017-12-11 11:54:05.943064');
+INSERT INTO semesters (id, title, created_at, updated_at) VALUES (7, 'Sedmi semestar', '2017-12-11 11:54:05.948203', '2017-12-11 11:54:05.948203');
+INSERT INTO semesters (id, title, created_at, updated_at) VALUES (8, 'Osmi semestar', '2017-12-11 11:54:05.951188', '2017-12-11 11:54:05.951188');
+INSERT INTO semesters (id, title, created_at, updated_at) VALUES (9, 'Deveti semestar', '2017-12-11 11:54:05.95419', '2017-12-11 11:54:05.95419');
+INSERT INTO semesters (id, title, created_at, updated_at) VALUES (10, 'Deseti semestar', '2017-12-11 11:54:05.957193', '2017-12-11 11:54:05.957193');
+
+
+--
+-- TOC entry 3025 (class 0 OID 16788)
+-- Dependencies: 219
+-- Data for Name: student_details; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO student_details (id, user_id, indeks, budget, "enrollmentDate", "disrollmentDate", "graduationDate", created_at, updated_at) VALUES (1, 5, '17777', B'0', '2017-12-10', '2017-12-10', '2017-12-10', '2017-12-10 23:12:21.701503', '2017-12-10 23:12:21.701503');
+INSERT INTO student_details (id, user_id, indeks, budget, "enrollmentDate", "disrollmentDate", "graduationDate", created_at, updated_at) VALUES (3, 6, '17149', B'1', '2017-10-10', '2019-10-10', '2019-10-10', '2017-12-11 11:56:20.501118', '2017-12-11 13:02:55.071449');
+INSERT INTO student_details (id, user_id, indeks, budget, "enrollmentDate", "disrollmentDate", "graduationDate", created_at, updated_at) VALUES (2, 2, '17155', B'1', '2017-10-10', '2019-10-10', '2019-10-10', '2017-12-11 11:56:20.493152', '2017-12-11 13:05:59.967691');
+INSERT INTO student_details (id, user_id, indeks, budget, "enrollmentDate", "disrollmentDate", "graduationDate", created_at, updated_at) VALUES (4, 14, '16923', B'1', '2017-10-10', '2019-10-10', '2019-10-10', '2017-12-11 11:56:20.501118', '2017-12-11 11:56:20.501118');
+
+
+--
+-- TOC entry 3023 (class 0 OID 16772)
+-- Dependencies: 217
+-- Data for Name: study_years; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO study_years (id, title, created_at, updated_at) VALUES (1, 'prva', '2017-12-09 10:01:45.048333', '2017-12-09 10:01:45.048333');
+INSERT INTO study_years (id, title, created_at, updated_at) VALUES (2, 'druga', '2017-12-09 10:01:45.053608', '2017-12-09 10:01:45.053608');
+INSERT INTO study_years (id, title, created_at, updated_at) VALUES (4, 'cetvrta', '2017-12-09 10:02:07.504544', '2017-12-09 10:02:07.504544');
+INSERT INTO study_years (id, title, created_at, updated_at) VALUES (3, 'treca', '2017-12-09 10:02:07.291211', '2017-12-09 10:02:07.291211');
+
+
+--
+-- TOC entry 3027 (class 0 OID 16805)
+-- Dependencies: 221
+-- Data for Name: user_enrollments; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO user_enrollments (id, study_year_id, user_id, course_department_id, lab_group_id, created_at, updated_at) VALUES (3, 1, 5, 1, 1, '2017-12-09 23:50:31.342382', '2017-12-09 23:50:31.342382');
+INSERT INTO user_enrollments (id, study_year_id, user_id, course_department_id, lab_group_id, created_at, updated_at) VALUES (4, 1, 3, 1, 1, '2017-12-10 12:41:00.199254', '2017-12-10 12:41:00.199254');
+INSERT INTO user_enrollments (id, study_year_id, user_id, course_department_id, lab_group_id, created_at, updated_at) VALUES (2, 1, 5, 1, 1, '2017-12-09 23:16:46.355389', '2017-12-10 12:41:24.987154');
+INSERT INTO user_enrollments (id, study_year_id, user_id, course_department_id, lab_group_id, created_at, updated_at) VALUES (5, 1, 2, 1, 1, '2017-12-11 12:16:57.934671', '2017-12-11 12:16:57.934671');
+INSERT INTO user_enrollments (id, study_year_id, user_id, course_department_id, lab_group_id, created_at, updated_at) VALUES (6, 1, 2, 2, 2, '2017-12-11 12:16:57.944671', '2017-12-11 12:16:57.944671');
+INSERT INTO user_enrollments (id, study_year_id, user_id, course_department_id, lab_group_id, created_at, updated_at) VALUES (7, 1, 2, 3, 3, '2017-12-11 12:16:57.954845', '2017-12-11 12:16:57.954845');
+INSERT INTO user_enrollments (id, study_year_id, user_id, course_department_id, lab_group_id, created_at, updated_at) VALUES (8, 1, 5, 1, 1, '2017-12-11 12:17:37.223284', '2017-12-11 12:17:37.223284');
+INSERT INTO user_enrollments (id, study_year_id, user_id, course_department_id, lab_group_id, created_at, updated_at) VALUES (9, 1, 5, 2, 2, '2017-12-11 12:17:37.236322', '2017-12-11 12:17:37.236322');
+INSERT INTO user_enrollments (id, study_year_id, user_id, course_department_id, lab_group_id, created_at, updated_at) VALUES (10, 1, 5, 3, 3, '2017-12-11 12:17:37.248135', '2017-12-11 12:17:37.248135');
+INSERT INTO user_enrollments (id, study_year_id, user_id, course_department_id, lab_group_id, created_at, updated_at) VALUES (11, 1, 2, 6, 3, '2017-02-01 00:00:00', '2017-02-01 00:00:00');
+
+
+--
+-- TOC entry 3007 (class 0 OID 16561)
+-- Dependencies: 201
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: bp
+--
+
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (1, 1, 'vildana', '123', 'Vildana', 'Panjeta', '2017-12-04', 'Humska 32', 'Sarajevo', '2017-12-04 22:23:15.939578', '2017-12-04 22:23:15.939578');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (3, 3, 'amina', '123', 'Amina', 'Puce', '2017-12-04', 'Vakufska 32', 'Koblenz', '2017-12-04 22:23:15.970764', '2017-12-04 22:23:15.970764');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (4, 4, 'emir', '123', 'Emir', 'Buza', '2017-12-04', 'Zmaja od Bosne', 'Sarajevo', '2017-12-04 22:23:15.980271', '2017-12-04 22:23:15.980271');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (7, 4, 'hasna', '123', 'Hasnija', 'Samic', '2017-12-10', 'Adresa', 'Sarajevo', '2017-12-10 17:47:01.21139', '2017-12-10 17:47:01.21139');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (8, 4, 'ebuza', '123', 'Emir', 'Buza', '1980-01-18', 'Zmaja od Bosne', 'Sarajevo', '2017-12-11 11:51:15.967741', '2017-12-11 11:51:15.967741');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (9, 4, 'ddonko', '123', 'Dzenana', 'Djonko', '1980-01-18', 'Zmaja od Bosne', 'Sarajevo', '2017-12-11 11:51:34.544443', '2017-12-11 11:51:34.544443');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (10, 4, 'nnosovic', '123', 'Novica', 'Nosovic', '1965-01-18', 'Zmaja od Bosne', 'Sarajevo', '2017-12-11 11:51:56.977735', '2017-12-11 11:51:56.977735');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (11, 4, 'hsupic', '123', 'Haris', 'Supic', '1965-01-18', 'Zmaja od Bosne', 'Sarajevo', '2017-12-11 11:52:09.129144', '2017-12-11 11:52:09.129144');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (12, 4, 'somanovic', '123', 'Samir', 'Omanovic', '1965-01-18', 'Zmaja od Bosne', 'Sarajevo', '2017-12-11 11:52:20.799799', '2017-12-11 11:52:20.799799');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (13, 4, 'hzildzo', '123', 'Hamid', 'Zildzo', '1965-01-18', 'Zmaja od Bosne', 'Sarajevo', '2017-12-11 11:52:28.057869', '2017-12-11 11:52:28.057869');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (6, 2, 'aida', '123', 'Aida', 'Dragnic', '2017-12-10', 'Avde Hume', 'Sarajevo', '2017-12-10 15:59:27.655469', '2017-12-11 13:03:13.798779');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (14, 2, 'apuce', '123', 'Amina', 'Puce', '1996-01-18', 'Avde Smajlovica 15', 'Koblenz', '2017-12-11 11:52:28.057869', '2017-12-11 11:52:28.057869');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (5, 2, 'emina', '123', 'Emina', 'Eminic', '2017-12-09', 'Adresa', 'Visoko', '2017-12-09 23:13:42.259985', '2017-12-10 17:29:52.746642');
+INSERT INTO users (id, role_id, username, password, name, lastname, "birthDate", address, birthplace, created_at, updated_at) VALUES (2, 2, 'zerina', '1234', 'Zerina', 'Dragnic', '2017-12-04', 'Avde Hume 32', 'Sarajevo', '2017-12-04 22:23:15.957092', '2018-01-16 23:11:11.727125');
+
+
+--
+-- TOC entry 3062 (class 0 OID 0)
+-- Dependencies: 208
+-- Name: academic_years_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('academic_years_id_seq', 1, true);
+
+
+--
+-- TOC entry 3063 (class 0 OID 0)
+-- Dependencies: 212
+-- Name: course_departments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('course_departments_id_seq', 1, true);
+
+
+--
+-- TOC entry 3064 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: courses_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('courses_id_seq', 8, true);
+
+
+--
+-- TOC entry 3065 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: credentials_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('credentials_id_seq', 3, true);
+
+
+--
+-- TOC entry 3066 (class 0 OID 0)
+-- Dependencies: 210
+-- Name: departments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('departments_id_seq', 2, true);
+
+
+--
+-- TOC entry 3067 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: employee_details_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('employee_details_id_seq', 1, false);
+
+
+--
+-- TOC entry 3068 (class 0 OID 0)
+-- Dependencies: 230
+-- Name: exam_students_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('exam_students_id_seq', 45, true);
+
+
+--
+-- TOC entry 3069 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: exams_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('exams_id_seq', 18, true);
+
+
+--
+-- TOC entry 3070 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: lab_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('lab_groups_id_seq', 1, true);
+
+
+--
+-- TOC entry 3071 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: notices_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('notices_id_seq', 93, true);
+
+
+--
+-- TOC entry 3072 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: requests_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('requests_id_seq', 37, true);
+
+
+--
+-- TOC entry 3073 (class 0 OID 0)
+-- Dependencies: 198
+-- Name: roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('roles_id_seq', 4, true);
+
+
+--
+-- TOC entry 3074 (class 0 OID 0)
+-- Dependencies: 206
+-- Name: semesters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('semesters_id_seq', 3, true);
+
+
+--
+-- TOC entry 3075 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: student_details_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('student_details_id_seq', 2, true);
+
+
+--
+-- TOC entry 3076 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: study_years_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('study_years_id_seq', 4, true);
+
+
+--
+-- TOC entry 3077 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: user_enrollments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('user_enrollments_id_seq', 4, true);
+
+
+--
+-- TOC entry 3078 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bp
+--
+
+SELECT pg_catalog.setval('users_id_seq', 10, true);
+
+
+--
+-- TOC entry 2823 (class 2606 OID 16709)
+-- Name: academic_years academic_years_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY academic_years
+    ADD CONSTRAINT academic_years_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2808 (class 2606 OID 16500)
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- TOC entry 2827 (class 2606 OID 16728)
+-- Name: course_departments course_departments_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY course_departments
+    ADD CONSTRAINT course_departments_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2818 (class 2606 OID 16681)
+-- Name: courses courses_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY courses
+    ADD CONSTRAINT courses_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2851 (class 2606 OID 16891)
+-- Name: credentials credentials_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY credentials
+    ADD CONSTRAINT credentials_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2825 (class 2606 OID 16720)
+-- Name: departments departments_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY departments
+    ADD CONSTRAINT departments_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2815 (class 2606 OID 16587)
+-- Name: employee_details employee_details_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY employee_details
+    ADD CONSTRAINT employee_details_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2860 (class 2606 OID 16936)
+-- Name: exam_students exam_students_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY exam_students
+    ADD CONSTRAINT exam_students_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2857 (class 2606 OID 16922)
+-- Name: exams exams_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY exams
+    ADD CONSTRAINT exams_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2834 (class 2606 OID 16763)
+-- Name: lab_groups lab_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY lab_groups
+    ADD CONSTRAINT lab_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2849 (class 2606 OID 16868)
+-- Name: notices notices_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY notices
+    ADD CONSTRAINT notices_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2855 (class 2606 OID 16899)
+-- Name: requests requests_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY requests
+    ADD CONSTRAINT requests_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2810 (class 2606 OID 16545)
+-- Name: roles roles_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY roles
+    ADD CONSTRAINT roles_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2806 (class 2606 OID 16492)
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- TOC entry 2821 (class 2606 OID 16698)
+-- Name: semesters semesters_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY semesters
+    ADD CONSTRAINT semesters_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2839 (class 2606 OID 16796)
+-- Name: student_details student_details_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY student_details
+    ADD CONSTRAINT student_details_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2836 (class 2606 OID 16780)
+-- Name: study_years study_years_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY study_years
+    ADD CONSTRAINT study_years_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2845 (class 2606 OID 16810)
+-- Name: user_enrollments user_enrollments_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY user_enrollments
+    ADD CONSTRAINT user_enrollments_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2813 (class 2606 OID 16569)
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2828 (class 1259 OID 16751)
+-- Name: index_course_departments_on_academic_year_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_course_departments_on_academic_year_id ON course_departments USING btree (academic_year_id);
+
+
+--
+-- TOC entry 2829 (class 1259 OID 16749)
+-- Name: index_course_departments_on_course_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_course_departments_on_course_id ON course_departments USING btree (course_id);
+
+
+--
+-- TOC entry 2830 (class 1259 OID 16750)
+-- Name: index_course_departments_on_department_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_course_departments_on_department_id ON course_departments USING btree (department_id);
+
+
+--
+-- TOC entry 2831 (class 1259 OID 16752)
+-- Name: index_course_departments_on_semester_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_course_departments_on_semester_id ON course_departments USING btree (semester_id);
+
+
+--
+-- TOC entry 2819 (class 1259 OID 16687)
+-- Name: index_courses_on_user_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_courses_on_user_id ON courses USING btree (user_id);
+
+
+--
+-- TOC entry 2816 (class 1259 OID 16588)
+-- Name: index_employee_details_on_user_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_employee_details_on_user_id ON employee_details USING btree (user_id);
+
+
+--
+-- TOC entry 2861 (class 1259 OID 16947)
+-- Name: index_exam_students_on_exam_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_exam_students_on_exam_id ON exam_students USING btree (exam_id);
+
+
+--
+-- TOC entry 2862 (class 1259 OID 16948)
+-- Name: index_exam_students_on_user_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_exam_students_on_user_id ON exam_students USING btree (user_id);
+
+
+--
+-- TOC entry 2858 (class 1259 OID 16928)
+-- Name: index_exams_on_course_department_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_exams_on_course_department_id ON exams USING btree (course_department_id);
+
+
+--
+-- TOC entry 2832 (class 1259 OID 16769)
+-- Name: index_lab_groups_on_course_department_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_lab_groups_on_course_department_id ON lab_groups USING btree (course_department_id);
+
+
+--
+-- TOC entry 2846 (class 1259 OID 16880)
+-- Name: index_notices_on_course_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_notices_on_course_id ON notices USING btree (course_id);
+
+
+--
+-- TOC entry 2847 (class 1259 OID 16879)
+-- Name: index_notices_on_user_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_notices_on_user_id ON notices USING btree (user_id);
+
+
+--
+-- TOC entry 2852 (class 1259 OID 16911)
+-- Name: index_requests_on_credential_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_requests_on_credential_id ON requests USING btree (credential_id);
+
+
+--
+-- TOC entry 2853 (class 1259 OID 16910)
+-- Name: index_requests_on_user_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_requests_on_user_id ON requests USING btree (user_id);
+
+
+--
+-- TOC entry 2837 (class 1259 OID 16802)
+-- Name: index_student_details_on_user_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_student_details_on_user_id ON student_details USING btree (user_id);
+
+
+--
+-- TOC entry 2840 (class 1259 OID 16833)
+-- Name: index_user_enrollments_on_course_department_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_user_enrollments_on_course_department_id ON user_enrollments USING btree (course_department_id);
+
+
+--
+-- TOC entry 2841 (class 1259 OID 16834)
+-- Name: index_user_enrollments_on_lab_group_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_user_enrollments_on_lab_group_id ON user_enrollments USING btree (lab_group_id);
+
+
+--
+-- TOC entry 2842 (class 1259 OID 16831)
+-- Name: index_user_enrollments_on_study_year_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_user_enrollments_on_study_year_id ON user_enrollments USING btree (study_year_id);
+
+
+--
+-- TOC entry 2843 (class 1259 OID 16832)
+-- Name: index_user_enrollments_on_user_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_user_enrollments_on_user_id ON user_enrollments USING btree (user_id);
+
+
+--
+-- TOC entry 2811 (class 1259 OID 16570)
+-- Name: index_users_on_role_id; Type: INDEX; Schema: public; Owner: bp
+--
+
+CREATE INDEX index_users_on_role_id ON users USING btree (role_id);
+
+
+--
+-- TOC entry 2866 (class 2606 OID 16739)
+-- Name: course_departments fk_rails_0e752894ac; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY course_departments
+    ADD CONSTRAINT fk_rails_0e752894ac FOREIGN KEY (academic_year_id) REFERENCES academic_years(id);
+
+
+--
+-- TOC entry 2864 (class 2606 OID 16729)
+-- Name: course_departments fk_rails_1a968ac072; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY course_departments
+    ADD CONSTRAINT fk_rails_1a968ac072 FOREIGN KEY (course_id) REFERENCES courses(id);
+
+
+--
+-- TOC entry 2870 (class 2606 OID 16811)
+-- Name: user_enrollments fk_rails_1ad8a5049b; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY user_enrollments
+    ADD CONSTRAINT fk_rails_1ad8a5049b FOREIGN KEY (study_year_id) REFERENCES study_years(id);
+
+
+--
+-- TOC entry 2880 (class 2606 OID 16942)
+-- Name: exam_students fk_rails_3fde9227e2; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY exam_students
+    ADD CONSTRAINT fk_rails_3fde9227e2 FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
+-- TOC entry 2872 (class 2606 OID 16821)
+-- Name: user_enrollments fk_rails_505eb88e12; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY user_enrollments
+    ADD CONSTRAINT fk_rails_505eb88e12 FOREIGN KEY (course_department_id) REFERENCES course_departments(id);
+
+
+--
+-- TOC entry 2868 (class 2606 OID 16764)
+-- Name: lab_groups fk_rails_70f5c2a0da; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY lab_groups
+    ADD CONSTRAINT fk_rails_70f5c2a0da FOREIGN KEY (course_department_id) REFERENCES course_departments(id);
+
+
+--
+-- TOC entry 2878 (class 2606 OID 16923)
+-- Name: exams fk_rails_71b582d6f4; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY exams
+    ADD CONSTRAINT fk_rails_71b582d6f4 FOREIGN KEY (course_department_id) REFERENCES course_departments(id);
+
+
+--
+-- TOC entry 2879 (class 2606 OID 16937)
+-- Name: exam_students fk_rails_780dd01489; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY exam_students
+    ADD CONSTRAINT fk_rails_780dd01489 FOREIGN KEY (exam_id) REFERENCES exams(id);
+
+
+--
+-- TOC entry 2875 (class 2606 OID 16874)
+-- Name: notices fk_rails_8dda6eabb7; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY notices
+    ADD CONSTRAINT fk_rails_8dda6eabb7 FOREIGN KEY (course_id) REFERENCES courses(id);
+
+
+--
+-- TOC entry 2876 (class 2606 OID 16900)
+-- Name: requests fk_rails_8ead8b1e6b; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY requests
+    ADD CONSTRAINT fk_rails_8ead8b1e6b FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
+-- TOC entry 2874 (class 2606 OID 16869)
+-- Name: notices fk_rails_984b9c27bc; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY notices
+    ADD CONSTRAINT fk_rails_984b9c27bc FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
+-- TOC entry 2867 (class 2606 OID 16744)
+-- Name: course_departments fk_rails_acbddb1e62; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY course_departments
+    ADD CONSTRAINT fk_rails_acbddb1e62 FOREIGN KEY (semester_id) REFERENCES semesters(id);
+
+
+--
+-- TOC entry 2863 (class 2606 OID 16682)
+-- Name: courses fk_rails_b3c61f05ef; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY courses
+    ADD CONSTRAINT fk_rails_b3c61f05ef FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
+-- TOC entry 2865 (class 2606 OID 16734)
+-- Name: course_departments fk_rails_cd6259b80b; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY course_departments
+    ADD CONSTRAINT fk_rails_cd6259b80b FOREIGN KEY (department_id) REFERENCES departments(id);
+
+
+--
+-- TOC entry 2873 (class 2606 OID 16826)
+-- Name: user_enrollments fk_rails_ddd97b0b7f; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY user_enrollments
+    ADD CONSTRAINT fk_rails_ddd97b0b7f FOREIGN KEY (lab_group_id) REFERENCES lab_groups(id);
+
+
+--
+-- TOC entry 2877 (class 2606 OID 16905)
+-- Name: requests fk_rails_dfd91600bb; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY requests
+    ADD CONSTRAINT fk_rails_dfd91600bb FOREIGN KEY (credential_id) REFERENCES credentials(id);
+
+
+--
+-- TOC entry 2871 (class 2606 OID 16816)
+-- Name: user_enrollments fk_rails_e0c2e714f5; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY user_enrollments
+    ADD CONSTRAINT fk_rails_e0c2e714f5 FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
+-- TOC entry 2869 (class 2606 OID 16797)
+-- Name: student_details fk_rails_ed67909c5c; Type: FK CONSTRAINT; Schema: public; Owner: bp
+--
+
+ALTER TABLE ONLY student_details
+    ADD CONSTRAINT fk_rails_ed67909c5c FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+-- Completed on 2018-01-17 13:19:39
+
+--
+-- PostgreSQL database dump complete
+--
+
