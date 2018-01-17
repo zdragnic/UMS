@@ -48,12 +48,17 @@
 <br>
 <%end%>
 
-<form >
   <%#  Tip izvještaja:
     <%= select_tag 'tag1', options_for_select([['Statistika po tipovima uvjerenja', 1], ['Obrađeni/Neobrađeni zahtjevi za uvjerenja', 2]]) %>
   <%# Tip prikaza:
   <%= select_tag(:option2, options_for_select([['Pie chart', 1], ['Bar chart', 2]], selected: :option2, @var2=>:selected)) %>
-  <h2>Statistički podaci</h2><br>
+<span style = "visibility: hidden">
+  <%=   @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] %>
+</span>
+
+<% if @current_user.role_id.equal?(3) %>
+
+<h2>Statistički podaci</h2><br>
   <%= link_to 'Prikaži statistiku po tipovima uvjerenja - Pie chart', employee_details_path(:param1 => 1, :param2 => 1) ,class:'btn btn-primary', style: 'color: white'%>
   <br><br>
   <%= link_to 'Prikaži statistiku po tipovima uvjerenja - Bar chart', employee_details_path(:param1 => 1, :param2 => 2) ,class:'btn btn-primary', style: 'color: white'%>
@@ -61,4 +66,5 @@
   <%= link_to 'Prikaži statistiku po obrađenim zahtjevima - Pie chart', employee_details_path(:param1 => 2, :param2 => 1) ,class:'btn btn-primary', style: 'color: white'%>
   <br><br>
   <%= link_to 'Prikaži statistiku po obrađenim zahtjevima - Bar chart', employee_details_path(:param1 => 2, :param2 => 2) ,class:'btn btn-primary', style: 'color: white'%>
+<% end %>
 </form>

@@ -28,8 +28,8 @@ class NoticesController < ApplicationController
 
     respond_to do |format|
       if @notice.save
-        format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
-        format.json { render :show, status: :created, location: @notice }
+        format.html { redirect_to notices_url, notice: 'Uspješno kreirano obavještenje.' }
+        format.json { head :no_content }
       else
         format.html { render :new }
         format.json { render json: @notice.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class NoticesController < ApplicationController
   def destroy
     @notice.destroy
     respond_to do |format|
-      format.html { redirect_to notices_url, notice: 'Notice was successfully destroyed.' }
+      format.html { redirect_to notices_url, notice: 'Obavještenje obrisano.' }
       format.json { head :no_content }
     end
   end

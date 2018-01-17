@@ -27,7 +27,7 @@
         </td>
         <td><%= link_to 'Prikaži', exam, class:'btn btn-primary btn-sm', style: 'color: white' %></td>
         <td><%= link_to 'Uredi', edit_exam_path(exam), class:'btn btn-primary btn-sm', style: 'color: white' %></td>
-        <td><%= link_to 'Izbriši', exam, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-sm', style: 'color: white' %></td>
+        <td><%= link_to 'Izbriši', exam, method: :delete, data: { confirm: 'Jeste li sigurni?' }, class:'btn btn-danger btn-sm', style: 'color: white' %></td>
       </tr>
           <% elsif StudentIspiti?(session[:user_id],exam.course_department_id)%>
               <tr>
@@ -46,7 +46,7 @@
                     <td><%= link_to 'Prijavi', exam_students_path(:user_id=>session[:user_id], :exam_id=>exam.id, :status=>1 ), method: :post,class:'btn btn-primary btn-sm', style: 'color: white' %></td>
                 <%end%>
                 <% if prijavioIspit(session[:user_id], exam.id)%>
-                    <td><%= link_to 'Odjavi', exam_student_path(@es1), method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-danger btn-sm', style: 'color: white'%></td>
+                    <td><%= link_to 'Odjavi', exam_student_path(@es1), method: :delete, data: { confirm: 'Jeste li sigurni?' } , class:'btn btn-danger btn-sm', style: 'color: white'%></td>
                 <%end %>
               </tr>
 

@@ -1,6 +1,6 @@
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title">Request</h3>
+    <h3 class="panel-title">Novo uvjerenje</h3>
      </div>
   <div class="panel-body">
 <%= form_with(model: request, local: true) do |form| %>
@@ -19,13 +19,13 @@
 
   <div class="field">
     <span style="visibility: hidden"> <%= @zahtjevi = Credential.all %> </span>
-    <%= form.label :credential_id %>
+    <%= form.label :zahtjev_id %>
        <%= form.collection_select :credential_id, @zahtjevi, :id, :title,{},{ prompt: "Select credential", class:'form-control'} %>
   </div>
 
     <% if rola?(session[:user_id])%>
    <span> <div class="field">
-      <%= form.label :user_id %>
+      <%= form.label :korisnik_id %>
       <%= form.text_field :user_id, id: :request_user_id , class:'form-control' %>
     </div>
     </span>
@@ -47,7 +47,7 @@
         <%end%>
 
   <div class="actions">
-    <%= form.submit class:'btn btn-primary'%>
+    <%= form.submit :value =>"Pošalji", class:'btn btn-primary'%>
   </div>
 <% end %>
   </div>

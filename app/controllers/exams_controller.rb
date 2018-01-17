@@ -28,8 +28,8 @@ class ExamsController < ApplicationController
 
     respond_to do |format|
       if @exam.save
-        format.html { redirect_to @exam, notice: 'Exam was successfully created.' }
-        format.json { render :show, status: :created, location: @exam }
+        format.html { redirect_to exams_url, notice: 'Ispit je uspješno kreiran.' }
+        format.json { head :no_content }
       else
         format.html { render :new }
         format.json { render json: @exam.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class ExamsController < ApplicationController
   def destroy
     @exam.destroy
     respond_to do |format|
-      format.html { redirect_to exams_url, notice: 'Exam was successfully destroyed.' }
+      format.html { redirect_to exams_url, notice: 'Ispit je obrisan.' }
       format.json { head :no_content }
     end
   end

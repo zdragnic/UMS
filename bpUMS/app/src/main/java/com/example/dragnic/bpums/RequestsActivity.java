@@ -47,7 +47,7 @@ public class RequestsActivity extends AppCompatActivity {
 
 
         try {
-            String q1 = "SELECT * FROM users WHERE id= " + id;
+            String q1 = "SELECT role_id FROM users WHERE id= " + id;
             Log.d("Upit", q1);
             rs1 = db.execute(q1);
             Integer role = 0;
@@ -179,7 +179,7 @@ public class RequestsActivity extends AppCompatActivity {
 
                 });
 
-                String q = "SELECT * FROM requests";
+                String q = "SELECT * FROM requests r WHERE EXISTS (SELECT * FROM users n WHERE "+id+" = r.user_id)";
                 Log.d("Upit", q);
                 rs = db.execute(q);
                 //rs.beforeFirst();
@@ -191,10 +191,10 @@ public class RequestsActivity extends AppCompatActivity {
                     r.setUser_id(rs.getInt("user_id"));
                     r.setCredential_id(rs.getInt("credential_id"));
                     r.setCreated_at(rs.getDate("created_at"));
-                    if(rs.getInt("user_id")== Integer.parseInt(id)) {
+                   // if(rs.getInt("user_id")== Integer.parseInt(id)) {
                         zahtjevi.add(r);
                         Log.d("Zahtjev id je", String.valueOf(r.getId()));
-                    }
+                   // }
                     }
                 btnNova.setVisibility(View.VISIBLE);
 

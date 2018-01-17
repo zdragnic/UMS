@@ -28,7 +28,8 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".RequestsActivity" />
         <activity android:name=".newRequestActivity" />
-        <activity android:name=".newExamActivity"></activity>
+        <activity android:name=".newExamActivity" />
+        <activity android:name=".StudentExamsActivity"></activity>
     </application>
 
 </manifest>

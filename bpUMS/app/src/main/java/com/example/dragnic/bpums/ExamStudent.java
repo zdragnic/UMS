@@ -57,11 +57,15 @@ public class ExamStudent {
 
     public void save(){
         String q = "";
+
         if (this.getId() == 0){
             q = String.format("INSERT INTO exam_students (exam_id, user_id, status, created_at, updated_at) VALUES ('%d','%d','%d','%s','%s');",
                     this.getExam_id(),this.getUser_id(),this.getStatus(), this.getCreated_at(),this.getCreated_at());
         }
+
         else{
+            if(this.getStatus()==0){this.setStatus(1);}
+            else{this.setStatus(0);}
             q = String.format("UPDATE exam_students SET status = '%d' WHERE id = %d;",
                     this.getStatus(),this.getId());
         }

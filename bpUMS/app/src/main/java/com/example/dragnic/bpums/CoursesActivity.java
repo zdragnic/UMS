@@ -37,7 +37,7 @@ public class CoursesActivity extends AppCompatActivity {
                 role = rs1.getInt("role_id");
             }
             if (role == 4) {
-                String q = "SELECT * FROM courses"; //+id;
+                String q = "SELECT * FROM courses c WHERE EXISTS (SELECT * FROM users n WHERE "+id+" = c.responsible)"; //+id;
                 Log.d("Upit", q);
                 rs = db.execute(q);
                 //rs.beforeFirst();
@@ -49,10 +49,10 @@ public class CoursesActivity extends AppCompatActivity {
                     c.setCode(rs.getString("code"));
                     c.setResponsible(rs.getInt("responsible"));
                     c.setCreated_at(rs.getDate("created_at"));
-                    if (String.valueOf(rs.getInt("responsible")).equals(id)) {
+                   // if (String.valueOf(rs.getInt("responsible")).equals(id)) {
                         kursevi.add(c);
                         Log.d("Kurs je", c.getTitle());
-                    }
+                   // }
 
                 }
                 rs.close();
@@ -103,7 +103,7 @@ public class CoursesActivity extends AppCompatActivity {
         int idDep= -1;
         try {
 
-            String q1 = "SELECT * FROM course_departments WHERE course_id= "+course_id;
+            String q1 = "SELECT id FROM course_departments WHERE course_id= "+course_id;
             Log.d("Upit",q1);
 
             rs = db.execute(q1);
@@ -111,7 +111,7 @@ public class CoursesActivity extends AppCompatActivity {
             if (rs.next()) {
                 idDep= rs.getInt("id");
             }
-            String q= "SELECT * FROM user_enrollments WHERE user_id= "+user_id+" AND course_department_id= "+idDep;
+            String q= "SELECT id FROM user_enrollments WHERE user_id= "+user_id+" AND course_department_id= "+idDep;
             Log.d("Upit",q);
             rs1 = db.execute(q);
             if (rs1.next()) {
